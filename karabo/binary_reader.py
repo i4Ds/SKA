@@ -144,7 +144,7 @@ class OskarBinaryReader:
     TAG_SIZE    = 20
     
     @staticmethod
-    def interpreteString(payload: bytes) -> string:
+    def interpreteString(payload: bytes) -> str:
         return str(payload, "utf-8")
     
     @staticmethod
