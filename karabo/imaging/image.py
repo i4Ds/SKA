@@ -34,6 +34,8 @@ class Image(KaraboResource):
         """
         self.name = name
         self._properties = {}
+        # use cache to not call `__read_fits_data` multiple times and to avoid overwriting
+        # `data` or `header` in case one of it gets set using setter and the other is loaded from the file afterwards
         self._cache = {}
         self.file = FileHandle()
 
@@ -73,13 +75,16 @@ class Image(KaraboResource):
                 del self._cache['header']
             else:
                 data, header = self.__read_fits_data()
-                self._properties['header'] = data
-                self._cache['data'] = header
+                self._properties['header'] = header
+                self._cache['data'] = data
         return self._properties['header']
 
     @header.setter
     def header(self, value:Dict[str,Any]) -> None:
         self._properties['header'] = value
+
+    def set_header_args(**kwargs) -> None:
+        return None
 
     def get_squeezed_data(self) -> NDArray[np.float64]:
         return numpy.squeeze(self.data[:1, :1, :, :])
