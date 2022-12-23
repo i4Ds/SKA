@@ -13,6 +13,7 @@ from karabo.karabo_resource import KaraboResource
 from karabo.util.FileHandle import FileHandle
 from karabo.util.data_util import read_CSV_to_ndarray, image_header_has_parameters
 
+import warnings
 from karabo.warning import KaraboWarning
 
 class SourceDetectionResult(KaraboResource):
@@ -66,7 +67,8 @@ class SourceDetectionResult(KaraboResource):
                 image.header["BPA"]
             )
         else:
-            raise KaraboWarning("No beam parameter provided or found. Continue with `beam`=None !")
+            wmsg = "No beam parameter provided or found in `detect_sources_in_image`. Continue with `beam`=None !"
+            warnings.warn(wmsg, category=KaraboWarning)
 
         detection = bdsf.process_image(
             image.file.path,
