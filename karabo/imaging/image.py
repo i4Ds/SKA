@@ -10,6 +10,7 @@ import numpy as np
 from numpy.typing import NDArray
 from astropy.io import fits
 from astropy.wcs import WCS
+from astropy.io.fits import Header
 from matplotlib import pyplot as plt
 
 from karabo.karabo_resource import KaraboResource
@@ -24,13 +25,16 @@ matplotlib.use(previous_backend)
 
 class Image(KaraboResource):
 
-    def __init__(self, name=None) -> None:
+    def __init__(
+        self,
+        name: Optional[str] = None,
+    ) -> None:
         """
         Proxy Object Class for Images. Dirty, Cleaned or any other type of image in a fits format
         """
-        self.header = None
-        self.data = None
         self.name = name
+        self._properties = {}
+        self._cache = {}
         self.file = FileHandle()
 
     def write_to_file(self, path: str) -> None:
@@ -45,26 +49,37 @@ class Image(KaraboResource):
         image.file = FileHandle(existing_file_path=path, mode='r')
         return image
 
-    # overwrite getter to make sure it always contains the data
     @property
     def data(self) -> NDArray[np.float64]:
-        if self._data is None:
-            self.__read_fits_data()
-        return self._data
+        if 'data' not in self._properties:
+            if 'data' in self._cache:
+                self._properties['data'] = self._cache['data']
+                del self._cache['data']
+            else:
+                data, header = self.__read_fits_data()
+                self._properties['data'] = data
+                self._cache['header'] = header
+        return self._properties['data']
 
     @data.setter
     def data(self, value:NDArray[np.float64]):
-        self._data = value
+        self._properties['data'] = value
 
     @property
     def header(self) -> Dict[str,Any]:
-        if self._header is None:
-            self.__read_fits_data()
-        return self._header
+        if 'header' not in self._properties:
+            if 'header' in self._cache:
+                self._properties['header'] = self._cache['header']
+                del self._cache['header']
+            else:
+                data, header = self.__read_fits_data()
+                self._properties['header'] = data
+                self._cache['data'] = header
+        return self._properties['header']
 
     @header.setter
     def header(self, value:Dict[str,Any]) -> None:
-        self._header = value
+        self._properties['header'] = value
 
     def get_squeezed_data(self) -> NDArray[np.float64]:
         return numpy.squeeze(self.data[:1, :1, :, :])
@@ -90,8 +105,9 @@ class Image(KaraboResource):
         plt.show(block=False)
         plt.pause(1)
 
-    def __read_fits_data(self) -> None:
-        self.data, self.header = fits.getdata(self.file.path, ext=0, header=True)
+    def __read_fits_data(self) -> Tuple[NDArray[np.float64], Header]:
+        data, header = fits.getdata(self.file.path, ext=0, header=True)
+        return data, header
 
     def get_dimensions_of_image(self) -> List[int]:
         """
