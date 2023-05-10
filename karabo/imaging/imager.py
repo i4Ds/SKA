@@ -81,46 +81,23 @@ class Imager:
 
     def __init__(
         self,
-        ingest_dd: List[int] = [0],
-        ingest_vis_nchan: Optional[int] = None,
-        ingest_chan_per_vis: int = 1,
-        imaging_nchan: int = 1,
-        imaging_w_stacking: Union[bool, str] = True,
-        imaging_flat_sky: Union[bool, str] = False,
+        visibility: Visibility,
         imaging_npixel: Optional[int] = None,
         imaging_cellsize: Optional[float] = None,
         override_cellsize: bool = False,
-        imaging_uvmax: Optional[float] = None,
-        imaging_uvmin: float = 0,
-        imaging_dft_kernel: Optional[
-            str
-        ] = None,  # DFT kernel: cpu_looped | cpu_numba | gpu_raw
     ) -> None:
-        self.ingest_dd = ingest_dd
-        self.ingest_vis_nchan = ingest_vis_nchan
-        self.ingest_chan_per_vis = ingest_chan_per_vis
-        self.imaging_nchan = imaging_nchan
-        self.imaging_w_stacking = imaging_w_stacking
-        self.imaging_flat_sky = imaging_flat_sky
+        self.visibility = visibility
         self.imaging_npixel = imaging_npixel
         self.imaging_cellsize = imaging_cellsize
         self.override_cellsize = override_cellsize
-        self.imaging_dft_kernel = imaging_dft_kernel
-        self.imaging_uvmax = imaging_uvmax
-        self.imaging_uvmin = imaging_uvmin
 
     def get_dirty_image(
         self,
-        visibility: Union[Visibility, str],
     ) -> Image:
         """Get Dirty Image of visibilities passed to the Imager.
         :return: dirty image of visibilities.
         """
-        if isinstance(visibility, Visibility):
-            ms_file_path = visibility.ms_file.path
-        else:
-            ms_file_path = visibility
-        block_visibilities = create_visibility_from_ms(ms_file_path)
+        block_visibilities = create_visibility_from_ms(self.visibility.ms_file.path)
 
         if len(block_visibilities) != 1:
             raise EnvironmentError("Visibilities are too large")
@@ -144,6 +121,17 @@ class Imager:
         use_dask: bool = False,
         n_threads: int = 1,
         use_cuda: bool = False,  # If True, use CUDA for Nifty Gridder
+        ingest_dd: List[int] = [0],
+        ingest_vis_nchan: Optional[int] = None,
+        ingest_chan_per_vis: int = 1,
+        imaging_nchan: int = 1,
+        imaging_w_stacking: Union[bool, str] = True,
+        imaging_flat_sky: Union[bool, str] = False,
+        imaging_uvmax: Optional[float] = None,
+        imaging_uvmin: float = 0,
+        imaging_dft_kernel: Optional[
+            str
+        ] = None,  # DFT kernel: cpu_looped | cpu_numba | gpu_raw
         # Imaging context: Which nifty gridder to use.
         # See: https://ska-telescope.gitlab.io/external/rascil/RASCIL_wagg.html
         img_context: str = "ng",
@@ -200,14 +188,14 @@ class Imager:
             img_context = "wg"
         rsexecute.set_client(use_dask=use_dask, client=client, use_dlg=False)
 
-        if self.ingest_vis_nchan is None:
+        if ingest_vis_nchan is None:
             raise KaraboError("`ingest_vis_nchan` is None but must be of type 'int'.")
 
         blockviss = create_visibility_from_ms_rsexecute(
             msname=self.visibility.ms_file.path,
-            nchan_per_vis=self.ingest_chan_per_vis,
-            nout=self.ingest_vis_nchan // self.ingest_chan_per_vis,  # pyright: ignore
-            dds=self.ingest_dd,
+            nchan_per_vis=ingest_chan_per_vis,
+            nout=ingest_vis_nchan // ingest_chan_per_vis,  # pyright: ignore
+            dds=ingest_dd,
             average_channels=True,
         )
 
@@ -219,7 +207,7 @@ class Imager:
             rsexecute.execute(create_image_from_visibility)(
                 bvis,
                 npixel=self.imaging_npixel,
-                nchan=self.imaging_nchan,
+                nchan=imaging_nchan,
                 cellsize=self.imaging_cellsize,
                 override_cellsize=self.override_cellsize,
                 polarisation_frame=PolarisationFrame("stokesI"),
@@ -236,8 +224,7 @@ class Imager:
             model_imagelist=models,  # List of model images
             context=img_context,
             threads=n_threads,
-            wstacking=self.imaging_w_stacking
-            == "True",  # Correct for w term in gridding
+            wstacking=imaging_w_stacking == "True",  # Correct for w term in gridding
             niter=clean_niter,  # iterations in minor cycle
             nmajor=clean_nmajor,  # Number of major cycles
             algorithm=clean_algorithm,
@@ -257,14 +244,14 @@ class Imager:
             restore_facets=clean_restore_facets,
             restore_overlap=clean_restore_overlap,
             restore_taper=clean_restore_taper,
-            dft_compute_kernel=self.imaging_dft_kernel,
+            dft_compute_kernel=imaging_dft_kernel,
             component_threshold=clean_component_threshold,
             component_method=clean_component_method,
-            flat_sky=self.imaging_flat_sky,
+            flat_sky=imaging_flat_sky,
             clean_beam=clean_beam,
             clean_algorithm=clean_algorithm,
-            imaging_uvmax=self.imaging_uvmax,
-            imaging_uvmin=self.imaging_uvmin,
+            imaging_uvmax=imaging_uvmax,
+            imaging_uvmin=imaging_uvmin,
         )
 
         result = rsexecute.compute(result, sync=True)
