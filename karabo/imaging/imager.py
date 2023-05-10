@@ -81,76 +81,58 @@ class Imager:
 
     def __init__(
         self,
-        visibility: Visibility,
-        logfile: Optional[str] = None,
-        performance_file: Optional[str] = None,
         ingest_dd: List[int] = [0],
         ingest_vis_nchan: Optional[int] = None,
         ingest_chan_per_vis: int = 1,
-        ingest_average_blockvis: Union[bool, str] = False,
-        imaging_phasecentre: Optional[str] = None,
-        imaging_pol: str = "stokesI",
         imaging_nchan: int = 1,
-        imaging_context: str = "ng",
-        imaging_ng_threads: int = 4,
         imaging_w_stacking: Union[bool, str] = True,
         imaging_flat_sky: Union[bool, str] = False,
         imaging_npixel: Optional[int] = None,
         imaging_cellsize: Optional[float] = None,
         override_cellsize: bool = False,
-        imaging_weighting: str = "uniform",
-        imaging_robustness: float = 0.0,
-        imaging_gaussian_taper: Optional[float] = None,
-        imaging_dopsf: Union[bool, str] = False,
         imaging_uvmax: Optional[float] = None,
         imaging_uvmin: float = 0,
         imaging_dft_kernel: Optional[
             str
         ] = None,  # DFT kernel: cpu_looped | cpu_numba | gpu_raw
     ) -> None:
-        self.visibility = visibility
-        self.logfile = logfile
-        self.performance_file = performance_file
         self.ingest_dd = ingest_dd
         self.ingest_vis_nchan = ingest_vis_nchan
         self.ingest_chan_per_vis = ingest_chan_per_vis
-        self.ingest_average_blockvis = ingest_average_blockvis
-        self.imaging_phasecentre = imaging_phasecentre
-        self.imaging_pol = imaging_pol
         self.imaging_nchan = imaging_nchan
-        self.imaging_context = imaging_context
-        self.imaging_ng_threads = imaging_ng_threads
         self.imaging_w_stacking = imaging_w_stacking
         self.imaging_flat_sky = imaging_flat_sky
         self.imaging_npixel = imaging_npixel
         self.imaging_cellsize = imaging_cellsize
         self.override_cellsize = override_cellsize
-        self.imaging_weighting = imaging_weighting
-        self.imaging_robustness = imaging_robustness
-        self.imaging_gaussian_taper = imaging_gaussian_taper
-        self.imaging_dopsf = imaging_dopsf
         self.imaging_dft_kernel = imaging_dft_kernel
         self.imaging_uvmax = imaging_uvmax
         self.imaging_uvmin = imaging_uvmin
 
-    def get_dirty_image(self) -> Image:
+    def get_dirty_image(
+        self,
+        visibility: Union[Visibility, str],
+    ) -> Image:
         """Get Dirty Image of visibilities passed to the Imager.
         :return: dirty image of visibilities.
         """
-        # Code that triggers assertion statements
-        block_visibilities = create_visibility_from_ms(self.visibility.ms_file.path)
+        if isinstance(visibility, Visibility):
+            ms_file_path = visibility.ms_file.path
+        else:
+            ms_file_path = visibility
+        block_visibilities = create_visibility_from_ms(ms_file_path)
 
         if len(block_visibilities) != 1:
             raise EnvironmentError("Visibilities are too large")
-        visibility = block_visibilities[0]
+        ska_sdp_visibility = block_visibilities[0]
         file_handle = FileHandle(file_name="dirty", suffix=".fits")
         model = create_image_from_visibility(
-            visibility,
+            ska_sdp_visibility,
             npixel=self.imaging_npixel,
             cellsize=self.imaging_cellsize,
             override_cellsize=self.override_cellsize,
         )
-        dirty, sumwt = invert_visibility(visibility, model, context="2d")
+        dirty, _ = invert_visibility(ska_sdp_visibility, model, context="2d")
         dirty.image_acc.export_to_fits(fits_file=f"{file_handle.path}")
 
         image = Image(path=file_handle)
