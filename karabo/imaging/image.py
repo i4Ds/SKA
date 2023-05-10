@@ -3,7 +3,7 @@ from __future__ import annotations
 import logging
 import os
 import uuid
-from typing import Any, Dict, List, Optional, Tuple, Union, cast
+from typing import Any, Dict, List, Literal, Optional, Tuple, Union, cast
 
 import matplotlib
 import matplotlib.pyplot as plt
@@ -26,37 +26,56 @@ matplotlib.use(previous_backend)
 
 
 class Image(KaraboResource):
+    """Image proxy object providing some utility features."""
+
     def __init__(
         self,
         path: Union[str, FileHandle],
         **kwargs: Any,
     ) -> None:
+        """Image constructor.
+
+        Args:
+            path: Path to .fits image.
         """
-        Proxy object class for images.
-        Dirty, cleaned or any other type of image in a fits format.
-        """
-        if isinstance(
-            path, FileHandle
-        ):  # save FileHandle if used to not lose reference and call it's __del__
-            path_ = path.path
+        if isinstance(path, FileHandle):
+            _path = path.path
         else:
-            path_ = path
-        self.path = path_
+            _path = path
+        self.path = _path
         self.__name = self.path.split(os.path.sep)[-1]
-        self.data: NDArray[np.float64]
+        self.data: NDArray[np.float_]
         self.header: fits.header.Header
         self.data, self.header = fits.getdata(self.path, ext=0, header=True, **kwargs)
 
     @staticmethod
     def read_from_file(path: str) -> Image:
+        """Static object instantiation.
+
+        Args:
+            path: Path to .fits image.
+
+        Returns:
+            Image proxy.
+        """
         return Image(path=path)
 
     @property
     def data(self) -> NDArray[np.float_]:
+        """Fits data getter-property.
+
+        Returns:
+            Data of image proxy.
+        """
         return self._data
 
     @data.setter
     def data(self, new_data: NDArray[np.float_]) -> None:
+        """Fits data setter-property.
+
+        Args:
+            new_data: Data for update.
+        """
         self._data = new_data
         if hasattr(self, "header"):
             self._update_header_after_resize()
@@ -66,7 +85,12 @@ class Image(KaraboResource):
         path: str,
         overwrite: bool = False,
     ) -> None:
-        """Write an `Image` to `path`  as .fits"""
+        """Write `Image` to `path`  as .fits file.
+
+        Args:
+            path: Path to write the file.
+            overwrite: Overwrite .fits file if already exist?
+        """
         check_ending(path=path, ending=".fits")
         if not os.path.exists(os.path.dirname(path)):
             os.makedirs(os.path.dirname(path))
@@ -81,12 +105,25 @@ class Image(KaraboResource):
         self,
         parameters: List[str],
     ) -> bool:
+        """Checks if header has the parameters `parameters`.
+
+        Args:
+            parameters: Parameters to check.
+
+        Returns:
+            True if header has ALL parameters, else False
+        """
         for parameter in parameters:
             if parameter not in self.header:
                 return False
         return True
 
-    def get_squeezed_data(self) -> NDArray[np.float64]:
+    def get_squeezed_data(self) -> NDArray[np.float_]:
+        """Squeeze `Image` data.
+
+        Returns:
+            Squeezed data
+        """
         return np.squeeze(self.data[:1, :1, :, :])
 
     def resample(
@@ -94,14 +131,15 @@ class Image(KaraboResource):
         shape: Tuple[int, ...],
         **kwargs: Any,
     ) -> None:
-        """
+        """Resamples the `Image.data`.
+
         Resamples the image to the given shape using SciPy's RegularGridInterpolator
         for bilinear interpolation. See:
         https://docs.scipy.org/doc/scipy/reference/generated/scipy.interpolate.RegularGridInterpolator.html
 
-        :param shape: The desired shape of the image
-        :param kwargs: Keyword arguments for the interpolation function
-
+        Args:
+            shape: Desired image shape
+            kwargs: kwargs for interpolation function
         """
         new_data = np.empty(
             (self.data.shape[0], 1, shape[0], shape[1]), dtype=self.data.dtype
@@ -124,7 +162,7 @@ class Image(KaraboResource):
         self.data = new_data
 
     def _update_header_after_resize(self) -> None:
-        """Reshape the header to the given shape"""
+        """Updates the header shape."""
         old_shape = (self.header["NAXIS2"], self.header["NAXIS1"])
         new_shape = (self.data.shape[2], self.data.shape[3])
         self.header["NAXIS1"] = new_shape[1]
@@ -146,30 +184,31 @@ class Image(KaraboResource):
         xlabel: Optional[str] = None,
         ylabel: Optional[str] = None,
         cmap: Optional[str] = "jet",
-        origin: Optional[str] = "lower",
+        origin: Optional[Literal["lower", "upper"]] = "lower",
         wcs_enabled: bool = True,
         invert_xaxis: bool = False,
         filename: Optional[str] = None,
         **kwargs: Any,
     ) -> None:
-        """Plots the image
+        """Plots the `Image.data`.
 
-        :param title: the title of the colormap
-        :param xlim: RA-limit of plot
-        :param ylim: DEC-limit of plot
-        :param figsize: figsize as tuple
-        :param title: plot title
-        :param xlabel: xlabel
-        :param ylabel: ylabel
-        :param cmap: matplotlib color map
-        :param origin: place the [0, 0] index of the array in
-        the upper left or lower left corner of the Axes
-        :param wcs_enabled: Use wcs transformation?
-        :param invert_xaxis: Do you want to invert the xaxis?
-        :param filename: Set to path/fname to save figure
-        (set extension to fname to overwrite .png default)
-        :param kwargs: matplotlib kwargs for scatter & Collections,
-        e.g. customize `s`, `vmin` or `vmax`
+        Args:
+            title: Title of the colormap
+            xlim: RA-limit x-axis
+            ylim: DEC-limit y-axis
+            figsize: Figsize
+            colobar_label: Colorbar label
+            xlabel: xlabel
+            ylabel: ylabel
+            cmap: matplotlib color-map
+            origin: Place the [0, 0] index of the array in
+                the upper left or lower left corner of the Axes
+            wcs_enabled: Use wcs transformation?
+            invert_xaxis: Invert the xaxis?
+            filename: Set to path/fname to save figure
+                (set extension to fname to overwrite .png default)
+            kwargs: matplotlib kwargs for scatter & Collections,
+                e.g. customize `s`, `vmin` or `vmax`
         """
 
         if wcs_enabled:
@@ -221,9 +260,10 @@ class Image(KaraboResource):
         plt.pause(1)
 
     def get_dimensions_of_image(self) -> List[int]:
-        """
-        Get the sizes of the dimensions of this Image in an array.
-        :return: list with the dimensions.
+        """Get the sizes of the dimensions of `Image`.
+
+        Returns:
+            Dimensions of `Image`
         """
         result = []
         dimensions = self.header["NAXIS"]
@@ -232,22 +272,25 @@ class Image(KaraboResource):
         return result
 
     def get_phase_center(self) -> Tuple[float, float]:
+        """Gets the physical value of the reference pixel.
+
+        Returns:
+            RA, DEC
+        """
         return float(self.header["CRVAL1"]), float(self.header["CRVAL2"])
 
     def has_beam_parameters(self) -> bool:
-        """
-        Check if the image has the beam parameters in the header.
-        :param image: Image to check
-        :return: True if the image has the beam parameters in the header
+        """Check if header has BMAJ, BMIN and BPA parameters.
+
+        Returns:
+            True if header has them, else False
         """
         return self.header_has_parameters(
             ["BMAJ", "BMIN", "BPA"],
         )
 
     def get_quality_metric(self) -> Dict[str, Any]:
-        """
-        Get image statistics.
-        Statistics include :
+        """Provides some image statistics.
 
         - Shape of Image --> 'shape'
         - Max Value --> 'max'
@@ -260,7 +303,8 @@ class Image(KaraboResource):
         - Median --> 'median'
         - Mean --> 'mean'
 
-        :return: Dictionary holding all image statistics
+        Returns:
+            Dict of all mentioned statistics.
         """
         # same implementation as RASCIL
         image_stats = {
@@ -285,14 +329,14 @@ class Image(KaraboResource):
         resolution: float = 5.0e-4,
         signal_channel: Optional[int] = None,
     ) -> Tuple[NDArray[np.float64], NDArray[np.float64]]:
-        """
-        Calculate the power spectrum of this image.
+        """Calculate the power spectrum of this image.
 
-        :param resolution: Resolution in radians needed for conversion from Jy to Kelvin
-        :param signal_channel: channel containing both signal and noise
-        (arr of same shape as nchan of Image), optional
-        :return (profile, theta_axis)
-            profile: Brightness temperature for each angular scale in Kelvin
+        Args:
+            resolution: Resolution in radians needed for conversion from Jy to Kelvin
+            signal_channel: channel containing both signal and noise
+
+        Returns:
+            profile: Brightness temperature for each angular scale in Kelvin,
             theta_axis: Angular scale data in degrees
         """
         profile, theta = power_spectrum(self.path, resolution, signal_channel)
@@ -304,13 +348,12 @@ class Image(KaraboResource):
         signal_channel: Optional[int] = None,
         save_png: bool = False,
     ) -> None:
-        """
-        Plot the power spectrum of this image.
+        """Plot the power spectrum of this image.
 
-        :param resolution: Resolution in radians needed for conversion from Jy to Kelvin
-        :param signal_channel: channel containing both signal and noise
-        (arr of same shape as nchan of Image), optional
-        :param save_png: True if result should be saved, default = False
+        Args:
+            resolution: Resolution in radians needed for conversion from Jy to Kelvin
+            signal_channel: Channel containing both signal and noise
+            save_png: Should result be saved as .png? (in `self.path`)
         """
         profile, theta = self.get_power_spectrum(resolution, signal_channel)
         plt.clf()
@@ -335,6 +378,13 @@ class Image(KaraboResource):
         plt.pause(1)
 
     def get_cellsize(self) -> np.float64:
+        """Get cellsize of `Image`.
+
+        Assumes square-pixels.
+
+        Returns:
+            Cellsize
+        """
         cdelt1 = self.header["CDELT1"]
         cdelt2 = self.header["CDELT2"]
         if not isinstance(cdelt1, float) or not isinstance(cdelt2, float):
@@ -349,12 +399,25 @@ class Image(KaraboResource):
         return cellsize
 
     def get_wcs(self) -> WCS:
+        """Creates `astropy.wcs.WCS` from `Image` header.
+
+        Returns:
+            WCS instance
+        """
         return WCS(self.header)
 
     def get_2d_wcs(
         self,
         invert_ra: bool = True,
     ) -> WCS:
+        """Creates a 2-dimensional `astropy.wcs.WCS` instance of `Image`.
+
+        Args:
+            invert_ra: Invert RA?
+
+        Returns:
+            WCS instance
+        """
         wcs = WCS(naxis=2)
 
         def radian_degree(rad: np.float64) -> np.float64:
