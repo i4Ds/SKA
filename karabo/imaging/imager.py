@@ -1,4 +1,4 @@
-from typing import Dict, List, Optional, Tuple, Union
+from typing import Dict, List, Literal, Optional, Tuple, Union
 
 import numpy as np
 from astropy.wcs import WCS
@@ -32,51 +32,6 @@ class Imager:
     of an observation with the help of RASCIL.
 
     In addition, it provides the calculation of the pixel coordinates of point sources.
-
-    Parameters
-    ---------------------------------------------
-    visibility : Visibility, required
-        Visibility object containing the visibilities of an observation.
-    logfile : str, default=None,
-        Name of logfile (default is to construct one from msname)
-    performance_file : str, default=None
-        Name of json file to contain performance information
-    ingest_dd : List[int], default=[0],
-        Data descriptors in MS to read (all must have the same number of channels)
-    ingest_vis_nchan : int, default=3,
-        Number of channels in a single data descriptor in the MS
-    ingest_chan_per_vis : int, defualt=1,
-        Number of channels per blockvis (before any average)
-    ingest_average_blockvis : Union[bool, str], default=False,
-        Average all channels in blockvis.
-    imaging_phasecentre : str, default=None
-        Phase centre (in SkyCoord string format)
-    imaging_pol : str, default="stokesI"
-        RASCIL polarisation frame for image
-    imaging_nchan : int, default=1,
-        Number of channels per image
-    imaging_ng_threads : int, default=4,
-        Number of Nifty Gridder threads to use (4 is a good choice)
-    imaging_w_stacking : Union[bool, str], default=True
-        Use the improved w stacking method in Nifty Gridder?
-    imaging_flat_sky : Union[bool, str], default=False
-        If using a primary beam, normalise to flat sky?
-    imaging_npixel : int, default=None
-        Number of pixels in ra, dec: Should be a composite of 2, 3, 5
-    imaging_cellsize : float, default=None
-        Cellsize (radians). Default is to calculate
-    override_cellsize : bool, default=False
-        Override the cellsize if it is above the critical cellsize
-    imaging_weighting : str, default="uniform"
-        Type of weighting uniform or robust or natural
-    imaging_robustness : float, default=0.0
-        Robustness for robust weighting
-    imaging_gaussian_taper : float, default=None
-        Size of Gaussian smoothing, implemented as taper in weights (rad)
-    imaging_dopsf : Union[bool, str], default=False
-        Make the PSF instead of the dirty image?
-    imaging_dft_kernel : str, default=None
-        DFT kernel: cpu_looped | cpu_numba | gpu_raw
     """
 
     def __init__(
@@ -86,6 +41,16 @@ class Imager:
         imaging_cellsize: Optional[float] = None,
         override_cellsize: bool = False,
     ) -> None:
+        """Imager constructor.
+
+        Args:
+            visibility: Visibility object containing the visibilities of an observation.
+            imaging_npixel: Number of pixels in ra, dec:
+                Should be a composite of 2, 3, 5.
+            imaging_cellsize: Cellsize (radians). Default is to calculate.
+            override_cellsize: Override the cellsize if it is above
+                the critical cellsize.
+        """
         self.visibility = visibility
         self.imaging_npixel = imaging_npixel
         self.imaging_cellsize = imaging_cellsize
@@ -94,8 +59,10 @@ class Imager:
     def get_dirty_image(
         self,
     ) -> Image:
-        """Get Dirty Image of visibilities passed to the Imager.
-        :return: dirty image of visibilities.
+        """Creates dirty image of `self.visibility` passed to `Imager`.
+
+        Returns:
+            Image: Dirty image of `self.visibility`.
         """
         block_visibilities = create_visibility_from_ms(self.visibility.ms_file.path)
 
@@ -120,62 +87,80 @@ class Imager:
         client: Optional[Client] = None,
         use_dask: bool = False,
         n_threads: int = 1,
-        use_cuda: bool = False,  # If True, use CUDA for Nifty Gridder
+        use_cuda: bool = False,
         ingest_dd: List[int] = [0],
         ingest_vis_nchan: Optional[int] = None,
         ingest_chan_per_vis: int = 1,
         imaging_nchan: int = 1,
-        imaging_w_stacking: Union[bool, str] = True,
-        imaging_flat_sky: Union[bool, str] = False,
+        imaging_w_stacking: bool = True,
+        imaging_flat_sky: bool = False,
         imaging_uvmax: Optional[float] = None,
-        imaging_uvmin: float = 0,
-        imaging_dft_kernel: Optional[
-            str
-        ] = None,  # DFT kernel: cpu_looped | cpu_numba | gpu_raw
-        # Imaging context: Which nifty gridder to use.
-        # See: https://ska-telescope.gitlab.io/external/rascil/RASCIL_wagg.html
-        img_context: str = "ng",
-        # Type of deconvolution algorithm (hogbom or msclean or mmclean)
-        clean_algorithm: str = "hogbom",
-        # Clean beam: major axis, minor axis, position angle (deg) DataFormat. 3 args.
-        clean_beam: Optional[Dict[str, float]] = None,
-        # Scales for multiscale clean (pixels) e.g. [0, 6, 10]
+        imaging_uvmin: Optional[float] = None,
+        imaging_dft_kernel: Optional[Literal["cpu_looped", "gpu_raw"]] = None,
+        imaging_context: Literal["ng", "2d", "wg"] = "ng",
+        clean_algorithm: Literal["hogbom", "msclean", "mmclean"] = "hogbom",
+        clean_beam: Optional[Dict[Literal["bmaj", "bmin", "bpa"], float]] = None,
         clean_scales: List[int] = [0],
-        # Number of frequency moments in mmclean (1 is a constant, 2 is linear, etc.)
         clean_nmoment: int = 4,
-        clean_nmajor: int = 5,  # Number of major cycles in cip or ical
-        # Number of minor cycles in CLEAN (i.e. clean iterations)
+        clean_nmajor: int = 5,
         clean_niter: int = 1000,
-        clean_psf_support: int = 256,  # Half-width of psf used in cleaning (pixels)
-        clean_gain: float = 0.1,  # Clean loop gain
-        clean_threshold: float = 1e-4,  # Clean stopping threshold (Jy/beam)
-        # Sources with absolute flux > this level (Jy)
-        # are fit or extracted using skycomponents
+        clean_psf_support: int = 256,
+        clean_gain: float = 0.1,
+        clean_threshold: float = 1e-4,
         clean_component_threshold: Optional[float] = None,
-        # Method to convert sources in image to skycomponents:
-        # 'fit' in frequency or 'extract' actual values
-        clean_component_method: str = "fit",
-        # Fractional stopping threshold for major cycle
+        clean_component_method: Literal["fit", "extract"] = "fit",
         clean_fractional_threshold: float = 0.3,
-        # Number of overlapping facets in faceted clean (along each axis)
         clean_facets: int = 1,
-        clean_overlap: int = 32,  # Overlap of facets in clean (pixels)
-        # Type of interpolation between facets in deconvolution:
-        # (none or linear or tukey)
-        clean_taper: str = "tukey",
-        # Number of overlapping facets in restore step (along each axis)
+        clean_overlap: int = 32,
+        clean_taper: Optional[Literal["linear", "tukey"]] = "tukey",
         clean_restore_facets: int = 1,
-        clean_restore_overlap: int = 32,  # Overlap of facets in restore step (pixels)
-        # Type of interpolation between facets in restore step (none, linear or tukey)
-        clean_restore_taper: str = "tukey",
-        # Type of restored image output: taylor, list, or integrated
-        clean_restored_output: str = "list",
+        clean_restore_overlap: int = 32,
+        clean_restore_taper: Optional[Literal["linear", "tukey"]] = "tukey",
+        clean_restored_output: Literal["list", "taylor", "integrated"] = "list",
     ) -> Tuple[Image, Image, Image]:
-        """
-        Starts imaging process using RASCIL, will run a CLEAN algorithm
-        on the passed visibilities to the Imager.
+        """Starts imaging process using RASCIL.
 
-        :returns (Deconvolved Image, Restored Image, Residual Image)
+        The process runs CLEAN on `self.visibility`.
+
+        Args:
+            client: Dask client
+            use_dask: Use dask?
+            n_threads: Number of dask threads
+            use_cuda: Use cuda for nifty gridder?
+            ingest_dd: Data descriptors in MS to read
+                (all must have the same number of channels)
+            ingest_vis_nchan: Number of channels in a single data descriptor in the MS
+            ingest_chan_per_vis: Number of channels per vis (before any average)
+            imaging_nchan: Number of channels per image
+            imaging_w_stacking: Use the improved w stacking method in Nifty Gridder?
+            imaging_flat_sky: If using a primary beam, normalise to flat sky?
+            imaging_uvmax: Maximum uv (wavelengths)
+            imaging_uvmin: Minimum uv (wavelengths)
+            imaging_dft_kernel: DFT kernel: cpu_looped | gpu_raw
+            imaging_context: Imaging context i.e. the gridder used 2d | ng
+            clean_algorithm: Type of deconvolution algorithm
+                (hogbom or msclean or mmclean)
+            clean_beam: Clean beam: major axis, minor axis, position angle (deg)
+            clean_scales: Scales for multiscale clean (pixels) e.g. [0, 6, 10]
+            clean_nmoment: Number of frequency moments in mmclean
+                (1 is a constant, 2 is linear, etc.)
+            clean_nmajor: Number of major cycles in cip or ical
+            clean_niter: Number of minor cycles in CLEAN (i.e. clean iterations)
+            clean_psf_support: Half-width of psf used in cleaning (pixels)
+            clean_component_method: Method to convert sources in image to skycomponents:
+                'fit' in frequency or 'extract' actual values
+            clean_fractional_threshold: Fractional stopping threshold for major cycle
+            clean_facets: Number of overlapping facets in faceted clean
+                (along each axis)
+            clean_overlap: Overlap of facets in clean (pixels)
+            clean_restore_facets: Number of overlapping facets in restore step
+                (along each axis)
+            clean_restore_overlap: Overlap of facets in restore step (pixels)
+            clean_restored_output: Type of restored image output: taylor, list,
+                or integrated
+
+        Returns:
+            Deconvolved image, Restored image, Residual image
         """
         if client and not use_dask:
             raise EnvironmentError("Client passed but use_dask is False")
@@ -185,7 +170,7 @@ class Imager:
             print(client.cluster)
         # Set CUDA parameters
         if use_cuda:
-            img_context = "wg"
+            imaging_context = "wg"
         rsexecute.set_client(use_dask=use_dask, client=client, use_dlg=False)
 
         if ingest_vis_nchan is None:
@@ -216,28 +201,25 @@ class Imager:
         ]
         # WAGG support for rascil does currently not work:
         # https://github.com/i4Ds/Karabo-Pipeline/issues/360
-        if img_context == "wg":
+        if imaging_context == "wg":
             raise NotImplementedError("WAGG support for rascil does currently not work")
 
         result = continuum_imaging_skymodel_list_rsexecute_workflow(
-            vis_list=blockviss,  # List of BlockVisibilitys
-            model_imagelist=models,  # List of model images
-            context=img_context,
+            vis_list=blockviss,
+            model_imagelist=models,
+            context=imaging_context,
             threads=n_threads,
-            wstacking=imaging_w_stacking == "True",  # Correct for w term in gridding
-            niter=clean_niter,  # iterations in minor cycle
-            nmajor=clean_nmajor,  # Number of major cycles
+            wstacking=imaging_w_stacking,
+            niter=clean_niter,
+            nmajor=clean_nmajor,
             algorithm=clean_algorithm,
-            gain=clean_gain,  # CLEAN loop gain
-            scales=clean_scales,  # Scales for multi-scale cleaning
+            gain=clean_gain,
+            scales=clean_scales,
             fractional_threshold=clean_fractional_threshold,
-            # Threshold per major cycle
-            threshold=clean_threshold,  # Final stopping threshold
+            threshold=clean_threshold,
             nmoment=clean_nmoment,
-            # Number of frequency moments (1 = no dependence)
             psf_support=clean_psf_support,
-            # Support of PSF used in minor cycles (halfwidth in pixels)
-            restored_output=clean_restored_output,  # Type of restored image
+            restored_output=clean_restored_output,
             deconvolve_facets=clean_facets,
             deconvolve_overlap=clean_overlap,
             deconvolve_taper=clean_taper,
@@ -290,19 +272,20 @@ class Imager:
         filter_outlier: bool = True,
         invert_ra: bool = True,
     ) -> Tuple[NDArray[np.float64], NDArray[np.int64]]:
-        """
-        Calculates the pixel coordinates `sky` sources as floats.
+        """Calculates the pixel coordinates `sky` sources as floats.
+
         If you want to have integer indices, just round them.
 
-        :param sky: `SkyModel` with the sources
-        :param phase_center: [RA,DEC]
-        :param imaging_cellsize: Image cellsize in radian (pixel coverage)
-        :param imaging_npixel: Number of pixels of the image
-        :param filter_outlier: Exclude source outside of image?
-        :param invert_ra: Invert RA axis?
+        Args:
+            sky: `SkyModel` with the sources
+            phase_center: [RA,DEC]
+            imaging_cellsize: Image cellsize in radian (pixel coverage)
+            imaging_npixel: Number of pixels of the image
+            filter_outlier: Exclude source outside of image?
+            invert_ra: Invert RA axis?
 
-        :return: image-coordinates as np.ndarray[px,py] and
-        `SkyModel` sources indices as np.ndarray[idxs]
+        Returns:
+            Image-coordinates, `SkyModel` sources indices
         """
 
         # calc WCS args
