@@ -46,9 +46,7 @@ QuantityVarType: TypeAlias = Union[
 
 
 class BeamPattern:
-    """
-    :param
-    """
+    """_summary_"""
 
     def __init__(
         self,
@@ -63,6 +61,20 @@ class BeamPattern:
         beam_method: BeamMethodType = "Gaussian Beam",
         interpol: InterpolType = "RectBivariateSpline",
     ) -> None:
+        """_summary_
+
+        Args:
+            cst_file_path: _description_
+            telescope: _description_
+            freq_hz: _description_
+            pol: _description_
+            element_type_index: _description_
+            average_fractional_error_factor_increase: _description_
+            ignore_data_at_pole: _description_
+            avg_frac_error: _description_
+            beam_method: _description_
+            interpol: _description_
+        """
         self.cst_file_path = cst_file_path
         self.telescope = telescope
         self.freq_hz = freq_hz
@@ -86,6 +98,17 @@ class BeamPattern:
         ignore_data_at_pole: Optional[bool] = None,
         avg_frac_error: Optional[float] = None,
     ) -> None:
+        """_summary_
+
+        Args:
+            telescope: _description_
+            freq_hz: _description_
+            pol: _description_
+            element_type_index: _description_
+            average_fractional_error_factor_increase: _description_
+            ignore_data_at_pole: _description_
+            avg_frac_error: _description_
+        """
         if telescope is not None:
             self.telescope = telescope
         if not isinstance(self.telescope, Telescope):
@@ -144,10 +167,11 @@ class BeamPattern:
         arr: ArrayLike,
         output_file_path: str,
     ) -> None:
-        """
-        Takes array of dimensions (*,8), and returns a cst files
-        :param arr:
-        :return:  cst file with given output filename
+        """Takes array of dimensions (*,8) and returns a cst file.
+
+        Args:
+            arr: _description_
+            output_file_path: _description_
         """
         line1 = (
             "Theta [deg.]  Phi   [deg.]  Abs(Dir.)   Horiz(Abs)  "
@@ -174,11 +198,17 @@ class BeamPattern:
         beamextenty: IntFloat,
         sampling_step: int = 80,
     ) -> Tuple[NDArray[np.float_], NDArray[np.float_], NDArray[np.float_]]:
-        """
+        """_summary_
 
-        :param pol:
-        :param beamextent:
-        :return:
+        Args:
+            f: _description_
+            pol: _description_
+            beamextentx: _description_
+            beamextenty: _description_
+            sampling_step: _description_
+
+        Returns:
+            _description_
         """
         beam = JimBeam("MKAT-AA-UHF-JIM-2020")
         freqlist = beam.freqMHzlist
@@ -210,8 +240,17 @@ class BeamPattern:
         thres: int,
         mode: Literal["AH", "EM"] = "AH",
     ) -> NDArray[np.complex_]:
-        """
-        Returns beam
+        """_summary_
+
+        Args:
+            npix: _description_
+            ch: _description_
+            dia: _description_
+            thres: _description_
+            mode: _description_
+
+        Returns:
+            _description_
         """
         if mode == "AH":
             meerkat_beam_coeff_ah = (
@@ -236,6 +275,12 @@ class BeamPattern:
         B_ah: NDArray[np.complex_],
         path: Optional[str] = None,
     ) -> None:
+        """_summary_
+
+        Args:
+            B_ah: _description_
+            path: _description_
+        """
         f, ax = plt.subplots(2, 2)
         log10_notzero = 10 ** (-10)
         ax00 = ax[0, 0]
@@ -288,6 +333,14 @@ class BeamPattern:
         npix: int,
         path: Optional[str] = None,
     ) -> None:
+        """_summary_
+
+        Args:
+            B_ah: _description_
+            B_em: _description_
+            npix: _description_
+            path: _description_
+        """
         f, ax = plt.subplots(2, 1)
         log10_notzero = 10 ** (-12)
         ax0 = ax[0]
@@ -327,12 +380,14 @@ class BeamPattern:
         pol: str,
         path: Optional[str] = None,
     ) -> None:
-        """
+        """_summary_
 
-        :param beamextent:
-        :param freq:
-        :param pol:
-        :return:
+        Args:
+            beampixels: _description_
+            beamextent: _description_
+            freq: _description_
+            pol: _description_
+            path: _description_
         """
         plt.imshow(
             beampixels,
@@ -354,12 +409,13 @@ class BeamPattern:
         absdir: NDArray[np.float_],
         path: Optional[str] = None,
     ) -> None:
-        """
+        """_summary_
 
-        :param theta: in radians
-        :param phi: in radian
-        :param absdir: in DBs
-        :return: polar plot
+        Args:
+            theta: _description_
+            phi: _description_
+            absdir: _description_
+            path: _description_
         """
         fig = plt.figure()
         ax = fig.add_axes([0.1, 0.1, 0.8, 0.8], polar=True)
@@ -377,6 +433,16 @@ class BeamPattern:
         phi: QuantityVarType,
         integrand: NDArray[np.float_],
     ) -> np.float_:
+        """_summary_
+
+        Args:
+            theta: _description_
+            phi: _description_
+            integrand): _description_
+
+        Returns:
+            _description_
+        """
         theta_ = Quantity(theta, unit=units.deg).to("rad")
         phi_ = Quantity(phi, unit=units.deg).to("rad")
         # very simple quadrature, assuming uniform
@@ -396,6 +462,20 @@ class BeamPattern:
         voltage: bool = False,
         power_norm: int = 1,
     ) -> NDArray[np.float_]:
+        """_summary_
+
+        Args:
+            theta: _description_
+            phi: _description_
+            freq: _description_
+            diameter: _description_
+            fwhm_fac: _description_
+            voltage: _description_
+            power_norm: _description_
+
+        Returns:
+            _description_
+        """
         theta = Quantity(theta, unit=units.deg).to("rad")
         phi = Quantity(phi, unit=units.deg).to("rad")
 
@@ -425,6 +505,18 @@ class BeamPattern:
         voltage: bool = False,
         rel_power_dB: int = -40,
     ) -> NDArray[np.float_]:
+        """_summary_
+
+        Args:
+            theta: _description_
+            phi: _description_
+            vcopol: _description_
+            voltage: _description_
+            rel_power_dB: _description_
+
+        Returns:
+            __description_
+        """
         theta = Quantity(theta, unit=units.deg).to("rad").value
         phi = Quantity(phi, unit=units.deg).to("rad").value
 
@@ -450,6 +542,18 @@ class BeamPattern:
         phi_em: NDArray[np.float_],
         beam0: NDArray[np.complex_],
     ) -> NDArray[np.float_]:
+        """_summary_
+
+        Args:
+            theta: _description_
+            phi: _description_
+            theta_em: _description_
+            phi_em: _description_
+            beam0: _description_
+
+        Returns:
+            _description_
+        """
         beam_em = interpolate.griddata(
             [theta_em, phi_em], beam0, (theta, phi), method="cubic"
         )
@@ -460,6 +564,15 @@ class BeamPattern:
         x: NDArray[np.float_],
         y: NDArray[np.float_],
     ) -> Tuple[NDArray[np.float_], NDArray[np.float_]]:
+        """Transforms cartesian to polar coordinates.
+
+        Args:
+            x: x-coordinate
+            y: y-coordinate
+
+        Returns:
+            Magnitude, Phase angle
+        """
         rho = np.sqrt(x**2 + y**2)
         phi = np.arctan2(y, x)
         return (rho, phi)
@@ -469,6 +582,15 @@ class BeamPattern:
         rho: NDArray[np.float_],
         phi: NDArray[np.float_],
     ) -> Tuple[NDArray[np.float_], NDArray[np.float_]]:
+        """Transforms polar to cartesian coordinates.
+
+        Args:
+            rho: Magnitude of complex number
+            phi: Phase angle of complex number
+
+        Returns:
+            x-coordinate, y-coordinate
+        """
         x = np.array([rho[i] * np.cos(phi) for i in range(len(rho))])
         y = np.array([rho[i] * np.sin(phi) for i in range(len(rho))])
         return (x, y)
@@ -486,14 +608,17 @@ class BeamPattern:
         NDArray[np.float_],
         NDArray[np.float_],
     ]:
-        """
-        Simulates the primary beam
+        """Simulates the primary beam.
 
-        :param beam_method: you can choose as beams: "Gaussian Beam",
-                            "Eidos_AH", "Eidos_EM", "KatBeam"
-        :param f: the frequency for which the beam is simulated (MHz)
-        :param fov: when using "KatBeam" the beam will be simulated
-                    for this size of fov (radius)
+        Args:
+            beam_method: Gaussian Beam, Eidos_AH, Eidos_EM or KatBeam
+            f: Frequency for which the beam is simulated (MHz)
+            fov: When using "KatBeam" the beam will be simulated
+                for this size of fov (radius)
+            interpol: _description_
+
+        Returns:
+            _description_
         """
         if beam_method is not None:
             self.beam_method = beam_method
@@ -817,6 +942,11 @@ class BeamPattern:
         self,
         path: Optional[str],
     ) -> None:
+        """_summary_
+
+        Args:
+            path: Path to save figure
+        """
         grid_th_phi, vcopol_x, vcopol_y, data_x, data_y = self.sim_beam("EIDOS_AH")
         vcrpol_x = data_x[5]
         vcrpol_y = data_y[3]
@@ -879,8 +1009,10 @@ class BeamPattern:
         self,
         cstdata: NDArray[np.float_],
     ) -> None:
-        """
-        Save CST file for MeerKat telescope for the custom beams
+        """Save CST file for MeerKat telescope for custom beams.
+
+        Args:
+            cstdata: _description_
         """
         header = """Theta [deg]
         Phi [deg]
@@ -908,6 +1040,15 @@ class BeamPattern:
         cstdata: NDArray[np.float_],
         telescope: Optional[Telescope] = None,
     ) -> bool:
+        """_summary_
+
+        Args:
+            cstdata: _description_
+            telescope: _description_
+
+        Returns:
+            _description_
+        """
         if telescope is None and self.telescope is not None:
             telescope = self.telescope
         if telescope is None:
