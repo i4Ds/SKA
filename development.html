@@ -1,0 +1,376 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Development Documentation &mdash; Karabo-Pipeline 0+untagged.1.gffd0cfb documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=fc98ef0e"></script>
+      <script src="_static/doctools.js?v=9a2dae69"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="karabo.util package" href="utilities/utils.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html">
+            
+              <img src="_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Users</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="installation_user.html">Installation (User)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="container.html">Containers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parallel_processing.html">Parallel processing with Karabo</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Simulation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="main_features/simulation.html">karabo.simulation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Imaging</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="main_features/imaging.html">karabo.imaging.image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="main_features/base_imaging.html">karabo.imaging.imager_base</a></li>
+<li class="toctree-l1"><a class="reference internal" href="main_features/oskar_imaging.html">karabo.imaging.imager_oskar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="main_features/rascil_imaging.html">karabo.imaging.imager_rascil</a></li>
+<li class="toctree-l1"><a class="reference internal" href="main_features/wsclean_imaging.html">karabo.imaging.imager_wsclean</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Source Detection</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="main_features/sourcedetection.html">karabo.sourcedetection</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Utilities</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="utilities/utils.html">karabo.util package</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developers</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Development Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#setup-local-dev-environment">Setup local dev environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#formatting">Formatting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#black">black</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#isort">isort</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mypy">mypy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pydocstyle">pydocstyle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#flake8">flake8</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#add-data-sets-by-uploading-to-cscs">Add Data Sets by Uploading to CSCS</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#upload-through-web-interface">Upload through Web Interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#upload-through-cli">Upload Through CLI</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#setup">Setup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#upload-single-file">Upload Single File</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#upload-multiple-files">Upload Multiple files</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#add-ska-layouts-as-oskar-telescopes">Add SKA layouts as OSKAR telescopes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#add-alma-layouts-as-oskar-telescopes">Add ALMA layouts as OSKAR telescopes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#convert-the-configurations">Convert the configurations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#important-links">Important links</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#update-documentation">Update Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#update-tests">Update Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#create-a-release">Create a Release</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Karabo-Pipeline</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Development Documentation</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/development.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="development-documentation">
+<h1>Development Documentation<a class="headerlink" href="#development-documentation" title="Link to this heading"></a></h1>
+<section id="setup-local-dev-environment">
+<h2>Setup local dev environment<a class="headerlink" href="#setup-local-dev-environment" title="Link to this heading"></a></h2>
+<p>Make sure you have a working installation of Conda, with, e.g.:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>wget<span class="w"> </span>https://repo.anaconda.com/miniconda/Miniconda3-py39_23.5.2-0-Linux-x86_64.sh
+bash<span class="w"> </span>Miniconda3-py39_23.5.2-0-Linux-x86_64.sh<span class="w"> </span>-b
+<span class="nb">source</span><span class="w"> </span>~/miniconda3/bin/activate
+</pre></div>
+</div>
+<p>(Optional but recommended for performance) Set the solver to libmamba:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>config<span class="w"> </span>--set<span class="w"> </span>solver<span class="w"> </span>libmamba
+</pre></div>
+</div>
+<p>Next, clone the code via git, and cd into it:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>git@github.com:i4Ds/Karabo-Pipeline.git
+<span class="nb">cd</span><span class="w"> </span>Karabo-Pipeline
+</pre></div>
+</div>
+<p>Then create a local development environment with the provided <code class="docutils literal notranslate"><span class="pre">environment.yaml</span></code> file.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>env<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>&lt;your-env-name&gt;<span class="w"> </span>-f<span class="w"> </span>environment.yaml
+conda<span class="w"> </span>activate<span class="w"> </span>&lt;your-env-name&gt;
+</pre></div>
+</div>
+<p>In case you’re using WSL2, do the following (see <a class="reference external" href="https://github.com/i4Ds/Karabo-Pipeline/issues/550">issue 550</a>):</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>env<span class="w"> </span>config<span class="w"> </span>vars<span class="w"> </span><span class="nb">set</span><span class="w"> </span><span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span><span class="nv">$LD_LIBRARY_PATH</span>:/usr/lib/wsl/lib
+</pre></div>
+</div>
+<p>Then install Karabo as a package and the according dev-dependencies.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;.[dev]&quot;</span>
+</pre></div>
+</div>
+<p>Afterwards, activating you dev-tools in your IDE and SHELL is recommended. For the setup of your IDE of choice you have to do it yourself. For the SHELL setup, we recommend to do the following in the repo-root:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pre-commit<span class="w"> </span>install
+podmena<span class="w"> </span>add<span class="w"> </span><span class="nb">local</span>
+</pre></div>
+</div>
+</section>
+<section id="formatting">
+<h2>Formatting<a class="headerlink" href="#formatting" title="Link to this heading"></a></h2>
+<p>To increase the readability of the code and to better detect potential errors already during development, a number of tools are used. The configurations of the tools are handled in <code class="docutils literal notranslate"><span class="pre">setup.cfg</span></code> or <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code>. If changes to the configurations are desired, the team members should agree to this (e.g. via a meeting).</p>
+<p>It is possible that certain tools complain about something that is not easy or even impossible to fix. ONLY then, there are options to ignore certain lines of code or even whole files for the checker. E.g. <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">noqa</span></code> ignores inline flake8 complaints. But be careful not to accidentally ignore the whole file (e.g. with <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">flake8:</span> <span class="pre">noqa</span></code>). Please refer to the documentation of the respective tool to learn how to ignore the errors.</p>
+<p>We recommend the setup using <a class="reference external" href="https://github.com/pre-commit/pre-commit-hooks">pre-commit-hooks</a>, so that the in <code class="docutils literal notranslate"><span class="pre">.pre-commit-config.yaml</span></code> specified tools prevent commits if the checks on the added files fail. The hook can be easily initialized using <code class="docutils literal notranslate"><span class="pre">pre-commit</span> <span class="pre">install</span></code> in the root directory of the repository. If absolutely necessary, the hooks can be ignored using the <code class="docutils literal notranslate"><span class="pre">--no-verify</span></code> flag in the git-commands. However, some checks are included in the CI-tests, so you have to check your files anyway. The <a class="reference external" href="https://pre-commit.com/">pre-commit-configs</a> used for this are defined in <code class="docutils literal notranslate"><span class="pre">.pre-commit-config.yaml</span></code>.</p>
+<p>The following sections list the tools to be used and their function &amp; usage.</p>
+<section id="black">
+<h3>black<a class="headerlink" href="#black" title="Link to this heading"></a></h3>
+<p><a class="reference internal" href="#black"><span class="xref myst">https://github.com/psf/black</span></a> is a Python <a class="reference external" href="https://peps.python.org/pep-0008/">PEP 8</a> compliant opinionated code formatter. It formats entire Python files with the CLI command <code class="docutils literal notranslate"><span class="pre">black</span> <span class="pre">{source_file_or_directory}</span></code>. For specific options, see <a class="reference external" href="https://black.readthedocs.io/en/stable/usage_and_configuration/the_basics.html">command line options</a> or <code class="docutils literal notranslate"><span class="pre">black</span> <span class="pre">--help</span></code>.</p>
+</section>
+<section id="isort">
+<h3>isort<a class="headerlink" href="#isort" title="Link to this heading"></a></h3>
+<p><a class="reference external" href="https://pycqa.github.io/isort/">isort</a> organizes Python imports alphabetically and automatically separated into sections and by type. The command can be called via <code class="docutils literal notranslate"><span class="pre">isort</span> <span class="pre">{source_file}</span></code>. There are further possibilities in the <a class="reference external" href="https://pycqa.github.io/isort/">documentation</a> to apply isort to multiple files at once.</p>
+</section>
+<section id="mypy">
+<h3>mypy<a class="headerlink" href="#mypy" title="Link to this heading"></a></h3>
+<p><a class="reference external" href="https://mypy.readthedocs.io/en/stable/">mypy</a> is a static type checker for Python. It ensures that variables and functions are used correctly in the code. It warns the developer if type hints (<a class="reference external" href="https://peps.python.org/pep-0484/">PEP 484</a>) are not used correctly. The CLI <code class="docutils literal notranslate"><span class="pre">mypy</span> <span class="pre">{source_file_or_directory}</span></code> makes it easy to use mypy (although it may take a while). For specific options, see <a class="reference external" href="https://mypy.readthedocs.io/en/stable/command_line.html">command line options</a> or <code class="docutils literal notranslate"><span class="pre">mypy</span> <span class="pre">--help</span></code>. The configs set in <code class="docutils literal notranslate"><span class="pre">setup.cfg</span></code> are <code class="docutils literal notranslate"><span class="pre">--strict</span></code>, so there is no need to set the flag by yourself.</p>
+<p>If you run mypy several times for the same file(s) and it takes a while, you can launch the mypy daemon <code class="docutils literal notranslate"><span class="pre">dmypy</span> <span class="pre">start</span></code> and then check your file(s) using <code class="docutils literal notranslate"><span class="pre">dmypy</span> <span class="pre">check</span> <span class="pre">{file_or_directory}</span></code>. The first time you check might still take a while. However, once the check is done and you want to check a file again, the check will only take into account the changes you have made, so it will be much faster.</p>
+</section>
+<section id="pydocstyle">
+<h3>pydocstyle<a class="headerlink" href="#pydocstyle" title="Link to this heading"></a></h3>
+<p><a class="reference external" href="http://www.pydocstyle.org/en/stable/">pydocstyle</a> supports docstring checking out of the box. The check can be used via CLI <code class="docutils literal notranslate"><span class="pre">pydocstyle</span> <span class="pre">{source_file_or_directory}</span></code>. Further options can be found in the <a class="reference external" href="http://www.pydocstyle.org/en/stable/usage.html">documentation</a> or via <code class="docutils literal notranslate"><span class="pre">pydocstyle</span> <span class="pre">--help</span></code>.</p>
+<p>In our project we use the <a class="reference external" href="http://www.pydocstyle.org/en/stable/error_codes.html?highlight=google#default-conventions">google convention</a>. Python files, classes as well as functions need corresponding docstrings. There are autocompletion tools for IDE’s that create docstrings in the correct format (e.g. VSCode <a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=njpwerner.autodocstring">autoDocstring</a>). Below is an example of a dummy function with the corresponding docstring template:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">fun</span><span class="p">(</span><span class="n">arg1</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">arg2</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;__summary__</span>
+
+<span class="sd">    __detailed_description_if_needed__</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        some_arg: __description__</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        __description__</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">arg_added</span> <span class="o">=</span> <span class="n">arg1</span> <span class="o">+</span> <span class="n">arg2</span>
+    <span class="k">return</span> <span class="n">arg_added</span>
+</pre></div>
+</div>
+</section>
+<section id="flake8">
+<h3>flake8<a class="headerlink" href="#flake8" title="Link to this heading"></a></h3>
+<p><a class="reference external" href="https://flake8.pycqa.org/en/latest/">flake8</a> is a tool for style guide enforcement. It checks various style errors such as unused import, variables, maximum line length, spacing and others. The style-checker can be used via the CLI <code class="docutils literal notranslate"><span class="pre">flake8</span> <span class="pre">{source_file_or_directory}</span></code>. In addition, you can set your IDE’s <strong>Linter to flake8</strong>, so that the errors are displayed directly (it might be necessary to install an extension to do so).</p>
+<p>It is recommended to run <em>black</em> before manually checking with <em>flake8</em> because <em>black</em> might fix a lot of <em>flake8</em> related issues. It is possible that the settings of <em>isort</em> and <em>black</em> are not compatible with <em>flake8</em> and therefore should get changed.</p>
+</section>
+</section>
+<section id="add-data-sets-by-uploading-to-cscs">
+<h2>Add Data Sets by Uploading to CSCS<a class="headerlink" href="#add-data-sets-by-uploading-to-cscs" title="Link to this heading"></a></h2>
+<p>Make new datasets available through CSCS object-storage REST-API. The GET-request URI follows the following format: <code class="docutils literal notranslate"><span class="pre">{CSCS-object-store-prefix}/{container}/{object}</span></code> where the prefix comes from <a class="reference external" href="https://castor.cscs.ch/dashboard/project/api_access/">CSCS API access</a>.</p>
+<section id="upload-through-web-interface">
+<h3>Upload through Web Interface<a class="headerlink" href="#upload-through-web-interface" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>Go to <a class="reference external" href="https://castor.cscs.ch/">Castor</a> and authenticate yourself.</p></li>
+<li><p>Navigate to <code class="docutils literal notranslate"><span class="pre">project/object-storage/container</span></code> and choose the container you want to upload (e.g. <code class="docutils literal notranslate"><span class="pre">karabo_public</span></code>).</p></li>
+<li><p>Click the upload option and upload the file of choice.</p></li>
+</ol>
+</section>
+<section id="upload-through-cli">
+<h3>Upload Through CLI<a class="headerlink" href="#upload-through-cli" title="Link to this heading"></a></h3>
+<section id="setup">
+<h4>Setup<a class="headerlink" href="#setup" title="Link to this heading"></a></h4>
+<p>Read https://user.cscs.ch/tools/openstack/ and implement everything inside <code class="docutils literal notranslate"><span class="pre">OpenStack</span> <span class="pre">CLI</span> <span class="pre">Access</span> <span class="pre">via</span> <span class="pre">Virtual</span> <span class="pre">Environment:</span></code></p>
+</section>
+<section id="upload-single-file">
+<h4>Upload Single File<a class="headerlink" href="#upload-single-file" title="Link to this heading"></a></h4>
+<p>Upload a single file with <code class="docutils literal notranslate"><span class="pre">swift</span> <span class="pre">upload</span> <span class="pre">karabo_public</span> <span class="pre">&lt;file&gt;</span></code></p>
+</section>
+<section id="upload-multiple-files">
+<h4>Upload Multiple files<a class="headerlink" href="#upload-multiple-files" title="Link to this heading"></a></h4>
+<ol class="arabic simple">
+<li><p>Create a new folder inside the container with <code class="docutils literal notranslate"><span class="pre">swift</span> <span class="pre">post</span> <span class="pre">karabo_public</span> <span class="pre">&lt;folder_name&gt;</span></code></p></li>
+<li><p>Upload all files inside the folder with <code class="docutils literal notranslate"><span class="pre">swift</span> <span class="pre">upload</span> <span class="pre">karabo_public</span> <span class="pre">&lt;folder_name&gt;</span></code></p></li>
+</ol>
+</section>
+</section>
+</section>
+<section id="add-ska-layouts-as-oskar-telescopes">
+<h2>Add SKA layouts as OSKAR telescopes<a class="headerlink" href="#add-ska-layouts-as-oskar-telescopes" title="Link to this heading"></a></h2>
+<p>In karabo.data._add_oskar_ska_layouts, there is the script array_config_to_oskar_tm.py to convert an ska-ost-array-config array layout to an OSKAR telescope model (.tm directory), which can then be added to Karabo by copying it to karabo/data/ and adding the telescope and telescope version to karabo/simulation/telescope.py and karabo/simulation/telescope_versions.py, respectively. I decided to add each layout as a telescope, e.g. SKA-LOW-AA0.5, and use ska-ost-array-config-[SKA_OST_ARRAY_CONFIG_PACKAGE_VERSION] as the version, e.g. ska-ost-array-config-2.3.1.</p>
+<p>Code to be adjusted:</p>
+<ul class="simple">
+<li><p>telescope.py: add telescope to OSKARTelescopesWithVersionType</p></li>
+<li><p>telescope.py: add telescope to directory name mapping to OSKAR_TELESCOPE_TO_FILENAMES</p></li>
+<li><p>telescope_versions.py: add versions enum, see existing enums for inspiration</p></li>
+<li><p>telescope.py: add telescope to versions class mapping to OSKAR_TELESCOPE_TO_VERSIONS</p></li>
+</ul>
+<p>Setup info to run the script can be found in the README in karabo.data._add_oskar_ska_layouts.</p>
+</section>
+<section id="add-alma-layouts-as-oskar-telescopes">
+<h2>Add ALMA layouts as OSKAR telescopes<a class="headerlink" href="#add-alma-layouts-as-oskar-telescopes" title="Link to this heading"></a></h2>
+<p>The dishes of the ALMA telescope (Atacama Large Microwave Array) can operate in different configurations. These ‘cycles’ are set up at different points in time (see link [1]). For the next year (2025) three new cycles are added to the configuration: cycle 9, 10 and 11. There is a script that helps to import new cycle configurations to Karabo. It fetches the latest config files from the ALMA server (see link [2]) and converts them to an OSKAR telescope model (.tm directory). This can then be added to Karabo by copying it to <code class="docutils literal notranslate"><span class="pre">karabo/data/</span></code>.</p>
+<p>The script and a README file can be found in <code class="docutils literal notranslate"><span class="pre">karabo.data._add_oskar_alma_layouts</span></code>.</p>
+<p>The files are fetched directly from the ALMA server. The url is not under our control. Therefore, the url may change which breaks the code. In this case have a look at link [2] and update the variable <code class="docutils literal notranslate"><span class="pre">CONFIG_FILE_URL</span></code> in the code.</p>
+<section id="id1">
+<h3>Setup<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>Create and activate a Python virtual env / conda env or similar</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">requests</span></code> should be enough</p></li>
+<li><p>Adjust code line <code class="docutils literal notranslate"><span class="pre">ALMA_CYCLE</span> <span class="pre">=</span> <span class="pre">10</span></code> according to the desired version of the ALMA cycle.</p></li>
+</ol>
+</section>
+<section id="convert-the-configurations">
+<h3>Convert the configurations<a class="headerlink" href="#convert-the-configurations" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>Run the script. The OSKAR .tm-foders are written to the current working directory</p></li>
+<li><p>Copy the directories to  <code class="docutils literal notranslate"><span class="pre">karabo/data/</span></code></p></li>
+<li><p>Add the cycle name and version to <code class="docutils literal notranslate"><span class="pre">karabo/simulation/telescope.py</span></code> and <code class="docutils literal notranslate"><span class="pre">karabo/simulation/telescope_versions.py</span></code>, respectively.</p></li>
+</ol>
+</section>
+<section id="important-links">
+<h3>Important links<a class="headerlink" href="#important-links" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>The ALMA configuration schedule: https://almascience.eso.org/news/the-alma-configuration-schedule-for-cycles-9-10-and-11</p></li>
+<li><p>The configuration files: https://almascience.eso.org/tools/casa-simulator</p></li>
+</ol>
+</section>
+</section>
+<section id="update-documentation">
+<h2>Update Documentation<a class="headerlink" href="#update-documentation" title="Link to this heading"></a></h2>
+<p>The docs are built from the python source code and other doc source files located in /doc/src.
+The .rst and .md files need to be referenced inside of index.rst or an already referenced page inside of index.rst, in order to be viewable by the public upon building the documentation.</p>
+<p>If you wish to add a new documentation file, create a new .md file or .rst file inside of the /doc/src folder.
+Then, reference the new file within index.rst in the topmost toctree. For instance, see below:</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="gh">Welcome to Karabo-Pipeline&#39;s documentation!</span>
+<span class="gh">===========================================</span>
+
+<span class="p">..</span> <span class="ow">toctree</span><span class="p">::</span>
+   <span class="nc">:maxdepth:</span> 2
+   <span class="nc">:caption:</span> Contents:
+
+   Installation
+   Container
+   modules
+   examples/Examples.md
+   --&gt; ADD THE REFERENCE TO YOUR FILE HERE
+</pre></div>
+</div>
+<p>(Note that .md files can reference each other, e.g. with <code class="docutils literal notranslate"><span class="pre">[some</span> <span class="pre">file](path/to/some/file)</span></code>).</p>
+<p>Once you have made changes to the documentation, you can test them via the following steps:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Inserts code snippets into Examples documentation</span>
+python<span class="w"> </span>doc/src/examples/combine_examples.py
+cp<span class="w"> </span>-a<span class="w"> </span>doc/src/<span class="w"> </span>_build
+sphinx-apidoc<span class="w"> </span>.<span class="w"> </span>-o<span class="w"> </span>_build
+make<span class="w"> </span>html
+</pre></div>
+</div>
+<p>Then, you can serve the documentation locally:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>_deploy/html
+python<span class="w"> </span>-m<span class="w"> </span>http.server<span class="w"> </span><span class="m">3000</span>
+</pre></div>
+</div>
+<p>If you add new examples to karabo/examples, please make sure to reference them on the examples page in the docs with a short description so they’re visible to users. Edit example_structure.md and then generate examples.md using combine_examples.py.</p>
+</section>
+<section id="update-tests">
+<h2>Update Tests<a class="headerlink" href="#update-tests" title="Link to this heading"></a></h2>
+<p>We use the <code class="docutils literal notranslate"> <span class="pre">pytest</span></code> python package (<a class="reference external" href="https://docs.pytest.org/">pytest docs</a>), with a few imports from the <code class="docutils literal notranslate"><span class="pre">unittest</span></code> package (<a class="reference external" href="https://docs.python.org/3/library/unittest.html">unittest docs</a>). To add a new test simply go to the <code class="docutils literal notranslate"><span class="pre">karabo/test</span></code> folder.</p>
+<p>Add tests for when you write some sort of new code that you feel like might break. Be aware that tests utilize the functionality of the testing-framework and therefore might not behave exactly the same as you would execute the code just as a function. The most important file to consider is <code class="docutils literal notranslate"><span class="pre">conftest.py</span></code>, which could impact the other tests.</p>
+</section>
+<section id="create-a-release">
+<h2>Create a Release<a class="headerlink" href="#create-a-release" title="Link to this heading"></a></h2>
+<p>When everything is merged which should be merged, a new Release can be deployed as following:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/i4Ds/Karabo-Pipeline/releases">Karabo-Pipeline | Releases</a></p></li>
+<li><p>Click on <code class="docutils literal notranslate"><span class="pre">Draft</span> <span class="pre">a</span> <span class="pre">new</span> <span class="pre">release</span></code></p></li>
+<li><p>Define a Version by clicking <code class="docutils literal notranslate"><span class="pre">Choose</span> <span class="pre">a</span> <span class="pre">tag</span></code>. We follow PEP440 {major}.{minor}.{path} with a leading <code class="docutils literal notranslate"><span class="pre">v</span></code> at the beginning (see previous versions). Usually we increment the minor version by 1.</p></li>
+<li><p>Check that the <code class="docutils literal notranslate"><span class="pre">Target</span></code> is set to <code class="docutils literal notranslate"><span class="pre">main</span></code>.</p></li>
+<li><p>Describe the release (get inspired by the previous releases).</p></li>
+<li><p>Click <code class="docutils literal notranslate"><span class="pre">Publish</span> <span class="pre">release</span></code>.</p></li>
+<li><p>Check on <a class="reference external" href="https://github.com/i4Ds/Karabo-Pipeline/actions">Karabo-Pipeline | Github Actions</a> that the release is successful.</p></li>
+<li><p>Check that the new version is on <a class="reference external" href="https://anaconda.org/i4ds/karabo-pipeline">Anaconda.org | Packages</a></p></li>
+<li><p>Check on <a class="reference external" href="https://github.com/i4ds/Karabo-Pipeline/pkgs/container/karabo-pipeline">Karabo-Pipeline | Docker Images</a> that the released image is live.</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="utilities/utils.html" class="btn btn-neutral float-left" title="karabo.util package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, i4ds.
+      <span class="lastupdated">Last updated on Jan 23, 2025.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

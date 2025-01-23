@@ -1,0 +1,377 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>karabo.imaging.imager_base &mdash; Karabo-Pipeline 0+untagged.1.gffd0cfb documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=fc98ef0e"></script>
+      <script src="../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="karabo.imaging.imager_oskar" href="oskar_imaging.html" />
+    <link rel="prev" title="karabo.imaging.image" href="imaging.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Users</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation_user.html">Installation (User)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../container.html">Containers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../parallel_processing.html">Parallel processing with Karabo</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Simulation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="simulation.html">karabo.simulation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Imaging</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="imaging.html">karabo.imaging.image</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">karabo.imaging.imager_base</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#classes">Classes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#karabo.imaging.imager_base.DirtyImagerConfig"><code class="docutils literal notranslate"><span class="pre">DirtyImagerConfig</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#karabo.imaging.imager_base.DirtyImagerConfig.imaging_npixel"><code class="docutils literal notranslate"><span class="pre">DirtyImagerConfig.imaging_npixel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#karabo.imaging.imager_base.DirtyImagerConfig.imaging_cellsize"><code class="docutils literal notranslate"><span class="pre">DirtyImagerConfig.imaging_cellsize</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#karabo.imaging.imager_base.DirtyImagerConfig.combine_across_frequencies"><code class="docutils literal notranslate"><span class="pre">DirtyImagerConfig.combine_across_frequencies</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#karabo.imaging.imager_base.DirtyImagerConfig.__init__"><code class="docutils literal notranslate"><span class="pre">DirtyImagerConfig.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#karabo.imaging.imager_base.DirtyImager"><code class="docutils literal notranslate"><span class="pre">DirtyImager</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#karabo.imaging.imager_base.DirtyImager.create_dirty_image"><code class="docutils literal notranslate"><span class="pre">DirtyImager.create_dirty_image()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id0"><code class="docutils literal notranslate"><span class="pre">DirtyImagerConfig</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1"><code class="docutils literal notranslate"><span class="pre">DirtyImagerConfig.imaging_npixel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2"><code class="docutils literal notranslate"><span class="pre">DirtyImagerConfig.imaging_cellsize</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3"><code class="docutils literal notranslate"><span class="pre">DirtyImagerConfig.combine_across_frequencies</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4"><code class="docutils literal notranslate"><span class="pre">DirtyImagerConfig.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#karabo.imaging.imager_base.ImageCleanerConfig"><code class="docutils literal notranslate"><span class="pre">ImageCleanerConfig</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#karabo.imaging.imager_base.ImageCleanerConfig.imaging_npixel"><code class="docutils literal notranslate"><span class="pre">ImageCleanerConfig.imaging_npixel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#karabo.imaging.imager_base.ImageCleanerConfig.imaging_cellsize"><code class="docutils literal notranslate"><span class="pre">ImageCleanerConfig.imaging_cellsize</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#karabo.imaging.imager_base.ImageCleanerConfig.__init__"><code class="docutils literal notranslate"><span class="pre">ImageCleanerConfig.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#karabo.imaging.imager_base.ImageCleaner"><code class="docutils literal notranslate"><span class="pre">ImageCleaner</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#karabo.imaging.imager_base.ImageCleaner.create_cleaned_image"><code class="docutils literal notranslate"><span class="pre">ImageCleaner.create_cleaned_image()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="oskar_imaging.html">karabo.imaging.imager_oskar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rascil_imaging.html">karabo.imaging.imager_rascil</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wsclean_imaging.html">karabo.imaging.imager_wsclean</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Source Detection</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="sourcedetection.html">karabo.sourcedetection</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Utilities</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../utilities/utils.html">karabo.util package</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developers</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../development.html">Development Documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Karabo-Pipeline</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">karabo.imaging.imager_base</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/main_features/base_imaging.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="karabo-imaging-imager-base">
+<h1>karabo.imaging.imager_base<a class="headerlink" href="#karabo-imaging-imager-base" title="Link to this heading"></a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
+<p>This package defines base classes from which the
+specialised image classes are derived.</p>
+</section>
+<section id="classes">
+<h2>Classes<a class="headerlink" href="#classes" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="karabo.imaging.imager_base.DirtyImagerConfig">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DirtyImagerConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">imaging_npixel</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">imaging_cellsize</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">combine_across_frequencies</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#karabo.imaging.imager_base.DirtyImagerConfig" title="Link to this definition"></a></dt>
+<dd><p>Base class for the config / parameters of a dirty imager.</p>
+<p>Contains basic parameters common across all dirty imagers.
+Inherit and add parameters specific to a dirty imager implementation.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="karabo.imaging.imager_base.DirtyImagerConfig.imaging_npixel">
+<span class="sig-name descname"><span class="pre">imaging_npixel</span></span><a class="headerlink" href="#karabo.imaging.imager_base.DirtyImagerConfig.imaging_npixel" title="Link to this definition"></a></dt>
+<dd><p>Image size</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="karabo.imaging.imager_base.DirtyImagerConfig.imaging_cellsize">
+<span class="sig-name descname"><span class="pre">imaging_cellsize</span></span><a class="headerlink" href="#karabo.imaging.imager_base.DirtyImagerConfig.imaging_cellsize" title="Link to this definition"></a></dt>
+<dd><p>Scale of a pixel in radians</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="karabo.imaging.imager_base.DirtyImagerConfig.combine_across_frequencies">
+<span class="sig-name descname"><span class="pre">combine_across_frequencies</span></span><a class="headerlink" href="#karabo.imaging.imager_base.DirtyImagerConfig.combine_across_frequencies" title="Link to this definition"></a></dt>
+<dd><p>Whether or not to combine images
+across all frequency channels into one image. Defaults to True.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="karabo.imaging.imager_base.DirtyImagerConfig.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">imaging_npixel</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">imaging_cellsize</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">combine_across_frequencies</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#karabo.imaging.imager_base.DirtyImagerConfig.__init__" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="karabo.imaging.imager_base.DirtyImager">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DirtyImager</span></span><a class="headerlink" href="#karabo.imaging.imager_base.DirtyImager" title="Link to this definition"></a></dt>
+<dd><p>Abstract base class for a dirty imager.</p>
+<p>A dirty imager creates dirty images from visibilities.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="karabo.imaging.imager_base.DirtyImager.create_dirty_image">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_dirty_image</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">visibility</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../karabo.simulation.html#karabo.simulation.visibility.Visibility" title="karabo.simulation.visibility.Visibility"><span class="pre">Visibility</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_fits_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="imaging.html#karabo.imaging.image.Image" title="karabo.imaging.image.Image"><span class="pre">Image</span></a></span></span><a class="headerlink" href="#karabo.imaging.imager_base.DirtyImager.create_dirty_image" title="Link to this definition"></a></dt>
+<dd><p>Creates a dirty image from a visibility.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>visibility</strong> – Visibility object
+from which to create the dirty image. Contains the visibilities
+of an observation.</p></li>
+<li><p><strong>output_fits_path</strong> – Path to write the dirty image to.
+Example: /tmp/dirty.fits.
+If None, will be set to a temporary directory and a default file name.
+Defaults to None.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Dirty image</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="imaging.html#karabo.imaging.image.Image" title="karabo.imaging.image.Image">Image</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="id0">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DirtyImagerConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">imaging_npixel</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">imaging_cellsize</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">combine_across_frequencies</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id0" title="Link to this definition"></a></dt>
+<dd><p>Base class for the config / parameters of a dirty imager.</p>
+<p>Contains basic parameters common across all dirty imagers.
+Inherit and add parameters specific to a dirty imager implementation.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id1">
+<span class="sig-name descname"><span class="pre">imaging_npixel</span></span><a class="headerlink" href="#id1" title="Link to this definition"></a></dt>
+<dd><p>Image size</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id2">
+<span class="sig-name descname"><span class="pre">imaging_cellsize</span></span><a class="headerlink" href="#id2" title="Link to this definition"></a></dt>
+<dd><p>Scale of a pixel in radians</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id3">
+<span class="sig-name descname"><span class="pre">combine_across_frequencies</span></span><a class="headerlink" href="#id3" title="Link to this definition"></a></dt>
+<dd><p>Whether or not to combine images
+across all frequency channels into one image. Defaults to True.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id4">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">imaging_npixel</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">imaging_cellsize</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">combine_across_frequencies</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#id4" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="karabo.imaging.imager_base.ImageCleanerConfig">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ImageCleanerConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">imaging_npixel</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">imaging_cellsize</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#karabo.imaging.imager_base.ImageCleanerConfig" title="Link to this definition"></a></dt>
+<dd><p>Base class for the config / parameters of an image cleaner.</p>
+<p>Contains basic parameters common across all image cleaners.
+Inherit and add parameters specific to an image cleaner implementation.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="karabo.imaging.imager_base.ImageCleanerConfig.imaging_npixel">
+<span class="sig-name descname"><span class="pre">imaging_npixel</span></span><a class="headerlink" href="#karabo.imaging.imager_base.ImageCleanerConfig.imaging_npixel" title="Link to this definition"></a></dt>
+<dd><p>Image size</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="karabo.imaging.imager_base.ImageCleanerConfig.imaging_cellsize">
+<span class="sig-name descname"><span class="pre">imaging_cellsize</span></span><a class="headerlink" href="#karabo.imaging.imager_base.ImageCleanerConfig.imaging_cellsize" title="Link to this definition"></a></dt>
+<dd><p>Scale of a pixel in radians</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="karabo.imaging.imager_base.ImageCleanerConfig.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">imaging_npixel</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">imaging_cellsize</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#karabo.imaging.imager_base.ImageCleanerConfig.__init__" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="karabo.imaging.imager_base.ImageCleaner">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ImageCleaner</span></span><a class="headerlink" href="#karabo.imaging.imager_base.ImageCleaner" title="Link to this definition"></a></dt>
+<dd><p>Abstract base class for an image cleaner.</p>
+<p>An image cleaner creates clean images from dirty images
+or directly from visibilities, in that case including the
+dirty imaging process.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="karabo.imaging.imager_base.ImageCleaner.create_cleaned_image">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_cleaned_image</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">visibility</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../karabo.simulation.html#karabo.simulation.visibility.Visibility" title="karabo.simulation.visibility.Visibility"><span class="pre">Visibility</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dirty_fits_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_fits_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="imaging.html#karabo.imaging.image.Image" title="karabo.imaging.image.Image"><span class="pre">Image</span></a></span></span><a class="headerlink" href="#karabo.imaging.imager_base.ImageCleaner.create_cleaned_image" title="Link to this definition"></a></dt>
+<dd><p>Creates a clean image from a dirty image or from visibilities.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>visibility</strong> – Visibility from which a clean image should be created.</p></li>
+<li><p><strong>dirty_fits_path</strong> – Path to dirty image FITS file that
+should be reused to create a clean image. If None, dirty image will be
+created first from the visibilities. Defaults to None.</p></li>
+<li><p><strong>output_fits_path</strong> – Path to write the clean image to.
+Example: /tmp/restored.fits.
+If None, will be set to a temporary directory and a default file name.
+Defaults to None.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Clean image</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="imaging.html#karabo.imaging.image.Image" title="karabo.imaging.image.Image">Image</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="imaging.html" class="btn btn-neutral float-left" title="karabo.imaging.image" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="oskar_imaging.html" class="btn btn-neutral float-right" title="karabo.imaging.imager_oskar" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, i4ds.
+      <span class="lastupdated">Last updated on Jan 23, 2025.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

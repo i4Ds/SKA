@@ -1,0 +1,407 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>karabo.sourcedetection &mdash; Karabo-Pipeline 0+untagged.1.gffd0cfb documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=fc98ef0e"></script>
+      <script src="../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="karabo.util package" href="../utilities/utils.html" />
+    <link rel="prev" title="karabo.imaging.imager_wsclean" href="wsclean_imaging.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Users</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation_user.html">Installation (User)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../container.html">Containers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../parallel_processing.html">Parallel processing with Karabo</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Simulation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="simulation.html">karabo.simulation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Imaging</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="imaging.html">karabo.imaging.image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="base_imaging.html">karabo.imaging.imager_base</a></li>
+<li class="toctree-l1"><a class="reference internal" href="oskar_imaging.html">karabo.imaging.imager_oskar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rascil_imaging.html">karabo.imaging.imager_rascil</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wsclean_imaging.html">karabo.imaging.imager_wsclean</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Source Detection</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">karabo.sourcedetection</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#classes">Classes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#karabo.sourcedetection.evaluation.SourceDetectionEvaluation"><code class="docutils literal notranslate"><span class="pre">SourceDetectionEvaluation</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#karabo.sourcedetection.evaluation.SourceDetectionEvaluation.__init__"><code class="docutils literal notranslate"><span class="pre">SourceDetectionEvaluation.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#karabo.sourcedetection.evaluation.SourceDetectionEvaluation.automatic_assignment_of_ground_truth_and_prediction"><code class="docutils literal notranslate"><span class="pre">SourceDetectionEvaluation.automatic_assignment_of_ground_truth_and_prediction()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#karabo.sourcedetection.evaluation.SourceDetectionEvaluation.calculate_evaluation_measures"><code class="docutils literal notranslate"><span class="pre">SourceDetectionEvaluation.calculate_evaluation_measures()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#karabo.sourcedetection.evaluation.SourceDetectionEvaluation.plot"><code class="docutils literal notranslate"><span class="pre">SourceDetectionEvaluation.plot()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#karabo.sourcedetection.result.SourceDetectionResult"><code class="docutils literal notranslate"><span class="pre">SourceDetectionResult</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#karabo.sourcedetection.result.SourceDetectionResult.__init__"><code class="docutils literal notranslate"><span class="pre">SourceDetectionResult.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#karabo.sourcedetection.result.SourceDetectionResult.detect_sources_in_image"><code class="docutils literal notranslate"><span class="pre">SourceDetectionResult.detect_sources_in_image()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#karabo.sourcedetection.result.SourceDetectionResult.get_source_image"><code class="docutils literal notranslate"><span class="pre">SourceDetectionResult.get_source_image()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#karabo.sourcedetection.result.SourceDetectionResult.has_source_image"><code class="docutils literal notranslate"><span class="pre">SourceDetectionResult.has_source_image()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#karabo.sourcedetection.result.SourceDetectionResult.write_to_file"><code class="docutils literal notranslate"><span class="pre">SourceDetectionResult.write_to_file()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Utilities</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../utilities/utils.html">karabo.util package</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developers</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../development.html">Development Documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Karabo-Pipeline</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">karabo.sourcedetection</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/main_features/sourcedetection.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="karabo-sourcedetection">
+<h1>karabo.sourcedetection<a class="headerlink" href="#karabo-sourcedetection" title="Link to this heading"></a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
+<p>Karabo comes with a source detection algorithm basesd on <cite>PyBDSF</cite>.
+This module offers wrappers around <cite>PyBDSF</cite> and allows for automatic
+source detection.</p>
+</section>
+<section id="classes">
+<h2>Classes<a class="headerlink" href="#classes" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="karabo.sourcedetection.evaluation.SourceDetectionEvaluation">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SourceDetectionEvaluation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sky</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="simulation.html#karabo.simulation.sky_model.SkyModel" title="karabo.simulation.sky_model.SkyModel"><span class="pre">SkyModel</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">ground_truth</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">float64</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">assignments</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">float64</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sky_idxs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">int64</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source_detection</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../karabo.sourcedetection.html#karabo.sourcedetection.result.ISourceDetectionResult" title="karabo.sourcedetection.result.ISourceDetectionResult"><span class="pre">ISourceDetectionResult</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#karabo.sourcedetection.evaluation.SourceDetectionEvaluation" title="Link to this definition"></a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="karabo.sourcedetection.evaluation.SourceDetectionEvaluation.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sky</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="simulation.html#karabo.simulation.sky_model.SkyModel" title="karabo.simulation.sky_model.SkyModel"><span class="pre">SkyModel</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">ground_truth</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">float64</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">assignments</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">float64</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sky_idxs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">int64</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source_detection</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../karabo.sourcedetection.html#karabo.sourcedetection.result.ISourceDetectionResult" title="karabo.sourcedetection.result.ISourceDetectionResult"><span class="pre">ISourceDetectionResult</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#karabo.sourcedetection.evaluation.SourceDetectionEvaluation.__init__" title="Link to this definition"></a></dt>
+<dd><p>Class that holds the mapping of a source detection to truth mapping.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sky</strong> – <cite>SkyModel</cite> where the <cite>assignment</cite> comes from</p></li>
+<li><p><strong>ground_truth</strong> – 2xn array of pixel positions of ground truth</p></li>
+<li><p><strong>assignments</strong> – <p>jx3 np.ndarray where each row represents an assignment:</p>
+<ul>
+<li><p>first column is the <cite>ground_truth</cite> index</p></li>
+<li><p>second column is the predicted <cite>source_detection.detected_sources</cite>                 index</p></li>
+<li><p>third column is the euclidean distance between the assignment</p></li>
+</ul>
+</p></li>
+<li><p><strong>sky_idxs</strong> – Sky sources indices of <cite>SkyModel</cite> from <cite>assignment</cite></p></li>
+<li><p><strong>source_detection</strong> – SourceDetectionResult from a previous source-detection</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="karabo.sourcedetection.evaluation.SourceDetectionEvaluation.automatic_assignment_of_ground_truth_and_prediction">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">automatic_assignment_of_ground_truth_and_prediction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ground_truth</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">int64</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">float64</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">detected</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">int64</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">float64</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_dist</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">top_k</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">float64</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#karabo.sourcedetection.evaluation.SourceDetectionEvaluation.automatic_assignment_of_ground_truth_and_prediction" title="Link to this definition"></a></dt>
+<dd><p>Automatic assignment of the predicted sources <cite>predicted</cite> to the
+ground truth <cite>gtruth</cite>. The strategy is the following (similar to
+<cite>AUTOMATIC SOURCE DETECTION IN ASTRONOMICAL IMAGES, P.61,
+Marc MASIAS MOYSET, 2014</cite>):</p>
+<p>Each distance between the predicted and the ground truth sources is
+calculated. Any distances &gt; <cite>max_dist</cite> are not considered.
+Assign the closest distance from the predicted and ground truth.
+Repeat the assignment, until every source from the gtruth has an
+assignment if possible, not allowing any double assignments from the
+predicted sources to the ground truth and vice versa. So each ground truth
+source should be assigned with a predicted source if at least one was
+in range and the predicted source assigned to another ground truth source
+before. If there are duplicate sources (e.g. same source, different
+frequency), the duplicate sources are removed and the assignment is done
+on the remaining.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ground_truth</strong> – nx2 np.ndarray with the ground truth pixel
+coordinates of the catalog</p></li>
+<li><p><strong>detected</strong> – kx2 np.ndarray with the predicted pixel
+coordinates of the image</p></li>
+<li><p><strong>max_dist</strong> – maximal allowed euclidean distance for assignment
+(in pixel domain)</p></li>
+<li><p><strong>top_k</strong> – number of top predictions to be considered in scipy.spatial.
+KDTree. A small value could lead to imperfect results.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><p>An nx3 array where each row represents an assignment.</p>
+<ul class="simple">
+<li><p>first column represents the ground truth index                 (return is sorted by this column). A negative index means a                 ground-truth source with no allocated prediction.</p></li>
+<li><p>second column represents the predicted index. A negative index means                 a predicted source with no allocated ground-truth.</p></li>
+<li><p>third column represents the euclidean distance between the                 assignment. A “inf” means no allocation between ground-truth and                 prediction of that source.</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>np.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="karabo.sourcedetection.evaluation.SourceDetectionEvaluation.calculate_evaluation_measures">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">calculate_evaluation_measures</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">assignments</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">float64</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#karabo.sourcedetection.evaluation.SourceDetectionEvaluation.calculate_evaluation_measures" title="Link to this definition"></a></dt>
+<dd><p>Calculates the True Positive (TP), False Positive (FP)
+and False Negative (FN) of the ground truth and predictions.</p>
+<ul class="simple">
+<li><p>TP are the detections associated with a source</p></li>
+<li><p>FP are detections without any associated source</p></li>
+<li><p>FN are sources with no associations with a detection</p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>assignments</strong> – nx3 did np.ndarray where each row represents an assignment
+The <cite>assignments</cite> is expected to be as
+<cite>automatic_assignment_of_ground_truth_and_prediction</cite> return.
+Therefore, the non-assigned sources must have a value of “-1”.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>TP, FP, FN</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Tuple[int, int, int]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="karabo.sourcedetection.evaluation.SourceDetectionEvaluation.plot">
+<span class="sig-name descname"><span class="pre">plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exclude_img</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_legend</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#karabo.sourcedetection.evaluation.SourceDetectionEvaluation.plot" title="Link to this definition"></a></dt>
+<dd><p>Plot the found sources as green x’s and the source truth as red ‘o’ on the
+original image, that the source detection was performed on.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="karabo.sourcedetection.result.SourceDetectionResult">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SourceDetectionResult</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">detected_sources</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">float64</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source_image</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="imaging.html#karabo.imaging.image.Image" title="karabo.imaging.image.Image"><span class="pre">Image</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#karabo.sourcedetection.result.SourceDetectionResult" title="Link to this definition"></a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="karabo.sourcedetection.result.SourceDetectionResult.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">detected_sources</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">float64</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source_image</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="imaging.html#karabo.imaging.image.Image" title="karabo.imaging.image.Image"><span class="pre">Image</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#karabo.sourcedetection.result.SourceDetectionResult.__init__" title="Link to this definition"></a></dt>
+<dd><p>Generic Source Detection Result Class.
+Inputting your Source Detection Result as an array</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>index</p></th>
+<th class="head"><p>ra</p></th>
+<th class="head"><p>dec</p></th>
+<th class="head" colspan="2"><p>pos X (pixel) | pos Y (pixel)</p></th>
+<th class="head"><p>total_flux</p></th>
+<th class="head"><p>peak_flux</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>30</p></td>
+<td><p>200</p></td>
+<td colspan="2"><p>400           | 500</p></td>
+<td colspan="2"><p>0.345     |    0.34540</p></td>
+</tr>
+</tbody>
+</table>
+<p>Rows can also be left empty if the specified value is not found by your source
+detection algorithm. More rows can also be added at the end. As they are not
+used for any internal algorithm.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>detected_sources</strong> – detected sources in array</p></li>
+<li><p><strong>source_image</strong> – Image, where the source detection was performed on</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="karabo.sourcedetection.result.SourceDetectionResult.detect_sources_in_image">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">detect_sources_in_image</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="imaging.html#karabo.imaging.image.Image" title="karabo.imaging.image.Image"><span class="pre">Image</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">beam</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">BeamType</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">_SourceDetectionResultType</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="headerlink" href="#karabo.sourcedetection.result.SourceDetectionResult.detect_sources_in_image" title="Link to this definition"></a></dt>
+<dd><p>Detect sources in an astronomical image using PyBDSF.process_image function.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>image</strong> (<a class="reference internal" href="imaging.html#karabo.imaging.image.Image" title="karabo.imaging.image.Image"><em>Image</em></a><em> or </em><em>List</em><em>[</em><a class="reference internal" href="imaging.html#karabo.imaging.image.Image" title="karabo.imaging.image.Image"><em>Image</em></a><em>]</em>) – Image object for source detection. Can be a single image or a list of
+images.</p></li>
+<li><p><strong>beam</strong> (<em>Optional</em><em>[</em><em>BeamType</em><em>]</em>) – The Full Width Half Maximum (FWHM) of the restoring beam,
+BMAJ(arcsec), BMIN(arcsec), BPA(degree).
+If None, tries to extract from image metadata.</p></li>
+<li><p><strong>verbose</strong> (<em>bool</em>) – verbose?</p></li>
+<li><p><strong>n_splits</strong> (<em>int</em>) – default 0
+The number of parts to split the image into for processing. A value
+greater than 1 requires Dask.</p></li>
+<li><p><strong>overlap</strong> (<em>int</em>) – default 0
+The overlap between split parts of the image in pixels.</p></li>
+<li><p><strong>kwargs</strong> (<em>**</em>) – Additional keyword arguments to pass to PyBDSF.process_image function.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list of detected sources,
+or None if all pixels in the image are blanked or on failure.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Optional[List[_SourceDetectionResultType]]</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>RuntimeError</strong> – If an unexpected error occurs during the source detection process.</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The dask client has to be created with the setting <cite>processes=False</cite> to avoid
+issues with PyBDSF multiprocessing. See similar issue here:
+<a class="reference external" href="https://stackoverflow.com/questions/51485212/multiprocessing-gives-assertionerror-daemonic-processes-are-not-allowed-to-have">https://stackoverflow.com/questions/51485212/multiprocessing-gives-assertionerror-daemonic-processes-are-not-allowed-to-have</a> # noqa
+If ‘n_splits’ is greater than 1 and ‘use_dask’ is True, the image will be split
+into multiple parts and processed in parallel using Dask. Overlap can be
+specified to prevent edge artifacts.</p>
+<p>If the ‘beam’ parameter is not provided, the method will attempt to extract the
+beam parameters from the image metadata. A warning is raised if beam parameters
+are not found.</p>
+<p>The PyBDSF process_image function is called for source detection, which is
+particularly designed for radio astronomical images. For details on this
+function, refer to the PyBDSF documentation.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="karabo.sourcedetection.result.SourceDetectionResult.get_source_image">
+<span class="sig-name descname"><span class="pre">get_source_image</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="imaging.html#karabo.imaging.image.Image" title="karabo.imaging.image.Image"><span class="pre">Image</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="headerlink" href="#karabo.sourcedetection.result.SourceDetectionResult.get_source_image" title="Link to this definition"></a></dt>
+<dd><p>Return the source image, where the source detection was performed on.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Karabo Image or None (if not supplied)</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="imaging.html#karabo.imaging.image.Image" title="karabo.imaging.image.Image">Image</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="karabo.sourcedetection.result.SourceDetectionResult.has_source_image">
+<span class="sig-name descname"><span class="pre">has_source_image</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#karabo.sourcedetection.result.SourceDetectionResult.has_source_image" title="Link to this definition"></a></dt>
+<dd><p>Check if source image is present.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if present, False if not present</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="karabo.sourcedetection.result.SourceDetectionResult.write_to_file">
+<span class="sig-name descname"><span class="pre">write_to_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#karabo.sourcedetection.result.SourceDetectionResult.write_to_file" title="Link to this definition"></a></dt>
+<dd><p>Save Source Detection Result to ZIP Archive containing the .fits source image
+and source-finding catalog.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>path</strong> – Path to save the zip archive to.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="wsclean_imaging.html" class="btn btn-neutral float-left" title="karabo.imaging.imager_wsclean" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../utilities/utils.html" class="btn btn-neutral float-right" title="karabo.util package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, i4ds.
+      <span class="lastupdated">Last updated on Jan 23, 2025.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

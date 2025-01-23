@@ -1,0 +1,247 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Examples &mdash; Karabo-Pipeline 0+untagged.1.gffd0cfb documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=fc98ef0e"></script>
+      <script src="../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Parallel processing with Karabo" href="../parallel_processing.html" />
+    <link rel="prev" title="Containers" href="../container.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Users</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../installation_user.html">Installation (User)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../container.html">Containers</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#running-a-general-interferometer-simulation">Running a general interferometer simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#show-telescope-config">Show telescope config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#imaging">Imaging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#source-detection">Source detection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#srcnet">SRCNet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#performing-a-line-emission-simulation-using-both-oskar-and-rascil">Performing a line emission simulation, using both OSKAR and RASCIL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#notes-on-the-oskar-telescope-data-conventions">Notes on the OSKAR Telescope data conventions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-our-demo-installation">Using our Demo Installation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../parallel_processing.html">Parallel processing with Karabo</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Simulation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../main_features/simulation.html">karabo.simulation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Imaging</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../main_features/imaging.html">karabo.imaging.image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../main_features/base_imaging.html">karabo.imaging.imager_base</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../main_features/oskar_imaging.html">karabo.imaging.imager_oskar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../main_features/rascil_imaging.html">karabo.imaging.imager_rascil</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../main_features/wsclean_imaging.html">karabo.imaging.imager_wsclean</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Source Detection</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../main_features/sourcedetection.html">karabo.sourcedetection</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Utilities</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../utilities/utils.html">karabo.util package</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developers</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../development.html">Development Documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Karabo-Pipeline</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Examples</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/examples/examples.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="examples">
+<h1>Examples<a class="headerlink" href="#examples" title="Link to this heading"></a></h1>
+<section id="running-a-general-interferometer-simulation">
+<h2>Running a general interferometer simulation<a class="headerlink" href="#running-a-general-interferometer-simulation" title="Link to this heading"></a></h2>
+<p>The following example showcases a simple telescope simulation using the main pipeline ingredients.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">karabo.simulation.interferometer</span><span class="w"> </span><span class="kn">import</span> <span class="n">InterferometerSimulation</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">karabo.simulation.observation</span><span class="w"> </span><span class="kn">import</span> <span class="n">Observation</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">karabo.simulation.sky_model</span><span class="w"> </span><span class="kn">import</span> <span class="n">SkyModel</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">karabo.simulation.telescope</span><span class="w"> </span><span class="kn">import</span> <span class="n">Telescope</span>
+
+<span class="c1"># create a simple sky model with three point sources</span>
+<span class="n">sky</span> <span class="o">=</span> <span class="n">SkyModel</span><span class="p">()</span>
+<span class="n">sky_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+    <span class="p">[</span>
+        <span class="p">[</span><span class="mf">20.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">30.0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">100.0e6</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+        <span class="p">[</span><span class="mf">20.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">30.5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">100.0e6</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mi">600</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">45</span><span class="p">],</span>
+        <span class="p">[</span><span class="mf">20.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">30.5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">100.0e6</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mi">700</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="o">-</span><span class="mi">10</span><span class="p">],</span>
+    <span class="p">]</span>
+<span class="p">)</span>
+<span class="n">sky</span><span class="o">.</span><span class="n">add_point_sources</span><span class="p">(</span><span class="n">sky_data</span><span class="p">)</span>
+
+<span class="c1"># get different predefined telescopes,</span>
+<span class="c1"># like here the OSKAR example telescope.png, with a handy functions</span>
+<span class="n">telescope</span> <span class="o">=</span> <span class="n">Telescope</span><span class="o">.</span><span class="n">constructor</span><span class="p">(</span><span class="s2">&quot;EXAMPLE&quot;</span><span class="p">)</span>
+
+<span class="c1"># overwrite or set any of the implemented configuration values</span>
+<span class="n">telescope</span><span class="o">.</span><span class="n">centre_longitude</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">simulation</span> <span class="o">=</span> <span class="n">InterferometerSimulation</span><span class="p">()</span>
+
+<span class="c1"># create new observational settings with most settings set to default</span>
+<span class="c1"># except the start frequency set to 1e6</span>
+<span class="n">observation</span> <span class="o">=</span> <span class="n">Observation</span><span class="p">(</span>
+    <span class="n">start_frequency_hz</span><span class="o">=</span><span class="mf">1e6</span><span class="p">,</span>
+    <span class="n">start_date_and_time</span><span class="o">=</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2024</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">46</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+<span class="p">)</span>
+
+<span class="c1"># run a single simulation with the provided configuration</span>
+<span class="n">simulation</span><span class="o">.</span><span class="n">run_simulation</span><span class="p">(</span><span class="n">telescope</span><span class="p">,</span> <span class="n">sky</span><span class="p">,</span> <span class="n">observation</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="show-telescope-config">
+<h2>Show telescope config<a class="headerlink" href="#show-telescope-config" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">karabo.simulation.telescope</span><span class="w"> </span><span class="kn">import</span> <span class="n">Telescope</span>
+
+<span class="n">telescope</span> <span class="o">=</span> <span class="n">Telescope</span><span class="o">.</span><span class="n">constructor</span><span class="p">(</span><span class="s2">&quot;EXAMPLE&quot;</span><span class="p">)</span>
+<span class="n">telescope</span><span class="o">.</span><span class="n">plot_telescope</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="s2">&quot;example_telescope.png&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="imaging">
+<h2>Imaging<a class="headerlink" href="#imaging" title="Link to this heading"></a></h2>
+<p>The notebook <a class="reference external" href="https://github.com/i4Ds/Karabo-Pipeline/blob/main/karabo/examples/imaging.ipynb">imaging.ipynb</a>, shows how to use different dirty imaging and image cleaning algorithms.</p>
+</section>
+<section id="source-detection">
+<h2>Source detection<a class="headerlink" href="#source-detection" title="Link to this heading"></a></h2>
+<p>In the example notebook <a class="reference external" href="https://github.com/i4Ds/Karabo-Pipeline/blob/main/karabo/examples/source_detection.ipynb">source_detection.ipynb</a>, we simulate data, perform dirty imaging, clean the image, and then run and evaluate a source detection algorithm.</p>
+</section>
+<section id="srcnet">
+<h2>SRCNet<a class="headerlink" href="#srcnet" title="Link to this heading"></a></h2>
+<p>Karabo is used in the SRCNet to generate simulated test data resembling SKAO data.</p>
+<p>The script <a class="reference external" href="https://github.com/i4Ds/Karabo-Pipeline/blob/main/karabo/examples/SRCNet_v0.1_simulation_1_MeerKAT.py">SRCNet_v0.1_simulation_1_MeerKAT.py</a> generates simulated visibilities and a dirty image for the SRCNet v0.1 release using the MeerKAT SKA-MID precursor telescope.<br />
+Data volume generated: 43 GB.<br />
+Required hardware: 32 GB RAM, 64 GB storage.<br />
+Approximate runtime with 16 cores, no GPU: 1 day.<br />
+Suggested command due to the runtime and due to Karabo currently logging to STDOUT: <code class="docutils literal notranslate"><span class="pre">nohup</span> <span class="pre">python</span> <span class="pre">SRCNet_v0.1_simulation_1_MeerKAT.py</span> <span class="pre">&gt;</span> <span class="pre">karabo_log.txt</span> <span class="pre">&amp;</span></code><br />
+By default, Karabo will use /tmp as the root dir for output and the data is written to a directory created by Karabo below this root dir. If the SCRATCH env var is set, Karabo will use the directory defined there as the root dir instead. If the TMPDIR or TMP env var is set, Karabo will use the directory defined there as the root dir instead. The precedence is TMPDIR = TMP &gt; SCRATCH &gt; /tmp.</p>
+<p>The script <a class="reference external" href="https://github.com/i4Ds/Karabo-Pipeline/blob/main/karabo/examples/SRCNet_v0.1_simulation_2_AAstar.py">SRCNet_v0.1_simulation_2_AAstar.py</a> generates simulated visibilities, a dirty image and a cleaned image for the SRCNet v0.1 release using the SKA-MID AA* layout.<br />
+Data volume generated: 3 TB.<br />
+Required hardware: 64 GB RAM, &gt; 3 TB storage.<br />
+Approximate runtime with 12 cores, NVIDIA Tesla P100 16 GB GPU: 31 h (visibilities 14 h, dirty imaging 3.5 h, image cleaning 13.5 h).<br />
+Running on GPU currently only speeds up the simulation part, not the imaging part. For the simulation part, we observed a massive speed-up (factor 18) when using the GPU (InterferometerSimulation parameter use_gpus).<br />
+See paragraph above for log capture and output directory suggestions.</p>
+<p>The notebook <a class="reference external" href="https://github.com/i4Ds/Karabo-Pipeline/blob/main/karabo/examples/SRCNet_simulation_walkthrough.ipynb">SRCNet_simulation_walkthrough.ipynb</a> contains a small example based on <code class="docutils literal notranslate"><span class="pre">SRCNet_v0.1_simulation_1_MeerKAT.py</span></code> that can be run on a laptop in a couple of minutes. It walks you through the whole process, from loading the survey / sky model and configuring the telescope, to configuring observation parameters and setting up and running the simulation, to creating a dirty image from the generated visibilities.</p>
+<p>In addition, we provide utility to create SRCNet Rucio metadata for the ingestion daemon for <code class="docutils literal notranslate"><span class="pre">images</span></code> and <code class="docutils literal notranslate"><span class="pre">visibilities</span></code> data products. The script <a class="reference external" href="https://github.com/i4Ds/Karabo-Pipeline/blob/main/karabo/examples/SRCNet_rucio_meta.py">SRCNet_rucio_meta.py</a> provides an example of how to generate metadata for a small simulation and imaging pipeline.</p>
+</section>
+<section id="performing-a-line-emission-simulation-using-both-oskar-and-rascil">
+<h2>Performing a line emission simulation, using both OSKAR and RASCIL<a class="headerlink" href="#performing-a-line-emission-simulation-using-both-oskar-and-rascil" title="Link to this heading"></a></h2>
+<p>See the script <a class="reference external" href="https://github.com/i4Ds/Karabo-Pipeline/blob/main/karabo/simulation/line_emission.py">line_emission.py</a> and the notebook <a class="reference external" href="https://github.com/i4Ds/Karabo-Pipeline/blob/main/karabo/examples/LineEmissionBackendsComparison.ipynb">LineEmissionBackendsComparison.ipynb</a> for an end-to-end line emission simulation.</p>
+<p>This simulation begins with a <code class="docutils literal notranslate"><span class="pre">SkyModel</span></code> instance, and with the definition of the desired <code class="docutils literal notranslate"><span class="pre">Observation</span></code> and <code class="docutils literal notranslate"><span class="pre">Telescope</span></code> details. Then, the <code class="docutils literal notranslate"><span class="pre">InterferometerSimulation</span></code> instance uses the requested backend (OSKAR and RASCIL are currently supported) to compute the corresponding visibilities, and the desired <code class="docutils literal notranslate"><span class="pre">DirtyImager</span></code> instance is used to convert the visibilities into dirty images. Optionally, we can include primary beam effects and correct for such effects in the final dirty images. Finally, we can mosaic different dirty images into one larger image using the <code class="docutils literal notranslate"><span class="pre">ImageMosaicker</span></code> class.</p>
+<p><img alt="Image" src="../_images/telescope.png" /></p>
+</section>
+<section id="notes-on-the-oskar-telescope-data-conventions">
+<h2>Notes on the OSKAR Telescope data conventions<a class="headerlink" href="#notes-on-the-oskar-telescope-data-conventions" title="Link to this heading"></a></h2>
+<p>Karabo supports many telescope configurations, and uses the OSKAR specification for its telescope directory structure, which is explained below in more detail.</p>
+<p>The name of the directory is given the name of the telescope followed by configuration or cycle specification e.g. for VLA configuration C will be “vla.c.tm” and for ALMA cycle 4.2, the name is “alma.cycle4.2”. The  top-level directory must contain a special file to specify the telescope centre position (position.txt), a special file to specify the position of each station (layout.txt), and a set of sub-directories one for every station. Each of these sub-directories contains one or more special files to specify the configuration of that station. For telescope with dishes, it contain just a number.</p>
+<p>More details can be find in the OSKAR documentation and source code: https://ska-telescope.gitlab.io/sim/oskar/telescope_model/telescope_model.html</p>
+</section>
+<section id="using-our-demo-installation">
+<h2>Using our Demo Installation<a class="headerlink" href="#using-our-demo-installation" title="Link to this heading"></a></h2>
+<p>We offer an always up-to-date demo installation for Karabo on Renkulab. This demo was created for a workshop at Swiss SKA Days in September 2024. It can be found here:</p>
+<p><a class="reference external" href="https://renkulab.io/projects/menkalinan56/swissskadays-karabo-workshop">SwissSKADays-Karabo-Workshop</a></p>
+<p>You do not need an account to use the demo. Just hit the green ‘Start’ button in the top right corner. However, if you want to save your work you need to log in using your GitHub account, your ORCID id, or your edu-ID. Then fork the project. Now changes you make will be saved to your GitLab repository linked to your Renkulab accout.</p>
+<p>The free server on Renkulab has limited resources. You will not be able to run much larger simulations than those provided in the demo notebooks.</p>
+<p>A good starting point may be the slide deck of the workshop. You can find it in the folder documents. The code in the slides is available as Jupyter notebooks in the folder notebooks. Those help you get started.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../container.html" class="btn btn-neutral float-left" title="Containers" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../parallel_processing.html" class="btn btn-neutral float-right" title="Parallel processing with Karabo" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, i4ds.
+      <span class="lastupdated">Last updated on Jan 23, 2025.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

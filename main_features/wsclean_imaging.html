@@ -1,0 +1,381 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>karabo.imaging.imager_wsclean &mdash; Karabo-Pipeline 0+untagged.1.gffd0cfb documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=fc98ef0e"></script>
+      <script src="../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="karabo.sourcedetection" href="sourcedetection.html" />
+    <link rel="prev" title="karabo.imaging.imager_rascil" href="rascil_imaging.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Users</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation_user.html">Installation (User)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../container.html">Containers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../parallel_processing.html">Parallel processing with Karabo</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Simulation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="simulation.html">karabo.simulation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Imaging</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="imaging.html">karabo.imaging.image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="base_imaging.html">karabo.imaging.imager_base</a></li>
+<li class="toctree-l1"><a class="reference internal" href="oskar_imaging.html">karabo.imaging.imager_oskar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rascil_imaging.html">karabo.imaging.imager_rascil</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">karabo.imaging.imager_wsclean</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#classes">Classes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#karabo.imaging.imager_wsclean.WscleanDirtyImager"><code class="docutils literal notranslate"><span class="pre">WscleanDirtyImager</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#karabo.imaging.imager_wsclean.WscleanDirtyImager.config"><code class="docutils literal notranslate"><span class="pre">WscleanDirtyImager.config</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#karabo.imaging.imager_wsclean.WscleanDirtyImager.__init__"><code class="docutils literal notranslate"><span class="pre">WscleanDirtyImager.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#karabo.imaging.imager_wsclean.WscleanDirtyImager.create_dirty_image"><code class="docutils literal notranslate"><span class="pre">WscleanDirtyImager.create_dirty_image()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#karabo.imaging.imager_wsclean.WscleanImageCleanerConfig"><code class="docutils literal notranslate"><span class="pre">WscleanImageCleanerConfig</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#karabo.imaging.imager_wsclean.WscleanImageCleanerConfig.niter"><code class="docutils literal notranslate"><span class="pre">WscleanImageCleanerConfig.niter</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#karabo.imaging.imager_wsclean.WscleanImageCleanerConfig.mgain"><code class="docutils literal notranslate"><span class="pre">WscleanImageCleanerConfig.mgain</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#karabo.imaging.imager_wsclean.WscleanImageCleanerConfig.auto_threshold"><code class="docutils literal notranslate"><span class="pre">WscleanImageCleanerConfig.auto_threshold</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#karabo.imaging.imager_wsclean.WscleanImageCleanerConfig.__init__"><code class="docutils literal notranslate"><span class="pre">WscleanImageCleanerConfig.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#karabo.imaging.imager_wsclean.WscleanImageCleaner"><code class="docutils literal notranslate"><span class="pre">WscleanImageCleaner</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#karabo.imaging.imager_wsclean.WscleanImageCleaner.config"><code class="docutils literal notranslate"><span class="pre">WscleanImageCleaner.config</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#karabo.imaging.imager_wsclean.WscleanImageCleaner.__init__"><code class="docutils literal notranslate"><span class="pre">WscleanImageCleaner.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#karabo.imaging.imager_wsclean.WscleanImageCleaner.create_cleaned_image"><code class="docutils literal notranslate"><span class="pre">WscleanImageCleaner.create_cleaned_image()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#functions">Functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#karabo.imaging.imager_wsclean.create_image_custom_command"><code class="docutils literal notranslate"><span class="pre">create_image_custom_command()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Source Detection</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="sourcedetection.html">karabo.sourcedetection</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Utilities</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../utilities/utils.html">karabo.util package</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developers</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../development.html">Development Documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Karabo-Pipeline</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">karabo.imaging.imager_wsclean</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/main_features/wsclean_imaging.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="karabo-imaging-imager-wsclean">
+<h1>karabo.imaging.imager_wsclean<a class="headerlink" href="#karabo-imaging-imager-wsclean" title="Link to this heading"></a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
+<p>This package summarizes tools and functions to be used with the imager
+based on the WSClean algorithm.</p>
+</section>
+<section id="classes">
+<h2>Classes<a class="headerlink" href="#classes" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="karabo.imaging.imager_wsclean.WscleanDirtyImager">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">WscleanDirtyImager</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="base_imaging.html#id0" title="karabo.imaging.imager_base.DirtyImagerConfig"><span class="pre">DirtyImagerConfig</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#karabo.imaging.imager_wsclean.WscleanDirtyImager" title="Link to this definition"></a></dt>
+<dd><p>Dirty imager based on the WSClean library.</p>
+<p>WSClean is integrated by calling the wsclean command line tool.
+The parameters in the config (DirtyImagerConfig) attribute are passed to wsclean.
+Use the create_image_custom_command function if you need to set params
+not available in DirtyImagerConfig.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="karabo.imaging.imager_wsclean.WscleanDirtyImager.config">
+<span class="sig-name descname"><span class="pre">config</span></span><a class="headerlink" href="#karabo.imaging.imager_wsclean.WscleanDirtyImager.config" title="Link to this definition"></a></dt>
+<dd><p>Config containing parameters for
+dirty imaging</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="base_imaging.html#id0" title="karabo.imaging.imager_base.DirtyImagerConfig">DirtyImagerConfig</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="karabo.imaging.imager_wsclean.WscleanDirtyImager.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="base_imaging.html#id0" title="karabo.imaging.imager_base.DirtyImagerConfig"><span class="pre">DirtyImagerConfig</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#karabo.imaging.imager_wsclean.WscleanDirtyImager.__init__" title="Link to this definition"></a></dt>
+<dd><p>Initializes the instance with a config.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>config</strong> (<a class="reference internal" href="base_imaging.html#id0" title="karabo.imaging.imager_base.DirtyImagerConfig"><em>DirtyImagerConfig</em></a>) – see config attribute</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="karabo.imaging.imager_wsclean.WscleanDirtyImager.create_dirty_image">
+<span class="sig-name descname"><span class="pre">create_dirty_image</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">visibility</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../karabo.simulation.html#karabo.simulation.visibility.Visibility" title="karabo.simulation.visibility.Visibility"><span class="pre">Visibility</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_fits_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="imaging.html#karabo.imaging.image.Image" title="karabo.imaging.image.Image"><span class="pre">Image</span></a></span></span><a class="headerlink" href="#karabo.imaging.imager_wsclean.WscleanDirtyImager.create_dirty_image" title="Link to this definition"></a></dt>
+<dd><p>Creates a dirty image from a visibility.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>visibility</strong> – Visibility object
+from which to create the dirty image. Contains the visibilities
+of an observation.</p></li>
+<li><p><strong>output_fits_path</strong> – Path to write the dirty image to.
+Example: /tmp/dirty.fits.
+If None, will be set to a temporary directory and a default file name.
+Defaults to None.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Dirty image</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="imaging.html#karabo.imaging.image.Image" title="karabo.imaging.image.Image">Image</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="karabo.imaging.imager_wsclean.WscleanImageCleanerConfig">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">WscleanImageCleanerConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">imaging_npixel</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">imaging_cellsize</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">niter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">50000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mgain</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auto_threshold</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#karabo.imaging.imager_wsclean.WscleanImageCleanerConfig" title="Link to this definition"></a></dt>
+<dd><p>Config / parameters of a WscleanImageCleaner.</p>
+<p>Adds parameters specific to WscleanImageCleaner.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="karabo.imaging.imager_wsclean.WscleanImageCleanerConfig.niter">
+<span class="sig-name descname"><span class="pre">niter</span></span><a class="headerlink" href="#karabo.imaging.imager_wsclean.WscleanImageCleanerConfig.niter" title="Link to this definition"></a></dt>
+<dd><p>Maximum number of clean iterations to perform.
+Defaults to 50000.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Optional[int]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="karabo.imaging.imager_wsclean.WscleanImageCleanerConfig.mgain">
+<span class="sig-name descname"><span class="pre">mgain</span></span><a class="headerlink" href="#karabo.imaging.imager_wsclean.WscleanImageCleanerConfig.mgain" title="Link to this definition"></a></dt>
+<dd><p>Cleaning gain for major iterations: Ratio of peak that
+will be subtracted in each major iteration. To use major iterations, 0.85 is
+a good value. Defaults to 0.8.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Optional[float]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="karabo.imaging.imager_wsclean.WscleanImageCleanerConfig.auto_threshold">
+<span class="sig-name descname"><span class="pre">auto_threshold</span></span><a class="headerlink" href="#karabo.imaging.imager_wsclean.WscleanImageCleanerConfig.auto_threshold" title="Link to this definition"></a></dt>
+<dd><p>Relative clean threshold. Estimate noise level
+using a robust estimator and stop at sigma x stddev. Defaults to 3.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Optional[int]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="karabo.imaging.imager_wsclean.WscleanImageCleanerConfig.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">imaging_npixel</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">imaging_cellsize</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">niter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">50000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mgain</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auto_threshold</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#karabo.imaging.imager_wsclean.WscleanImageCleanerConfig.__init__" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="karabo.imaging.imager_wsclean.WscleanImageCleaner">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">WscleanImageCleaner</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#karabo.imaging.imager_wsclean.WscleanImageCleanerConfig" title="karabo.imaging.imager_wsclean.WscleanImageCleanerConfig"><span class="pre">WscleanImageCleanerConfig</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#karabo.imaging.imager_wsclean.WscleanImageCleaner" title="Link to this definition"></a></dt>
+<dd><p>Image cleaner based on the WSClean library.</p>
+<p>WSClean is integrated by calling the wsclean command line tool.
+The parameters in the config (WscleanImageCleanerConfig) attribute
+are passed to wsclean.
+Use the create_image_custom_command function if you need to set params
+not available in WscleanImageCleanerConfig.
+Parameters in the config that are explicitly set to None will not be passed to the
+command line tool, which will then resort to its own default values.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="karabo.imaging.imager_wsclean.WscleanImageCleaner.config">
+<span class="sig-name descname"><span class="pre">config</span></span><a class="headerlink" href="#karabo.imaging.imager_wsclean.WscleanImageCleaner.config" title="Link to this definition"></a></dt>
+<dd><p>Config containing parameters for
+WSClean image cleaning.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#karabo.imaging.imager_wsclean.WscleanImageCleanerConfig" title="karabo.imaging.imager_wsclean.WscleanImageCleanerConfig">WscleanImageCleanerConfig</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="karabo.imaging.imager_wsclean.WscleanImageCleaner.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#karabo.imaging.imager_wsclean.WscleanImageCleanerConfig" title="karabo.imaging.imager_wsclean.WscleanImageCleanerConfig"><span class="pre">WscleanImageCleanerConfig</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#karabo.imaging.imager_wsclean.WscleanImageCleaner.__init__" title="Link to this definition"></a></dt>
+<dd><p>Initializes the instance with a config.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>config</strong> (<a class="reference internal" href="#karabo.imaging.imager_wsclean.WscleanImageCleanerConfig" title="karabo.imaging.imager_wsclean.WscleanImageCleanerConfig"><em>WscleanImageCleanerConfig</em></a>) – see config attribute</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="karabo.imaging.imager_wsclean.WscleanImageCleaner.create_cleaned_image">
+<span class="sig-name descname"><span class="pre">create_cleaned_image</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">visibility</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../karabo.simulation.html#karabo.simulation.visibility.Visibility" title="karabo.simulation.visibility.Visibility"><span class="pre">Visibility</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dirty_fits_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_fits_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="imaging.html#karabo.imaging.image.Image" title="karabo.imaging.image.Image"><span class="pre">Image</span></a></span></span><a class="headerlink" href="#karabo.imaging.imager_wsclean.WscleanImageCleaner.create_cleaned_image" title="Link to this definition"></a></dt>
+<dd><p>Creates a clean image from a dirty image or from visibilities.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>visibility</strong> – Visibility from which a clean image should be created.</p></li>
+<li><p><strong>dirty_fits_path</strong> – Path to dirty image FITS file that
+should be reused to create a clean image. If None, dirty image will be
+created first from the visibilities. Defaults to None.</p></li>
+<li><p><strong>output_fits_path</strong> – Path to write the clean image to.
+Example: /tmp/restored.fits.
+If None, will be set to a temporary directory and a default file name.
+Defaults to None.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Clean image</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="imaging.html#karabo.imaging.image.Image" title="karabo.imaging.image.Image">Image</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.imaging.imager_wsclean.create_image_custom_command">
+<span class="sig-name descname"><span class="pre">create_image_custom_command</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">command</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_filenames</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'wsclean-image.fits'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="imaging.html#karabo.imaging.image.Image" title="karabo.imaging.image.Image"><span class="pre">Image</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="imaging.html#karabo.imaging.image.Image" title="karabo.imaging.image.Image"><span class="pre">Image</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#karabo.imaging.imager_wsclean.create_image_custom_command" title="Link to this definition"></a></dt>
+<dd><p>Create a dirty or cleaned image using your own command.</p>
+<p>Allows the use of the full WSClean functionality with all parameters.
+Command has to start with ‘wsclean ‘.
+The working directory the command runs in will be a temporary directory.
+Use absolute paths to reference files or directories like the measurement set.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>command</strong> – Command to execute.
+Example: wsclean -size 2048 2048
+-scale 0.00222222deg -niter 50000 -mgain 0.8
+-abs-threshold 100µJy /tmp/measurements.MS</p></li>
+<li><p><strong>output_filenames</strong> – WSClean output filename(s)
+(relative to the working directory) that should be returned
+as Image objects. Can be a string for one file or a list of strings
+for multiple files.
+Example 1: “wsclean-image.fits”
+Example 2: [‘wsclean-image.fits’, ‘wsclean-residual.fits’]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p>If output_filenames is a <strong>string</strong>, returns an Image object of the file             output_filenames.</p></li>
+<li><p>If output_filenames is a <strong>list of strings</strong>, returns a list of             Image objects, one object per filename in output_filenames.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="rascil_imaging.html" class="btn btn-neutral float-left" title="karabo.imaging.imager_rascil" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="sourcedetection.html" class="btn btn-neutral float-right" title="karabo.sourcedetection" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, i4ds.
+      <span class="lastupdated">Last updated on Jan 23, 2025.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

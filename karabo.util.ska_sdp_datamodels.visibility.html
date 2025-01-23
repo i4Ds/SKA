@@ -1,0 +1,361 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>karabo.util.ska_sdp_datamodels.visibility package &mdash; Karabo-Pipeline 0+untagged.1.gffd0cfb documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=fc98ef0e"></script>
+      <script src="_static/doctools.js?v=9a2dae69"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html">
+            
+              <img src="_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Users</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="installation_user.html">Installation (User)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="container.html">Containers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parallel_processing.html">Parallel processing with Karabo</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Simulation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="main_features/simulation.html">karabo.simulation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Imaging</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="main_features/imaging.html">karabo.imaging.image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="main_features/base_imaging.html">karabo.imaging.imager_base</a></li>
+<li class="toctree-l1"><a class="reference internal" href="main_features/oskar_imaging.html">karabo.imaging.imager_oskar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="main_features/rascil_imaging.html">karabo.imaging.imager_rascil</a></li>
+<li class="toctree-l1"><a class="reference internal" href="main_features/wsclean_imaging.html">karabo.imaging.imager_wsclean</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Source Detection</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="main_features/sourcedetection.html">karabo.sourcedetection</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Utilities</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="utilities/utils.html">karabo.util package</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developers</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="development.html">Development Documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Karabo-Pipeline</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">karabo.util.ska_sdp_datamodels.visibility package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/karabo.util.ska_sdp_datamodels.visibility.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="karabo-util-ska-sdp-datamodels-visibility-package">
+<h1>karabo.util.ska_sdp_datamodels.visibility package<a class="headerlink" href="#karabo-util-ska-sdp-datamodels-visibility-package" title="Link to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-karabo.util.ska_sdp_datamodels.visibility.msv2">
+<span id="karabo-util-ska-sdp-datamodels-visibility-msv2-module"></span><h2>karabo.util.ska_sdp_datamodels.visibility.msv2 module<a class="headerlink" href="#module-karabo.util.ska_sdp_datamodels.visibility.msv2" title="Link to this heading"></a></h2>
+<p>Source: <a class="reference external" href="https://gitlab.com/ska-telescope/sdp/ska-sdp-datamodels">https://gitlab.com/ska-telescope/sdp/ska-sdp-datamodels</a>
+Copyright: SKAO
+License: Apache License 2.0</p>
+<p>MeasurementSets V2 Codes Based on Python-casacore For ska-sdp-datamodels</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="karabo.util.ska_sdp_datamodels.visibility.msv2.Ms">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Ms</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ref_time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frame</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ITRF'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">if_delete</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#karabo.util.ska_sdp_datamodels.visibility.msv2.Ms" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#karabo.util.ska_sdp_datamodels.visibility.msv2.WriteMs" title="karabo.util.ska_sdp_datamodels.visibility.msv2.WriteMs"><code class="xref py py-class docutils literal notranslate"><span class="pre">WriteMs</span></code></a></p>
+<p>Class for storing visibility data and writing the data,
+along with array geometry, frequency setup, etc., to a
+CASA measurement set.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="karabo.util.ska_sdp_datamodels.visibility.msv2.WriteMs">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">WriteMs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ref_time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frame</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ITRF'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">if_delete</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#karabo.util.ska_sdp_datamodels.visibility.msv2.WriteMs" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#karabo.util.ska_sdp_datamodels.visibility.msv2fund.BaseData" title="karabo.util.ska_sdp_datamodels.visibility.msv2fund.BaseData"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseData</span></code></a></p>
+<p>Class for storing visibility data and writing the data, along
+with array geometry, frequency setup, etc., to a CASA
+measurement set.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="karabo.util.ska_sdp_datamodels.visibility.msv2.WriteMs.add_data_set">
+<span class="sig-name descname"><span class="pre">add_data_set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obstime</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inttime</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">baselines</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">visibilities</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flags</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'XX'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phasecentre</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">uvw</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#karabo.util.ska_sdp_datamodels.visibility.msv2.WriteMs.add_data_set" title="Link to this definition"></a></dt>
+<dd><p>Create a UVData object to store a collection of visibilities.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="karabo.util.ska_sdp_datamodels.visibility.msv2.WriteMs.close">
+<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#karabo.util.ska_sdp_datamodels.visibility.msv2.WriteMs.close" title="Link to this definition"></a></dt>
+<dd><p>Close out the file.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="karabo.util.ska_sdp_datamodels.visibility.msv2.WriteMs.set_geometry">
+<span class="sig-name descname"><span class="pre">set_geometry</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">site_config</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">antennas</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bits</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#karabo.util.ska_sdp_datamodels.visibility.msv2.WriteMs.set_geometry" title="Link to this definition"></a></dt>
+<dd><p>Given a station and an array of stands, set the relevant common
+observation parameters and add entries to the self.array list.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>site_config</strong> – RASCIL Configuration</p></li>
+<li><p><strong>antennas</strong> – Antenna array</p></li>
+<li><p><strong>bits</strong> – Preserved</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="karabo.util.ska_sdp_datamodels.visibility.msv2.WriteMs.write">
+<span class="sig-name descname"><span class="pre">write</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#karabo.util.ska_sdp_datamodels.visibility.msv2.WriteMs.write" title="Link to this definition"></a></dt>
+<dd><p>Fill in the Measurement Sets file with correct order.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-karabo.util.ska_sdp_datamodels.visibility.msv2fund">
+<span id="karabo-util-ska-sdp-datamodels-visibility-msv2fund-module"></span><h2>karabo.util.ska_sdp_datamodels.visibility.msv2fund module<a class="headerlink" href="#module-karabo.util.ska_sdp_datamodels.visibility.msv2fund" title="Link to this heading"></a></h2>
+<p>Source: <a class="reference external" href="https://gitlab.com/ska-telescope/sdp/ska-sdp-datamodels">https://gitlab.com/ska-telescope/sdp/ska-sdp-datamodels</a>
+Copyright: SKAO
+License: Apache License 2.0</p>
+<p>MeasurementSets V2 Reference Codes Based on Python-casacore</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="karabo.util.ska_sdp_datamodels.visibility.msv2fund.Antenna">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Antenna</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ant_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stand</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fee</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feePort</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#karabo.util.ska_sdp_datamodels.visibility.msv2fund.Antenna" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl>
+<dt>Object to store the information about an antenna.  Stores antenna:</dt><dd><ul class="simple">
+<li><p>ID number (id)</p></li>
+<li><p>Stand instance the antenna is part of (stand)</p></li>
+<li><p>Polarization (0 == N-S; pol)</p></li>
+<li><p>Antenna vertical mis-alignment in degrees (theta)</p></li>
+<li><p>Antenna rotation mis-alignment in degrees (phi)</p></li>
+<li><p>Fee instance the antenna is attached to (fee)</p></li>
+<li><p>Port of the FEE used for the antenna (feePort)</p></li>
+<li><p>Cable instance used to connect the antenna (cable)</p></li>
+</ul>
+<p>Some arguments are designed for future extension</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="karabo.util.ska_sdp_datamodels.visibility.msv2fund.BaseData">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">BaseData</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ref_time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frame</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ITRF'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#karabo.util.ska_sdp_datamodels.visibility.msv2fund.BaseData" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Base Data class: For an observation of interferometer,
+we should have: Antenna, Frequency, Visibility Funcation, UVW</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="karabo.util.ska_sdp_datamodels.visibility.msv2fund.BaseData.add_data_set">
+<span class="sig-name descname"><span class="pre">add_data_set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obstime</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inttime</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">baselines</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">visibilities</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flags</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'XX'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#karabo.util.ska_sdp_datamodels.visibility.msv2fund.BaseData.add_data_set" title="Link to this definition"></a></dt>
+<dd><p>Create a UVData object to store a collection of visibilities.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="karabo.util.ska_sdp_datamodels.visibility.msv2fund.BaseData.close">
+<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#karabo.util.ska_sdp_datamodels.visibility.msv2fund.BaseData.close" title="Link to this definition"></a></dt>
+<dd><p>Close out the file.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="karabo.util.ska_sdp_datamodels.visibility.msv2fund.BaseData.parse_time">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parse_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ref_time</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#karabo.util.ska_sdp_datamodels.visibility.msv2fund.BaseData.parse_time" title="Link to this definition"></a></dt>
+<dd><p>Given a time as either a integer, float, string, or datetime
+object, convert it to a string in the formation
+‘YYYY-MM-DDTHH:MM:SS’.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="karabo.util.ska_sdp_datamodels.visibility.msv2fund.BaseData.set_frequency">
+<span class="sig-name descname"><span class="pre">set_frequency</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">freq</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel_width</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#karabo.util.ska_sdp_datamodels.visibility.msv2fund.BaseData.set_frequency" title="Link to this definition"></a></dt>
+<dd><p>Given a numpy array of frequencies, set the relevant common
+observation parameters and add an entry to the self.freq list.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="karabo.util.ska_sdp_datamodels.visibility.msv2fund.BaseData.set_stokes">
+<span class="sig-name descname"><span class="pre">set_stokes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">polList</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#karabo.util.ska_sdp_datamodels.visibility.msv2fund.BaseData.set_stokes" title="Link to this definition"></a></dt>
+<dd><p>Given a list of Stokes parameters, update the object’s
+parameters.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="karabo.util.ska_sdp_datamodels.visibility.msv2fund.BaseData.write">
+<span class="sig-name descname"><span class="pre">write</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#karabo.util.ska_sdp_datamodels.visibility.msv2fund.BaseData.write" title="Link to this definition"></a></dt>
+<dd><p>Fill in the file will all of the required supporting metadata.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="karabo.util.ska_sdp_datamodels.visibility.msv2fund.Observatory">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Observatory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lon</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alt</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#karabo.util.ska_sdp_datamodels.visibility.msv2fund.Observatory" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Observatory class.
+Contains the location of the observatory.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="karabo.util.ska_sdp_datamodels.visibility.msv2fund.Stand">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Stand</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stand_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#karabo.util.ska_sdp_datamodels.visibility.msv2fund.Stand" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Object to store the information (location and ID) about a stand.
+Stores stand:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>ID number (id)</p></li>
+<li><p>Position relative to the center stake in meters (x,y,z)</p></li>
+</ul>
+</div></blockquote>
+<dl class="simple">
+<dt>The x, y, and z positions can also be accessed through subscripts:</dt><dd><p>Stand[0] = x
+Stand[1] = y
+Stand[2] = z</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-karabo.util.ska_sdp_datamodels.visibility.msv2supp">
+<span id="karabo-util-ska-sdp-datamodels-visibility-msv2supp-module"></span><h2>karabo.util.ska_sdp_datamodels.visibility.msv2supp module<a class="headerlink" href="#module-karabo.util.ska_sdp_datamodels.visibility.msv2supp" title="Link to this heading"></a></h2>
+<p>Source: <a class="reference external" href="https://gitlab.com/ska-telescope/sdp/ska-sdp-datamodels">https://gitlab.com/ska-telescope/sdp/ska-sdp-datamodels</a>
+Copyright: SKAO
+License: Apache License 2.0</p>
+<p>MeasurementSets V2 Reference Codes Based on Python-casacore</p>
+</section>
+<section id="module-karabo.util.ska_sdp_datamodels.visibility.vis_io_ms">
+<span id="karabo-util-ska-sdp-datamodels-visibility-vis-io-ms-module"></span><h2>karabo.util.ska_sdp_datamodels.visibility.vis_io_ms module<a class="headerlink" href="#module-karabo.util.ska_sdp_datamodels.visibility.vis_io_ms" title="Link to this heading"></a></h2>
+<p>Source: <a class="reference external" href="https://gitlab.com/ska-telescope/sdp/ska-sdp-datamodels">https://gitlab.com/ska-telescope/sdp/ska-sdp-datamodels</a>
+Copyright: SKAO
+License: Apache License 2.0</p>
+<p>Base functions to create and export Visibility
+from/into Measurement Set files.
+They take definitions of columns from msv2.py
+and interact with Casacore.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.util.ska_sdp_datamodels.visibility.vis_io_ms.export_visibility_to_ms">
+<span class="sig-name descname"><span class="pre">export_visibility_to_ms</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msname</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vis_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#karabo.util.ska_sdp_datamodels.visibility.vis_io_ms.export_visibility_to_ms" title="Link to this definition"></a></dt>
+<dd><p>Minimal Visibility to MS converter</p>
+<p>The MS format is much more general than the RASCIL Visibility
+so we cut many corners. This requires casacore to be
+installed. If not an exception ModuleNotFoundError is raised.</p>
+<p>Write a list of Visibility’s to a MS file, split by field and
+spectral window</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>msname</strong> – File name of MS</p></li>
+<li><p><strong>vis_list</strong> – list of Visibility</p></li>
+<li><p><strong>source_name</strong> – Source name to use</p></li>
+<li><p><strong>ack</strong> – Ask casacore to acknowledge each table operation</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-karabo.util.ska_sdp_datamodels.visibility">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-karabo.util.ska_sdp_datamodels.visibility" title="Link to this heading"></a></h2>
+<p>Copied from ska_sdp_datamodels v0.3.1 as a workaround.
+We need the export_visibility_to_ms function but it isn’t available until
+ska_sdp_datamodels v0.2.1, while Karabo uses v0.1.3.
+Upgrading to v0.2.1 will probably break RASCIL, which means we’d have to upgrade
+RASCIL, which in turn means we’d have to upgrade to Python 3.10, which is out-of-scope
+for now.</p>
+<p>Additional info:
+export_visibility_to_ms added to ska_sdp_datamodels in v0.2.1.
+v0.2.1 and v0.2.2 would be compatible with Python 3.9.
+numpy is fixed to ^1.23, &lt;1.24. Reason stated:
+“numpy version set to be compatible with RASCIL”
+RASCIL and ska_sdp_datamodels seem to be quite tightly coupled, serious doubts
+if RASCIL v1.0.0 would work with ska_sdp_datamodels v0.2.1 or 0.2.2.
+In addition, there’s a bunch of fixes to the vis_io_ms.py module that contains
+export_visibility_to_ms after v0.2.2 that we probably want as well.</p>
+<p>TODO remove karabo.util.ska_sdp_datamodels when upgrade to Python 3.10,
+RASCIL &gt; 1.0.0, ska_sdp_datamodels &gt;= 0.2.1 or hopefully &gt;= 0.3.1 is done.
+Change imports to ska_sdp_datamodels.visibility.*</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, i4ds.
+      <span class="lastupdated">Last updated on Jan 23, 2025.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

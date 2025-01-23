@@ -1,0 +1,109 @@
+karabo.simulation.signal package
+================================
+
+Submodules
+----------
+
+karabo.simulation.signal.base\_segmentation module
+--------------------------------------------------
+
+.. automodule:: karabo.simulation.signal.base_segmentation
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+karabo.simulation.signal.base\_signal module
+--------------------------------------------
+
+.. automodule:: karabo.simulation.signal.base_signal
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+karabo.simulation.signal.eor\_profile module
+--------------------------------------------
+
+.. automodule:: karabo.simulation.signal.eor_profile
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+karabo.simulation.signal.galactic\_foreground module
+----------------------------------------------------
+
+.. automodule:: karabo.simulation.signal.galactic_foreground
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+karabo.simulation.signal.helpers module
+---------------------------------------
+
+.. automodule:: karabo.simulation.signal.helpers
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+karabo.simulation.signal.plotting module
+----------------------------------------
+
+.. automodule:: karabo.simulation.signal.plotting
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+karabo.simulation.signal.seg\_u\_net\_segmentation module
+---------------------------------------------------------
+
+.. automodule:: karabo.simulation.signal.seg_u_net_segmentation
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+karabo.simulation.signal.signal\_21\_cm module
+----------------------------------------------
+
+.. automodule:: karabo.simulation.signal.signal_21_cm
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+karabo.simulation.signal.superimpose module
+-------------------------------------------
+
+.. automodule:: karabo.simulation.signal.superimpose
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+karabo.simulation.signal.superpixel\_segmentation module
+--------------------------------------------------------
+
+.. automodule:: karabo.simulation.signal.superpixel_segmentation
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+karabo.simulation.signal.synchroton\_signal module
+--------------------------------------------------
+
+.. automodule:: karabo.simulation.signal.synchroton_signal
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+karabo.simulation.signal.typing module
+--------------------------------------
+
+.. automodule:: karabo.simulation.signal.typing
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: karabo.simulation.signal
+   :members:
+   :undoc-members:
+   :show-inheritance:

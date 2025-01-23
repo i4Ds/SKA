@@ -1,0 +1,230 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Parallel processing with Karabo &mdash; Karabo-Pipeline 0+untagged.1.gffd0cfb documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=fc98ef0e"></script>
+      <script src="_static/doctools.js?v=9a2dae69"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="karabo.simulation" href="main_features/simulation.html" />
+    <link rel="prev" title="Examples" href="examples/examples.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html">
+            
+              <img src="_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Users</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation_user.html">Installation (User)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="container.html">Containers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/examples.html">Examples</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Parallel processing with Karabo</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#points-to-consider-when-using-parallelize-with-dask-and-dask-in-general">Points to Consider When Using <code class="docutils literal notranslate"><span class="pre">parallelize_with_dask</span></code> and Dask in General</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#parameters">Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#returns">Returns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#additional-notes">Additional Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#function-signature">Function Signature</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#use-karabo-on-a-slurm-cluster">Use Karabo on a SLURM cluster</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#dask-dashboard">Dask Dashboard</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Simulation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="main_features/simulation.html">karabo.simulation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Imaging</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="main_features/imaging.html">karabo.imaging.image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="main_features/base_imaging.html">karabo.imaging.imager_base</a></li>
+<li class="toctree-l1"><a class="reference internal" href="main_features/oskar_imaging.html">karabo.imaging.imager_oskar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="main_features/rascil_imaging.html">karabo.imaging.imager_rascil</a></li>
+<li class="toctree-l1"><a class="reference internal" href="main_features/wsclean_imaging.html">karabo.imaging.imager_wsclean</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Source Detection</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="main_features/sourcedetection.html">karabo.sourcedetection</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Utilities</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="utilities/utils.html">karabo.util package</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developers</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="development.html">Development Documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Karabo-Pipeline</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Parallel processing with Karabo</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/parallel_processing.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="parallel-processing-with-karabo">
+<h1>Parallel processing with Karabo<a class="headerlink" href="#parallel-processing-with-karabo" title="Link to this heading"></a></h1>
+<p>Karabo streamlines the process of setting up an environment for parallelization. Through its utility function <code class="docutils literal notranslate"><span class="pre">parallelize_with_dask</span></code>, Karabo nudges the user towards a seamless parallelization experience. By adhering to its format, users find themselves in a <code class="docutils literal notranslate"><span class="pre">pit</span> <span class="pre">of</span> <span class="pre">success</span></code> with parallel processing. This ensures efficient task distribution across multiple cores or even entire cluster nodes, especially when handling large datasets or tasks with high computational demands.</p>
+<section id="points-to-consider-when-using-parallelize-with-dask-and-dask-in-general">
+<h2>Points to Consider When Using <code class="docutils literal notranslate"><span class="pre">parallelize_with_dask</span></code> and Dask in General<a class="headerlink" href="#points-to-consider-when-using-parallelize-with-dask-and-dask-in-general" title="Link to this heading"></a></h2>
+<p>When leveraging the <code class="docutils literal notranslate"><span class="pre">parallelize_with_dask</span></code> function for parallel processing in Karabo, users should keep in mind the following best practices:</p>
+<ol class="arabic simple">
+<li><p><strong>Avoid Infinite Tasks</strong>: Ensure that the tasks you’re parallelizing have a defined end. Infinite or extremely long-running tasks can clog the parallelization pipeline.</p></li>
+<li><p><strong>Beware of Massive Tasks</strong>: Large tasks can monopolize resources, potentially causing an imbalance in the workload distribution. It’s often more efficient to break massive tasks into smaller, more manageable chunks.</p></li>
+<li><p><strong>No Open h5 Connections</strong>: Objects with open h5 connections are not <code class="docutils literal notranslate"><span class="pre">pickleable</span></code>. This means that they cannot be serialized and sent to other processes. If you need to pass an object with an open h5 connection to a function, close the connection before passing it to the function, e.g. by calling <code class="docutils literal notranslate"><span class="pre">h5file.close()</span></code> or <code class="docutils literal notranslate"><span class="pre">.compute()</span></code> inside Karabo.</p></li>
+<li><p><strong>Use <code class="docutils literal notranslate"><span class="pre">.compute()</span></code> on Dask Arrays</strong>: Before passing Dask arrays to the function, call <code class="docutils literal notranslate"><span class="pre">.compute()</span></code> on them to realize their values. This avoids potential issues and ensures efficient processing.</p></li>
+<li><p><strong>Refer to Dask’s Best Practices</strong>: For a more comprehensive understanding and to avoid common pitfalls, consult <a class="reference external" href="https://docs.dask.org/en/stable/best-practices.html">Dask’s official best practices guide</a>.</p></li>
+</ol>
+<p>Following these guidelines will help ensure that you get the most out of Karabo’s parallel processing capabilities.</p>
+</section>
+<section id="parameters">
+<h2>Parameters<a class="headerlink" href="#parameters" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>iterate_function (callable): The function to be applied to each element of the iterable. This function should take the current element of the iterable as its first argument, followed by any specified positional and keyword arguments.</p></li>
+<li><p>iterable (iterable): The collection of elements over which the iterate_function will be applied.</p></li>
+<li><p>args (tuple): Positional arguments that will be passed to the iterate_function after the current element of the iterable.</p></li>
+<li><p>kwargs (dict): Keyword arguments that will be passed to the iterate_function.</p></li>
+</ul>
+</section>
+<section id="returns">
+<h2>Returns<a class="headerlink" href="#returns" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>tuple: A tuple containing the results of the iterate_function for each element in the iterable. Results are gathered using Dask’s compute function.</p></li>
+</ul>
+</section>
+<section id="additional-notes">
+<h2>Additional Notes<a class="headerlink" href="#additional-notes" title="Link to this heading"></a></h2>
+<p>It’s important when working on a <code class="docutils literal notranslate"><span class="pre">Slurm</span> <span class="pre">Cluster</span></code> to call DaskHandler.setup() at the beginning.</p>
+<p>If ‘verbose’ is specified in kwargs and is set to True, progress messages will be printed during processing.</p>
+<p>The function internally uses the distributed scheduler of Dask.</p>
+<p>Leverage the <code class="docutils literal notranslate"><span class="pre">parallelize_with_dask</span></code> utility in Karabo to harness the power of parallel processing and speed up your data-intensive operations.</p>
+</section>
+<section id="function-signature">
+<h2>Function Signature<a class="headerlink" href="#function-signature" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">karabo.util.dask</span><span class="w"> </span><span class="kn">import</span> <span class="n">DaskHandler</span>
+
+<span class="c1"># Example</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">my_function</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="c1"># Do something with element</span>
+    <span class="k">return</span> <span class="n">result</span>
+
+<span class="n">DaskHandler</span><span class="o">.</span><span class="n">parallelize_with_dask</span><span class="p">(</span><span class="n">my_function</span><span class="p">,</span> <span class="n">my_iterable</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="c1"># The current element of the iterable is passed as the first argument to my_function</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="p">(</span><span class="n">result1</span><span class="p">,</span> <span class="n">result2</span><span class="p">,</span> <span class="n">result3</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="use-karabo-on-a-slurm-cluster">
+<h2>Use Karabo on a SLURM cluster<a class="headerlink" href="#use-karabo-on-a-slurm-cluster" title="Link to this heading"></a></h2>
+<p>Karabo manages all available nodes through Dask, making the computational power conveniently accessible for the user. The <code class="docutils literal notranslate"><span class="pre">DaskHandler</span></code> class streamlines the creation of a Dask client and offers a user-friendly interface for interaction. This class contains static variables to modify the behavior of a Dask client, if they’ve changed before creating a client.</p>
+<p>While users are not required to interact with Dask directly - thanks to the background processes managed by Karabo - the Dask client should be initialized at the beginning of your script with <code class="docutils literal notranslate"><span class="pre">DaskHandler.setup</span></code> (see example below). This has to do with the spawning of new processes when creating <code class="docutils literal notranslate"><span class="pre">Nanny</span></code> processes.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">karabo.util.dask</span><span class="w"> </span><span class="kn">import</span> <span class="n">DaskHandler</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="c1"># Get the Dask client</span>
+    <span class="n">client</span> <span class="o">=</span> <span class="n">DaskHandler</span><span class="o">.</span><span class="n">get_dask_client</span><span class="p">()</span> <span class="c1"># Not needed anymore to call .setup()</span>
+
+    <span class="c1"># Use the client as needed</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">submit</span><span class="p">(</span><span class="n">my_function</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">karabo.util.dask</span><span class="w"> </span><span class="kn">import</span> <span class="n">DaskHandler</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">DaskHandler</span><span class="o">.</span><span class="n">setup</span><span class="p">()</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">function_of_karabo_which_uses_dask_in_the_background</span><span class="o">&gt;</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Disable the usage of Dask by Karabo.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">karabo.util.dask</span><span class="w"> </span><span class="kn">import</span> <span class="n">DaskHandler</span>
+<span class="c1"># Modify the static variables</span>
+<span class="n">DaskHandler</span><span class="o">.</span><span class="n">use_dask</span> <span class="o">=</span> <span class="kc">False</span>
+</pre></div>
+</div>
+<p>Please also check out the <code class="docutils literal notranslate"><span class="pre">DaskHandler</span></code> under <code class="docutils literal notranslate"><span class="pre">karabo.util.dask</span></code> for more information.</p>
+</section>
+<section id="dask-dashboard">
+<h2>Dask Dashboard<a class="headerlink" href="#dask-dashboard" title="Link to this heading"></a></h2>
+<p>The Dask dashboard link should be printed in stdout. Just copy the link into your browser, and then you’re able to observe the current dask-process. If you run Karabo on a VM without access to a browser and internet, you can use ssh <code class="docutils literal notranslate"><span class="pre">port</span> <span class="pre">forwarding</span></code> to access the Dask Dashboard from your local machine (e.g. <code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">-N</span> <span class="pre">-L</span> <span class="pre">&lt;local-port&gt;:(&lt;remote-node&gt;:)&lt;remote-port&gt;</span> <span class="pre">&lt;host&gt;</span></code>). Don’t forget to use the <code class="docutils literal notranslate"><span class="pre">&lt;local-port&gt;</span></code> in the browser-link if you used port-forwarding. In <code class="docutils literal notranslate"><span class="pre">VSCODE</span></code>, this can be done directly when using the “PORTS” tab; just paste the IP address and port number from stdout into the “Port” column and click on “Open in Browser” in the “Local Address” column.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="examples/examples.html" class="btn btn-neutral float-left" title="Examples" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="main_features/simulation.html" class="btn btn-neutral float-right" title="karabo.simulation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, i4ds.
+      <span class="lastupdated">Last updated on Jan 23, 2025.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

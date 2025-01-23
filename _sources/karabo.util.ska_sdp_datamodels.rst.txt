@@ -1,0 +1,18 @@
+karabo.util.ska\_sdp\_datamodels package
+========================================
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   karabo.util.ska_sdp_datamodels.visibility
+
+Module contents
+---------------
+
+.. automodule:: karabo.util.ska_sdp_datamodels
+   :members:
+   :undoc-members:
+   :show-inheritance:

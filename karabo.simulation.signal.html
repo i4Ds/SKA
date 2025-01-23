@@ -1,0 +1,1218 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>karabo.simulation.signal package &mdash; Karabo-Pipeline 0+untagged.1.gffd0cfb documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=fc98ef0e"></script>
+      <script src="_static/doctools.js?v=9a2dae69"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html">
+            
+              <img src="_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Users</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="installation_user.html">Installation (User)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="container.html">Containers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parallel_processing.html">Parallel processing with Karabo</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Simulation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="main_features/simulation.html">karabo.simulation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Imaging</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="main_features/imaging.html">karabo.imaging.image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="main_features/base_imaging.html">karabo.imaging.imager_base</a></li>
+<li class="toctree-l1"><a class="reference internal" href="main_features/oskar_imaging.html">karabo.imaging.imager_oskar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="main_features/rascil_imaging.html">karabo.imaging.imager_rascil</a></li>
+<li class="toctree-l1"><a class="reference internal" href="main_features/wsclean_imaging.html">karabo.imaging.imager_wsclean</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Source Detection</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="main_features/sourcedetection.html">karabo.sourcedetection</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Utilities</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="utilities/utils.html">karabo.util package</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developers</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="development.html">Development Documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Karabo-Pipeline</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">karabo.simulation.signal package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/karabo.simulation.signal.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="karabo-simulation-signal-package">
+<h1>karabo.simulation.signal package<a class="headerlink" href="#karabo-simulation-signal-package" title="Link to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-karabo.simulation.signal.base_segmentation">
+<span id="karabo-simulation-signal-base-segmentation-module"></span><h2>karabo.simulation.signal.base_segmentation module<a class="headerlink" href="#module-karabo.simulation.signal.base_segmentation" title="Link to this heading"></a></h2>
+<p>Base segmentation class.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="karabo.simulation.signal.base_segmentation.BaseSegmentation">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">BaseSegmentation</span></span><a class="headerlink" href="#karabo.simulation.signal.base_segmentation.BaseSegmentation" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ABC</span></code></p>
+<p>Base segmentation class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="karabo.simulation.signal.base_segmentation.BaseSegmentation.segment">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">segment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#karabo.simulation.signal.typing.Image3D" title="karabo.simulation.signal.typing.Image3D"><span class="pre">Image3D</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#karabo.simulation.signal.typing.SegmentationOutput" title="karabo.simulation.signal.typing.SegmentationOutput"><span class="pre">SegmentationOutput</span></a></span></span><a class="headerlink" href="#karabo.simulation.signal.base_segmentation.BaseSegmentation.segment" title="Link to this definition"></a></dt>
+<dd><p>Segments on a 2D or 3D image.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-karabo.simulation.signal.base_signal">
+<span id="karabo-simulation-signal-base-signal-module"></span><h2>karabo.simulation.signal.base_signal module<a class="headerlink" href="#module-karabo.simulation.signal.base_signal" title="Link to this heading"></a></h2>
+<p>Base signal class.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="karabo.simulation.signal.base_signal.BaseSignal">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">BaseSignal</span></span><a class="headerlink" href="#karabo.simulation.signal.base_signal.BaseSignal" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Generic</span></code>[<code class="xref py py-obj docutils literal notranslate"><span class="pre">T</span></code>], <code class="xref py py-class docutils literal notranslate"><span class="pre">ABC</span></code></p>
+<p>Base signal class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="karabo.simulation.signal.base_signal.BaseSignal.simulate">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">simulate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">T</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#karabo.simulation.signal.base_signal.BaseSignal.simulate" title="Link to this definition"></a></dt>
+<dd><p>Simulate a signal to get a 2D/3D image output.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-karabo.simulation.signal.eor_profile">
+<span id="karabo-simulation-signal-eor-profile-module"></span><h2>karabo.simulation.signal.eor_profile module<a class="headerlink" href="#module-karabo.simulation.signal.eor_profile" title="Link to this heading"></a></h2>
+<p>EoR profile simulation.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="karabo.simulation.signal.eor_profile.EoRProfile">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">EoRProfile</span></span><a class="headerlink" href="#karabo.simulation.signal.eor_profile.EoRProfile" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>EoR profile simulation.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">rnd</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sum_rnd</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">rnd</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sum_rnd</span> <span class="o">/=</span> <span class="n">sum_rnd</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">eor</span> <span class="o">=</span> <span class="n">EoRProfile</span><span class="o">.</span><span class="n">simulate</span><span class="p">(</span><span class="n">x_hi</span><span class="o">=</span><span class="n">sum_rnd</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">EoRProfile</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">eor</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="karabo.simulation.signal.eor_profile.EoRProfile.delta_m">
+<span class="sig-name descname"><span class="pre">delta_m</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#karabo.simulation.signal.eor_profile.EoRProfile.delta_m" title="Link to this definition"></a></dt>
+<dd><p>Density contrast of matter.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="karabo.simulation.signal.eor_profile.EoRProfile.frequency_21cm">
+<span class="sig-name descname"><span class="pre">frequency_21cm</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1420405751.768</span></em><a class="headerlink" href="#karabo.simulation.signal.eor_profile.EoRProfile.frequency_21cm" title="Link to this definition"></a></dt>
+<dd><p>Frequency of the 21cm signal [Hz].</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="karabo.simulation.signal.eor_profile.EoRProfile.hubble_constant">
+<span class="sig-name descname"><span class="pre">hubble_constant</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0.7</span></em><a class="headerlink" href="#karabo.simulation.signal.eor_profile.EoRProfile.hubble_constant" title="Link to this definition"></a></dt>
+<dd><p>Hubble constant.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="karabo.simulation.signal.eor_profile.EoRProfile.hubble_param">
+<span class="sig-name descname"><span class="pre">hubble_param</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">70.0</span></em><a class="headerlink" href="#karabo.simulation.signal.eor_profile.EoRProfile.hubble_param" title="Link to this definition"></a></dt>
+<dd><p>Hubble parameter [km/s/Mpc].</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="karabo.simulation.signal.eor_profile.EoRProfile.omega_b">
+<span class="sig-name descname"><span class="pre">omega_b</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0.05</span></em><a class="headerlink" href="#karabo.simulation.signal.eor_profile.EoRProfile.omega_b" title="Link to this definition"></a></dt>
+<dd><p>Baryon density parameter.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="karabo.simulation.signal.eor_profile.EoRProfile.omega_m">
+<span class="sig-name descname"><span class="pre">omega_m</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0.31</span></em><a class="headerlink" href="#karabo.simulation.signal.eor_profile.EoRProfile.omega_m" title="Link to this definition"></a></dt>
+<dd><p>Matter density parameter.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="karabo.simulation.signal.eor_profile.EoRProfile.plot">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x_hi</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Annotated</span><span class="p"><span class="pre">[</span></span><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">float64</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'N'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">profile</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Annotated</span><span class="p"><span class="pre">[</span></span><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">float64</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'N'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">2</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Figure</span></span></span><a class="headerlink" href="#karabo.simulation.signal.eor_profile.EoRProfile.plot" title="Link to this definition"></a></dt>
+<dd><p>Plot the fluctuation profile of the 21cm signal.</p>
+<p>Either the x_hi parameter needs to be given or the calculated profile.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x_hi</strong> (Optional[Annotated[npt.NDArray[<a href="#id1"><span class="problematic" id="id2">np.float_</span></a>], Literal[“N”]]], optional) – Neutral hydrogen fraction, by default None.</p></li>
+<li><p><strong>profile</strong> (<em>Optional</em><em>[</em><em>EoRProfileT</em><em>]</em><em>, </em><em>optional</em>) – An optional profile to be plotted. If not given, a default EoR profile will
+be plotted. By default None.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The plotted figure of the 21cm signal.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Figure</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="karabo.simulation.signal.eor_profile.EoRProfile.simulate">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">simulate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x_hi</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Annotated</span><span class="p"><span class="pre">[</span></span><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">float64</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'N'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dv_r_over_dr</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">f_range</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">(1000000.0,</span> <span class="pre">200000000.0)</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Annotated</span><span class="p"><span class="pre">[</span></span><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">float64</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'N'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">2</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#karabo.simulation.signal.eor_profile.EoRProfile.simulate" title="Link to this definition"></a></dt>
+<dd><p>Calculate the approximate evolution of fluctuations in the 21cm brightness.</p>
+<p>The number of points is determined by the resolution of the x_hi array.</p>
+<p>Implemented per <a class="reference external" href="https://arxiv.org/pdf/1602.02351.pdf">https://arxiv.org/pdf/1602.02351.pdf</a>, equation (1)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x_hi</strong> (Annotated[npt.NDArray[<a href="#id3"><span class="problematic" id="id4">np.float_</span></a>], Literal[“N”]]) – Neutral hydrogen fraction.</p></li>
+<li><p><strong>dv_r_over_dr</strong> (<em>float</em><em>, </em><em>optional</em>) – ???. By default 0</p></li>
+<li><p><strong>f_range</strong> (<em>tuple</em><em>[</em><em>float</em><em>, </em><em>float</em><em>]</em><em>, </em><em>optional</em>) – Frequency range to plot in [Hz]. by default (2, 200e6)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An array of the shape (floor((f_end - f_start) / step_size), 2), containing
+the frequency in the first column and the corresponding EoR profile in the
+second.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>EoRProfileT</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="karabo.simulation.signal.eor_profile.EoRProfile.t_gamma">
+<span class="sig-name descname"><span class="pre">t_gamma</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2.73</span></em><a class="headerlink" href="#karabo.simulation.signal.eor_profile.EoRProfile.t_gamma" title="Link to this definition"></a></dt>
+<dd><p>Cosmic microwave background temperature [Kelvin].</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="karabo.simulation.signal.eor_profile.EoRProfile.t_s">
+<span class="sig-name descname"><span class="pre">t_s</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0.068</span></em><a class="headerlink" href="#karabo.simulation.signal.eor_profile.EoRProfile.t_s" title="Link to this definition"></a></dt>
+<dd><p>Spin temperature [Kelvin].</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-karabo.simulation.signal.galactic_foreground">
+<span id="karabo-simulation-signal-galactic-foreground-module"></span><h2>karabo.simulation.signal.galactic_foreground module<a class="headerlink" href="#module-karabo.simulation.signal.galactic_foreground" title="Link to this heading"></a></h2>
+<p>Galactic Foreground signal catalogue wrapper.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="karabo.simulation.signal.galactic_foreground.SignalGalacticForeground">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SignalGalacticForeground</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">centre</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">SkyCoord</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fov</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Angle</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">redshifts</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">Annotated</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'X'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Annotated</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'Y'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gleam_file_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#karabo.simulation.signal.galactic_foreground.SignalGalacticForeground" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#karabo.simulation.signal.base_signal.BaseSignal" title="karabo.simulation.signal.base_signal.BaseSignal"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseSignal</span></code></a>[<a class="reference internal" href="#karabo.simulation.signal.typing.Image2D" title="karabo.simulation.signal.typing.Image2D"><code class="xref py py-class docutils literal notranslate"><span class="pre">Image2D</span></code></a>]</p>
+<p>Galactic Foreground signal catalogue wrapper.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">karabo.simulation.signal.plotting</span><span class="w"> </span><span class="kn">import</span> <span class="n">SignalPlotting</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">available_redshifts</span> <span class="o">=</span> <span class="n">SignalGalacticForeground</span><span class="o">.</span><span class="n">available_redshifts</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cent</span> <span class="o">=</span> <span class="n">SkyCoord</span><span class="p">(</span><span class="n">ra</span><span class="o">=</span><span class="mi">10</span> <span class="o">*</span> <span class="n">units</span><span class="o">.</span><span class="n">degree</span><span class="p">,</span> <span class="n">dec</span><span class="o">=</span><span class="mi">20</span> <span class="o">*</span> <span class="n">units</span><span class="o">.</span><span class="n">degree</span><span class="p">,</span> <span class="n">frame</span><span class="o">=</span><span class="s2">&quot;icrs&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gf</span> <span class="o">=</span> <span class="n">SignalGalacticForeground</span><span class="p">(</span>
+<span class="gp">... </span>   <span class="n">cent</span><span class="p">,</span>
+<span class="gp">... </span>   <span class="n">redshifts</span><span class="o">=</span><span class="n">available_redshifts</span><span class="p">[:</span><span class="mi">3</span><span class="p">],</span>
+<span class="gp">... </span>   <span class="n">grid_size</span><span class="o">=</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">30</span><span class="p">),</span>
+<span class="gp">... </span>   <span class="n">fov</span><span class="o">=</span><span class="n">Angle</span><span class="p">([</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">],</span> <span class="n">unit</span><span class="o">=</span><span class="n">units</span><span class="o">.</span><span class="n">degree</span><span class="p">),</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">imgs</span> <span class="o">=</span> <span class="n">gf</span><span class="o">.</span><span class="n">simulate</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">SignalPlotting</span><span class="o">.</span><span class="n">general_img</span><span class="p">(</span><span class="n">imgs</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;Galactic foreground&quot;</span><span class="p">,</span> <span class="n">log_bar</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Map plotting</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">col</span> <span class="o">=</span> <span class="n">SignalGalacticForeground</span><span class="o">.</span><span class="n">_flux_column</span><span class="p">(</span><span class="mf">7.6</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="p">(</span>
+<span class="gp">... </span>    <span class="n">gf</span><span class="o">.</span><span class="n">gleam_catalogue</span><span class="p">[</span><span class="n">gf</span><span class="o">.</span><span class="n">gleam_catalogue</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">]</span>
+<span class="gp">... </span>        <span class="o">.</span><span class="n">to_pandas</span><span class="p">()</span>
+<span class="gp">... </span>        <span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">SignalGalacticForeground</span><span class="o">.</span><span class="n">RA_COLUMN</span><span class="p">)</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">SignalPlotting</span><span class="o">.</span><span class="n">general_polar_plot</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">data</span><span class="p">[</span><span class="n">SignalGalacticForeground</span><span class="o">.</span><span class="n">RA_COLUMN</span><span class="p">],</span>
+<span class="gp">... </span>    <span class="n">data</span><span class="p">[</span><span class="n">SignalGalacticForeground</span><span class="o">.</span><span class="n">DEC_COLUMN</span><span class="p">],</span>
+<span class="gp">... </span>    <span class="n">data</span><span class="p">[</span><span class="n">col</span><span class="p">],</span>
+<span class="gp">... </span>    <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Galactic Foreground&quot;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">log_bar</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="gp">... </span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="karabo.simulation.signal.galactic_foreground.SignalGalacticForeground.DEC_COLUMN">
+<span class="sig-name descname"><span class="pre">DEC_COLUMN</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Final</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'DEJ2000'</span></em><a class="headerlink" href="#karabo.simulation.signal.galactic_foreground.SignalGalacticForeground.DEC_COLUMN" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="karabo.simulation.signal.galactic_foreground.SignalGalacticForeground.RA_COLUMN">
+<span class="sig-name descname"><span class="pre">RA_COLUMN</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Final</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'RAJ2000'</span></em><a class="headerlink" href="#karabo.simulation.signal.galactic_foreground.SignalGalacticForeground.RA_COLUMN" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="karabo.simulation.signal.galactic_foreground.SignalGalacticForeground.available_redshifts">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">available_redshifts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gleam_file_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gleam_catalogue</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Table</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#karabo.simulation.signal.galactic_foreground.SignalGalacticForeground.available_redshifts" title="Link to this definition"></a></dt>
+<dd><p>Get a list from available redshift values (as float).</p>
+<p>If the gleam catalogue is given, it will take precedents over the path. Else, if
+no path is given, the default catalogue will bi used.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>gleam_file_path</strong> (<em>Optional</em><em>[</em><em>Path</em><em>]</em><em>, </em><em>optional</em>) – Path to the gleam catalogue, by default None</p></li>
+<li><p><strong>gleam_catalogue</strong> (<em>Optional</em><em>[</em><em>Table</em><em>]</em><em>, </em><em>optional</em>) – Gleam catalogue data, by default None</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>List of available redshift values.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list[float]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="karabo.simulation.signal.galactic_foreground.SignalGalacticForeground.simulate">
+<span class="sig-name descname"><span class="pre">simulate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#karabo.simulation.signal.typing.Image2D" title="karabo.simulation.signal.typing.Image2D"><span class="pre">Image2D</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#karabo.simulation.signal.galactic_foreground.SignalGalacticForeground.simulate" title="Link to this definition"></a></dt>
+<dd><p>Simulate a signal to get a 2D image output.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-karabo.simulation.signal.helpers">
+<span id="karabo-simulation-signal-helpers-module"></span><h2>karabo.simulation.signal.helpers module<a class="headerlink" href="#module-karabo.simulation.signal.helpers" title="Link to this heading"></a></h2>
+<p>Helpers for generating different types of signals.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.simulation.signal.helpers.filter_dataframe_radec">
+<span class="sig-name descname"><span class="pre">filter_dataframe_radec</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">centre</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">SkyCoord</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fov</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Angle</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ra_column</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dec_column</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wrap_offset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">DataFrame</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Angle</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Angle</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#karabo.simulation.signal.helpers.filter_dataframe_radec" title="Link to this definition"></a></dt>
+<dd><p>Filter a dataframe with RA-DEC coordinates.</p>
+<p>Expects the Center to be at (0°, 0°) with the RA axis having a range of (-180°,
+180°) and the DEC axis (-90°, 90°).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> (<em>pd.DataFrame</em>) – The dataframe that is to be filtered.</p></li>
+<li><p><strong>centre</strong> (<em>SkyCoord</em>) – The center position of the filter.</p></li>
+<li><p><strong>fov</strong> (<em>Angle</em>) – Field of View in the (RA, DEC) axis.</p></li>
+<li><p><strong>ra_column</strong> (<em>str</em>) – Name of the RA column in the dataframe.</p></li>
+<li><p><strong>dec_column</strong> (<em>str</em>) – Name of the DEC column in the dataframe.</p></li>
+<li><p><strong>wrap_offset</strong> (<em>bool</em>) – If we reach a wrap point, if all the coordinates should be wrapped back into the
+positive space.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The filtered dataframe (copy), lower left corner, upper right corner.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple[pd.DataFrame, Angle, Angle]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.simulation.signal.helpers.interpolate_image">
+<span class="sig-name descname"><span class="pre">interpolate_image</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Annotated</span><span class="p"><span class="pre">[</span></span><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">float64</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'X'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'Y'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'reflect'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'grid-mirror'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'constant'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'grid-constant'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'nearest'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'mirror'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'grid-wrap'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'wrap'</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'constant'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Annotated</span><span class="p"><span class="pre">[</span></span><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">float64</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'N'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'M'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#karabo.simulation.signal.helpers.interpolate_image" title="Link to this definition"></a></dt>
+<dd><p>Interpolate an image from it’s original size to <cite>new_size</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>image</strong> (Annotated[npt.NDArray[<a href="#id5"><span class="problematic" id="id6">np.float_</span></a>], Literal[“X”, “Y”]]) – The image that is to be interpolated.</p></li>
+<li><p><strong>new_size</strong> (<em>tuple</em><em>[</em><em>int</em><em>, </em><em>int</em><em>]</em>) – The desired output size of the image</p></li>
+<li><p><strong>mode</strong> (<em>SciPyInterpolationModes</em><em>, </em><em>optional</em>) – The interpolation mode, by default “constant”.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The interpolated input image with it’s new dimensions.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Annotated[npt.NDArray[<a href="#id7"><span class="problematic" id="id8">np.float_</span></a>], Literal[“N”, “M”]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.simulation.signal.helpers.map_radec_datapoints_to_grid">
+<span class="sig-name descname"><span class="pre">map_radec_datapoints_to_grid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">Annotated</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'X'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Annotated</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'Y'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ra_column</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dec_column</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">intensity_column</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">par_count</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">5</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Annotated</span><span class="p"><span class="pre">[</span></span><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">float64</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'X'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'Y'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#karabo.simulation.signal.helpers.map_radec_datapoints_to_grid" title="Link to this definition"></a></dt>
+<dd><p>Map the given data points with a destination to source mapping.</p>
+<p>For each pixel in the destination grid, the equivalent degree range in the
+source will be summed together and set in the destination grid.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<em>pd.DataFrame</em><em>,</em>) – The data that is to be plotted onto the grid.</p></li>
+<li><p><strong>grid_size</strong> (<em>tuple</em><em>[</em><em>Annotated</em><em>[</em><em>int</em><em>, </em><em>Literal</em><em>[</em><em>&quot;X&quot;</em><em>]</em><em>]</em><em>, </em><em>Annotated</em><em>[</em><em>int</em><em>, </em><em>Literal</em><em>[</em><em>&quot;Y&quot;</em><em>]</em><em>]</em><em>]</em>) – Size of the output grid.</p></li>
+<li><p><strong>ra_column</strong> (<em>str</em>) – Name of the RA column in the dataframe.</p></li>
+<li><p><strong>dec_column</strong> (<em>str</em>) – Name of the DEC column in the dataframe.</p></li>
+<li><p><strong>intensity_column</strong> (<em>str</em>) – Name of the column to use for the intensities.</p></li>
+<li><p><strong>par_count</strong> (<em>int</em><em>, </em><em>optional</em>) – How many processes to use to map the data points. By default 5.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A 2D numpy array representing an image with the dimensions of the grid_size
+parameter.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Annotated[npt.NDArray[<a href="#id9"><span class="problematic" id="id10">np.float_</span></a>], Literal[“X”, “Y”]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-karabo.simulation.signal.plotting">
+<span id="karabo-simulation-signal-plotting-module"></span><h2>karabo.simulation.signal.plotting module<a class="headerlink" href="#module-karabo.simulation.signal.plotting" title="Link to this heading"></a></h2>
+<p>Signal plotting helpers.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="karabo.simulation.signal.plotting.SegmentationPlotting">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SegmentationPlotting</span></span><a class="headerlink" href="#karabo.simulation.signal.plotting.SegmentationPlotting" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Plotting utilities for the segmentation.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="karabo.simulation.signal.plotting.SegmentationPlotting.seg_u_net_plotting">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">seg_u_net_plotting</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">segmented</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#karabo.simulation.signal.typing.SegmentationOutput" title="karabo.simulation.signal.typing.SegmentationOutput"><span class="pre">SegmentationOutput</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">bin_count</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">20</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Figure</span></span></span><a class="headerlink" href="#karabo.simulation.signal.plotting.SegmentationPlotting.seg_u_net_plotting" title="Link to this definition"></a></dt>
+<dd><p>Plot the first slice of the segU-net cube.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>segmented</strong> (<a class="reference internal" href="#karabo.simulation.signal.typing.SegmentationOutput" title="karabo.simulation.signal.typing.SegmentationOutput"><em>SegmentationOutput</em></a>) – Output of the segmentation</p></li>
+<li><p><strong>bin_count</strong> (<em>int</em>) – The number output bins in the histogram plot</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Plot of the SegU-Net segmentation</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Figure</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="karabo.html#karabo.error.KaraboError" title="karabo.error.KaraboError"><strong>KaraboError</strong></a> – If the input ‘xhi_seg_err’ is None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="karabo.simulation.signal.plotting.SegmentationPlotting.superpixel_plotting">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">superpixel_plotting</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">segmented</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#karabo.simulation.signal.typing.SegmentationOutput" title="karabo.simulation.signal.typing.SegmentationOutput"><span class="pre">SegmentationOutput</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">signal_image</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#karabo.simulation.signal.typing.Image3D" title="karabo.simulation.signal.typing.Image3D"><span class="pre">Image3D</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_sky</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Figure</span></span></span><a class="headerlink" href="#karabo.simulation.signal.plotting.SegmentationPlotting.superpixel_plotting" title="Link to this definition"></a></dt>
+<dd><p>Plot the first slice of the superpixel cube.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>segmented</strong> (<a class="reference internal" href="#karabo.simulation.signal.typing.SegmentationOutput" title="karabo.simulation.signal.typing.SegmentationOutput"><em>SegmentationOutput</em></a>) – output of the segmentation</p></li>
+<li><p><strong>signal_image</strong> (<a class="reference internal" href="#karabo.simulation.signal.typing.Image3D" title="karabo.simulation.signal.typing.Image3D"><em>Image3D</em></a>) – Image cube</p></li>
+<li><p><strong>log_sky</strong> (<em>bool</em><em>, </em><em>optional</em>) – If the color bar of the sky plot should have a symmetric log norm applied.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Plot of the Superpixel segmentation</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Figure</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="karabo.html#karabo.error.KaraboError" title="karabo.error.KaraboError"><strong>KaraboError</strong></a> – If the input ‘xhii_stitch’ is None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="karabo.simulation.signal.plotting.SignalPlotting">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SignalPlotting</span></span><a class="headerlink" href="#karabo.simulation.signal.plotting.SignalPlotting" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Signal plotting helpers.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="karabo.simulation.signal.plotting.SignalPlotting.brightness_temperature">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">brightness_temperature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#karabo.simulation.signal.typing.BaseImage" title="karabo.simulation.signal.typing.BaseImage"><span class="pre">BaseImage</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">z_layer</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Figure</span></span></span><a class="headerlink" href="#karabo.simulation.signal.plotting.SignalPlotting.brightness_temperature" title="Link to this definition"></a></dt>
+<dd><p>Plot the brightness temperature of a 2D image.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<a class="reference internal" href="#karabo.simulation.signal.typing.BaseImage" title="karabo.simulation.signal.typing.BaseImage"><em>BaseImage</em></a>) – The image to be plotted.</p></li>
+<li><p><strong>z_layer</strong> (<em>int</em><em>, </em><em>optional</em>) – The Z layer to be used, when a Image3D is used.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Figure of the plotted image</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Figure</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="karabo.simulation.signal.plotting.SignalPlotting.general_img">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">general_img</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#karabo.simulation.signal.typing.Image2D" title="karabo.simulation.signal.typing.Image2D"><span class="pre">Image2D</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tick_count</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_label</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'RA</span> <span class="pre">[°]'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_label</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'DEC</span> <span class="pre">[°]'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bar_label</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'Temperature</span> <span class="pre">[K]'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_bar</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Figure</span></span></span><a class="headerlink" href="#karabo.simulation.signal.plotting.SignalPlotting.general_img" title="Link to this definition"></a></dt>
+<dd><p>Plot a general image with a temperature.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>img</strong> (<a class="reference internal" href="#karabo.simulation.signal.typing.Image2D" title="karabo.simulation.signal.typing.Image2D"><em>Image2D</em></a>) – The image to be plotted.</p></li>
+<li><p><strong>title</strong> (<em>str</em>) – Title to be shown in the figure.</p></li>
+<li><p><strong>tick_count</strong> (<em>int</em><em>, </em><em>optional</em>) – The count of ticks to show along each axis, by default 5</p></li>
+<li><p><strong>x_label</strong> (<em>str</em><em>, </em><em>optional</em>) – Label to be plotted along the X-axis.</p></li>
+<li><p><strong>y_label</strong> (<em>str</em><em>, </em><em>optional</em>) – Label to be plotted along the Y-axis.</p></li>
+<li><p><strong>bar_label</strong> (<em>str</em><em>, </em><em>optional</em>) – Label for the color bar.</p></li>
+<li><p><strong>log_bar</strong> (<em>bool</em><em>, </em><em>optional</em>) – If the color bar should have a symmetric log norm applied.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The resulting plot figure.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Figure</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="karabo.simulation.signal.plotting.SignalPlotting.general_polar_plot">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">general_polar_plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ra_series</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Annotated</span><span class="p"><span class="pre">[</span></span><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">float64</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'N'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dec_series</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Annotated</span><span class="p"><span class="pre">[</span></span><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">float64</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'N'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">intensities_series</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Annotated</span><span class="p"><span class="pre">[</span></span><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">float64</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'N'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bar_label</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'Temperature</span> <span class="pre">[K]'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_bar</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Figure</span></span></span><a class="headerlink" href="#karabo.simulation.signal.plotting.SignalPlotting.general_polar_plot" title="Link to this definition"></a></dt>
+<dd><p>Plot a RA/DEC data in a polar plot with the intensity representing the color.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ra_series</strong> (Annotated[npt.NDArray[<a href="#id11"><span class="problematic" id="id12">np.float_</span></a>], Literal[“N”]]) – RA coordinates in degrees.</p></li>
+<li><p><strong>dec_series</strong> (Annotated[npt.NDArray[<a href="#id13"><span class="problematic" id="id14">np.float_</span></a>], Literal[“N”]]) – DEC coordinates in degrees.</p></li>
+<li><p><strong>intensities_series</strong> (Annotated[npt.NDArray[<a href="#id15"><span class="problematic" id="id16">np.float_</span></a>], Literal[“N”]]) – Intensities in Kelvin.</p></li>
+<li><p><strong>title</strong> (<em>str</em>) – Title to be shown in the figure.</p></li>
+<li><p><strong>bar_label</strong> (<em>str</em><em>, </em><em>optional</em>) – Label for the color bar.</p></li>
+<li><p><strong>log_bar</strong> (<em>bool</em><em>, </em><em>optional</em>) – If the color bar should have a symmetric log norm applied.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The resulting plot figure.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Figure</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="karabo.simulation.signal.plotting.SignalPlotting.power_spectrum">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">power_spectrum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#karabo.simulation.signal.typing.BaseImage" title="karabo.simulation.signal.typing.BaseImage"><span class="pre">BaseImage</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#karabo.simulation.signal.typing.SegmentationOutput" title="karabo.simulation.signal.typing.SegmentationOutput"><span class="pre">SegmentationOutput</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#karabo.simulation.signal.typing.BaseImage" title="karabo.simulation.signal.typing.BaseImage"><span class="pre">BaseImage</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#karabo.simulation.signal.typing.SegmentationOutput" title="karabo.simulation.signal.typing.SegmentationOutput"><span class="pre">SegmentationOutput</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kbins</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">15</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z_layer</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Figure</span></span></span><a class="headerlink" href="#karabo.simulation.signal.plotting.SignalPlotting.power_spectrum" title="Link to this definition"></a></dt>
+<dd><p>Plot the power spectrum the 21cm signal.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<em>Union</em><em>[</em><a class="reference internal" href="#karabo.simulation.signal.typing.BaseImage" title="karabo.simulation.signal.typing.BaseImage"><em>BaseImage</em></a><em>, </em><a class="reference internal" href="#karabo.simulation.signal.typing.SegmentationOutput" title="karabo.simulation.signal.typing.SegmentationOutput"><em>SegmentationOutput</em></a><em>]</em>) – Either a BaseImage or a SegmentationOutput</p></li>
+<li><p><strong>kbins</strong> (<em>int</em><em>, </em><em>optional</em>) – Count of bins for the spectrum plot, by default 15</p></li>
+<li><p><strong>z_layer</strong> (<em>int</em>) – If an Image3D is passed, then this layer will be used to plot the image. By
+default 0</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The generated plot figure.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Figure</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="karabo.simulation.signal.plotting.SignalPlotting.power_spectrum_image_vs_xfrac_dens">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">power_spectrum_image_vs_xfrac_dens</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#karabo.simulation.signal.typing.BaseImage" title="karabo.simulation.signal.typing.BaseImage"><span class="pre">BaseImage</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#karabo.simulation.signal.typing.SegmentationOutput" title="karabo.simulation.signal.typing.SegmentationOutput"><span class="pre">SegmentationOutput</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">xfrac_dens</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#karabo.simulation.signal.typing.XFracDensFilePair" title="karabo.simulation.signal.typing.XFracDensFilePair"><span class="pre">XFracDensFilePair</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">kbins</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">15</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z_layer</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Figure</span></span></span><a class="headerlink" href="#karabo.simulation.signal.plotting.SignalPlotting.power_spectrum_image_vs_xfrac_dens" title="Link to this definition"></a></dt>
+<dd><p>Plot the power spectrum by using an image and the original xfrac/dens file pair.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>image</strong> (<em>Union</em><em>[</em><a class="reference internal" href="#karabo.simulation.signal.typing.BaseImage" title="karabo.simulation.signal.typing.BaseImage"><em>BaseImage</em></a><em>, </em><a class="reference internal" href="#karabo.simulation.signal.typing.SegmentationOutput" title="karabo.simulation.signal.typing.SegmentationOutput"><em>SegmentationOutput</em></a><em>]</em>) – Either a BaseImage or a SegmentationOutput</p></li>
+<li><p><strong>xfrac_dens</strong> (<a class="reference internal" href="#karabo.simulation.signal.typing.XFracDensFilePair" title="karabo.simulation.signal.typing.XFracDensFilePair"><em>XFracDensFilePair</em></a>) – The xfrac and dens file pair.</p></li>
+<li><p><strong>kbins</strong> (<em>int</em><em>, </em><em>optional</em>) – Count of bins for the spectrum plot, by default 15</p></li>
+<li><p><strong>z_layer</strong> (<em>int</em>) – If an Image3D is passed, then this layer will be used to plot the image. By
+default 0</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The generated plot figure.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Figure</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="karabo.simulation.signal.plotting.SignalPlotting.power_spectrum_xfrac_dens">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">power_spectrum_xfrac_dens</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#karabo.simulation.signal.typing.XFracDensFilePair" title="karabo.simulation.signal.typing.XFracDensFilePair"><span class="pre">XFracDensFilePair</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#karabo.simulation.signal.typing.XFracDensFilePair" title="karabo.simulation.signal.typing.XFracDensFilePair"><span class="pre">XFracDensFilePair</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kbins</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">15</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Figure</span></span></span><a class="headerlink" href="#karabo.simulation.signal.plotting.SignalPlotting.power_spectrum_xfrac_dens" title="Link to this definition"></a></dt>
+<dd><p>Plot the power spectrum the 21cm signal using xfrac and dens-files.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<em>Union</em><em>[</em><a class="reference internal" href="#karabo.simulation.signal.typing.XFracDensFilePair" title="karabo.simulation.signal.typing.XFracDensFilePair"><em>XFracDensFilePair</em></a><em>, </em><em>list</em><em>[</em><a class="reference internal" href="#karabo.simulation.signal.typing.XFracDensFilePair" title="karabo.simulation.signal.typing.XFracDensFilePair"><em>XFracDensFilePair</em></a><em>]</em><em>]</em>) – The xfrac and dens file pair or a list thereof.</p></li>
+<li><p><strong>kbins</strong> (<em>int</em><em>, </em><em>optional</em>) – Count of bins for the spectrum plot, by default 15</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The generated plot figure.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Figure</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="karabo.simulation.signal.plotting.SignalPlotting.xfrac_dens">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">xfrac_dens</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#karabo.simulation.signal.typing.XFracDensFilePair" title="karabo.simulation.signal.typing.XFracDensFilePair"><span class="pre">XFracDensFilePair</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Figure</span></span></span><a class="headerlink" href="#karabo.simulation.signal.plotting.SignalPlotting.xfrac_dens" title="Link to this definition"></a></dt>
+<dd><p>Plot the xfrac and dens files.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> (<a class="reference internal" href="#karabo.simulation.signal.typing.XFracDensFilePair" title="karabo.simulation.signal.typing.XFracDensFilePair"><em>XFracDensFilePair</em></a>) – The xfrac and dens file pair.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The figure that was plotted.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Figure</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-karabo.simulation.signal.seg_u_net_segmentation">
+<span id="karabo-simulation-signal-seg-u-net-segmentation-module"></span><h2>karabo.simulation.signal.seg_u_net_segmentation module<a class="headerlink" href="#module-karabo.simulation.signal.seg_u_net_segmentation" title="Link to this heading"></a></h2>
+<p>Segmentation with SegU-net.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="karabo.simulation.signal.seg_u_net_segmentation.FixedSegUNet">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">FixedSegUNet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tta</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="m"><span class="pre">0</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">2</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#karabo.simulation.signal.seg_u_net_segmentation.FixedSegUNet" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">segunet21cm</span></code></p>
+<p>Fixes the bug such that the Segmentation can run.</p>
+<p>Can be removed once Tools21cm is fixed.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="karabo.simulation.signal.seg_u_net_segmentation.SegUNetSegmentation">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SegUNetSegmentation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">max_baseline</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">70.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tta</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="m"><span class="pre">0</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">2</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#karabo.simulation.signal.seg_u_net_segmentation.SegUNetSegmentation" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#karabo.simulation.signal.base_segmentation.BaseSegmentation" title="karabo.simulation.signal.base_segmentation.BaseSegmentation"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseSegmentation</span></code></a></p>
+<p>SegU-net based segmentation. Using its own init for t2c (Tools21cm).</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">karabo.simulation.signal.plotting</span><span class="w"> </span><span class="kn">import</span> <span class="n">SegmentationPlotting</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">karabo.simulation.signal.signal_21_cm</span><span class="w"> </span><span class="kn">import</span> <span class="n">Signal21cm</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">z</span> <span class="o">=</span> <span class="n">Signal21cm</span><span class="o">.</span><span class="n">get_xfrac_dens_file</span><span class="p">(</span><span class="n">z</span><span class="o">=</span><span class="mf">7.059</span><span class="p">,</span> <span class="n">box_dims</span><span class="o">=</span><span class="mi">244</span> <span class="o">/</span> <span class="mf">0.7</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sig</span> <span class="o">=</span> <span class="n">Signal21cm</span><span class="p">([</span><span class="n">z</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">signal_images</span> <span class="o">=</span> <span class="n">sig</span><span class="o">.</span><span class="n">simulate</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">seg</span> <span class="o">=</span> <span class="n">SegUNetSegmentation</span><span class="p">(</span><span class="n">max_baseline</span><span class="o">=</span><span class="mf">70.0</span><span class="p">,</span> <span class="n">tta</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">segmented</span> <span class="o">=</span> <span class="n">seg</span><span class="o">.</span><span class="n">segment</span><span class="p">(</span><span class="n">signal_images</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">SegmentationPlotting</span><span class="o">.</span><span class="n">seg_u_net_plotting</span><span class="p">(</span><span class="n">segmented</span><span class="o">=</span><span class="n">segmented</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="karabo.simulation.signal.seg_u_net_segmentation.SegUNetSegmentation.segment">
+<span class="sig-name descname"><span class="pre">segment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#karabo.simulation.signal.typing.Image3D" title="karabo.simulation.signal.typing.Image3D"><span class="pre">Image3D</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#karabo.simulation.signal.typing.SegmentationOutput" title="karabo.simulation.signal.typing.SegmentationOutput"><span class="pre">SegmentationOutput</span></a></span></span><a class="headerlink" href="#karabo.simulation.signal.seg_u_net_segmentation.SegUNetSegmentation.segment" title="Link to this definition"></a></dt>
+<dd><p>SegU-net based segmentation. Using its own init for t2c (Tools21cm).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>image</strong> (<a class="reference internal" href="#karabo.simulation.signal.typing.Image3D" title="karabo.simulation.signal.typing.Image3D"><em>Image3D</em></a>) – The constructed simulation</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>SegU-net cube</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#karabo.simulation.signal.typing.SegmentationOutput" title="karabo.simulation.signal.typing.SegmentationOutput">SegmentationOutput</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-karabo.simulation.signal.signal_21_cm">
+<span id="karabo-simulation-signal-signal-21-cm-module"></span><h2>karabo.simulation.signal.signal_21_cm module<a class="headerlink" href="#module-karabo.simulation.signal.signal_21_cm" title="Link to this heading"></a></h2>
+<p>21cm Signal simulation.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="karabo.simulation.signal.signal_21_cm.Signal21cm">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Signal21cm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">files</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#karabo.simulation.signal.typing.XFracDensFilePair" title="karabo.simulation.signal.typing.XFracDensFilePair"><span class="pre">XFracDensFilePair</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#karabo.simulation.signal.signal_21_cm.Signal21cm" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#karabo.simulation.signal.base_signal.BaseSignal" title="karabo.simulation.signal.base_signal.BaseSignal"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseSignal</span></code></a>[<a class="reference internal" href="#karabo.simulation.signal.typing.Image3D" title="karabo.simulation.signal.typing.Image3D"><code class="xref py py-class docutils literal notranslate"><span class="pre">Image3D</span></code></a>]</p>
+<p>21cm Signal simulation wrapper.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">karabo.simulation.signal.plotting</span><span class="w"> </span><span class="kn">import</span> <span class="n">SignalPlotting</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">redshifts</span> <span class="o">=</span> <span class="n">Signal21cm</span><span class="o">.</span><span class="n">available_redshifts</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">z1</span> <span class="o">=</span> <span class="n">Signal21cm</span><span class="o">.</span><span class="n">get_xfrac_dens_file</span><span class="p">(</span><span class="n">z</span><span class="o">=</span><span class="n">redshifts</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">box_dims</span><span class="o">=</span><span class="mi">244</span> <span class="o">/</span> <span class="mf">0.7</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">z2</span> <span class="o">=</span> <span class="n">Signal21cm</span><span class="o">.</span><span class="n">get_xfrac_dens_file</span><span class="p">(</span><span class="n">z</span><span class="o">=</span><span class="n">redshifts</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">box_dims</span><span class="o">=</span><span class="mi">244</span> <span class="o">/</span> <span class="mf">0.7</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sig</span> <span class="o">=</span> <span class="n">Signal21cm</span><span class="p">([</span><span class="n">z1</span><span class="p">,</span> <span class="n">z2</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">signal_images</span> <span class="o">=</span> <span class="n">sig</span><span class="o">.</span><span class="n">simulate</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fig</span> <span class="o">=</span> <span class="n">SignalPlotting</span><span class="o">.</span><span class="n">brightness_temperature</span><span class="p">(</span><span class="n">signal_images</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;brightness_temperature.png&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">karabo.simulation.signal.plotting</span><span class="w"> </span><span class="kn">import</span> <span class="n">SignalPlotting</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">z</span> <span class="o">=</span> <span class="n">Signal21cm</span><span class="o">.</span><span class="n">randomized_lightcones</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">SignalPlotting</span><span class="o">.</span><span class="n">brightness_temperature</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">z_layer</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="karabo.simulation.signal.signal_21_cm.Signal21cm.astro_gmell_base_url">
+<span class="sig-name descname"><span class="pre">astro_gmell_base_url</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'https://ttt.astro.su.se/~gmell/244Mpc'</span></em><a class="headerlink" href="#karabo.simulation.signal.signal_21_cm.Signal21cm.astro_gmell_base_url" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="karabo.simulation.signal.signal_21_cm.Signal21cm.available_redshifts">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">available_redshifts</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#karabo.simulation.signal.signal_21_cm.Signal21cm.available_redshifts" title="Link to this definition"></a></dt>
+<dd><p>Get all available redshifts.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List of all available redshifts.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list[float]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="karabo.simulation.signal.signal_21_cm.Signal21cm.available_redshifts_dens">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">available_redshifts_dens</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#karabo.simulation.signal.signal_21_cm.Signal21cm.available_redshifts_dens" title="Link to this definition"></a></dt>
+<dd><p>Get all available redshifts for dens files.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List of all available redshifts for dens files.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list[float]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="karabo.simulation.signal.signal_21_cm.Signal21cm.available_redshifts_xfrac">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">available_redshifts_xfrac</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#karabo.simulation.signal.signal_21_cm.Signal21cm.available_redshifts_xfrac" title="Link to this definition"></a></dt>
+<dd><p>Get all available redshifts for xfrac files.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List of all available redshifts for xfrac files.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list[float]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="karabo.simulation.signal.signal_21_cm.Signal21cm.default_r_hii">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">default_r_hii</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">redshift</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#karabo.simulation.signal.signal_21_cm.Signal21cm.default_r_hii" title="Link to this definition"></a></dt>
+<dd><p>Light cone HII region size calculation function (default implementation).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>redshift</strong> (<em>float</em>) – Redshift, to determine the radius for.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Light cone radius.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="karabo.simulation.signal.signal_21_cm.Signal21cm.dens_url">
+<span class="sig-name descname"><span class="pre">dens_url</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'densities/nc250/coarser_densities'</span></em><a class="headerlink" href="#karabo.simulation.signal.signal_21_cm.Signal21cm.dens_url" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="karabo.simulation.signal.signal_21_cm.Signal21cm.get_xfrac_dens_file">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_xfrac_dens_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">z</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">box_dims</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#karabo.simulation.signal.typing.XFracDensFilePair" title="karabo.simulation.signal.typing.XFracDensFilePair"><span class="pre">XFracDensFilePair</span></a></span></span><a class="headerlink" href="#karabo.simulation.signal.signal_21_cm.Signal21cm.get_xfrac_dens_file" title="Link to this definition"></a></dt>
+<dd><p>Get the xfrac and dens files from the server.</p>
+<p>They are downloaded and cached on the first access.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>z</strong> (<em>float</em>) – Redshift value.</p></li>
+<li><p><strong>box_dims</strong> (<em>float</em>) – Box dimensions used for these files.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A tuple of xfrac and dens files.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#karabo.simulation.signal.typing.XFracDensFilePair" title="karabo.simulation.signal.typing.XFracDensFilePair">XFracDensFilePair</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="karabo.simulation.signal.signal_21_cm.Signal21cm.randomized_lightcones">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">randomized_lightcones</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n_cells</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r_hii</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#karabo.simulation.signal.typing.Image3D" title="karabo.simulation.signal.typing.Image3D"><span class="pre">Image3D</span></a></span></span><a class="headerlink" href="#karabo.simulation.signal.signal_21_cm.Signal21cm.randomized_lightcones" title="Link to this definition"></a></dt>
+<dd><p>Generate an image with randomized light cones.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n_cells</strong> (<em>int</em>) – The count of cells to produce.</p></li>
+<li><p><strong>z</strong> (<em>float</em>) – The redshift value for this image.</p></li>
+<li><p><strong>r_hii</strong> (<em>Callable</em><em>[</em><em>[</em><em>float</em><em>]</em><em>, </em><em>float</em><em>]</em><em>, </em><em>optional</em>) – Radius function of the HII region. By default None, resulting in the
+execution of <cite>Signal21cm.default_r_hii</cite></p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>Implementation according to
+<a class="reference external" href="https://tools21cm.readthedocs.io/examples/lightcone.html">https://tools21cm.readthedocs.io/examples/lightcone.html</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The generated cube with multiple light cones.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#karabo.simulation.signal.typing.Image3D" title="karabo.simulation.signal.typing.Image3D">Image3D</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="karabo.simulation.signal.signal_21_cm.Signal21cm.simulate">
+<span class="sig-name descname"><span class="pre">simulate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#karabo.simulation.signal.typing.Image3D" title="karabo.simulation.signal.typing.Image3D"><span class="pre">Image3D</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#karabo.simulation.signal.signal_21_cm.Signal21cm.simulate" title="Link to this definition"></a></dt>
+<dd><p>Simulate the 21cm signal as a 3D intensity cube.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A list of 3D image cubes, based on the <cite>self.files</cite> list of provided xfrac
+and dens files. The pixel values are in Kelvin.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list[<a class="reference internal" href="#karabo.simulation.signal.typing.Image3D" title="karabo.simulation.signal.typing.Image3D">Image3D</a>]</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="karabo.html#karabo.error.KaraboError" title="karabo.error.KaraboError"><strong>KaraboError</strong></a> – If a pair of xfrac and dens files do not have the same redshift values.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="karabo.simulation.signal.signal_21_cm.Signal21cm.xfrac_url">
+<span class="sig-name descname"><span class="pre">xfrac_url</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'244Mpc_f2_0_250'</span></em><a class="headerlink" href="#karabo.simulation.signal.signal_21_cm.Signal21cm.xfrac_url" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-karabo.simulation.signal.superimpose">
+<span id="karabo-simulation-signal-superimpose-module"></span><h2>karabo.simulation.signal.superimpose module<a class="headerlink" href="#module-karabo.simulation.signal.superimpose" title="Link to this heading"></a></h2>
+<p>Superimpose two or more signals.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="karabo.simulation.signal.superimpose.Superimpose">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Superimpose</span></span><a class="headerlink" href="#karabo.simulation.signal.superimpose.Superimpose" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Superimpose two or more signals.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="karabo.simulation.signal.superimpose.Superimpose.combine">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">combine</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">signals</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#karabo.simulation.signal.typing.BaseImage" title="karabo.simulation.signal.typing.BaseImage"><span class="pre">BaseImage</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#karabo.simulation.signal.typing.BaseImage" title="karabo.simulation.signal.typing.BaseImage"><span class="pre">BaseImage</span></a></span></span><a class="headerlink" href="#karabo.simulation.signal.superimpose.Superimpose.combine" title="Link to this definition"></a></dt>
+<dd><p>Superimpose two or more signals int a single signal.</p>
+<p>Superimposing is done by adding each signal to the previous one. To combine a
+Image3D with a Image2D, the Image2D will be added to every layer of the Image3D.</p>
+<p>If only one signal is passed, it gets returned without any further processing.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>signals</strong> (<a class="reference internal" href="#karabo.simulation.signal.typing.BaseImage" title="karabo.simulation.signal.typing.BaseImage"><em>BaseImage</em></a>) – The signals that are to be combined.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>If the input includes at least one Image3D, the return type is a Image3D,
+else Image2D.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#karabo.simulation.signal.typing.BaseImage" title="karabo.simulation.signal.typing.BaseImage">BaseImage</a></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="karabo.html#karabo.error.KaraboError" title="karabo.error.KaraboError"><strong>KaraboError</strong></a> – When an empty signal list is passed in.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-karabo.simulation.signal.superpixel_segmentation">
+<span id="karabo-simulation-signal-superpixel-segmentation-module"></span><h2>karabo.simulation.signal.superpixel_segmentation module<a class="headerlink" href="#module-karabo.simulation.signal.superpixel_segmentation" title="Link to this heading"></a></h2>
+<p>Segmentation with Superpixel.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="karabo.simulation.signal.superpixel_segmentation.SuperpixelSegmentation">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SuperpixelSegmentation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">max_baseline</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">70.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_segments</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_iter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">5</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#karabo.simulation.signal.superpixel_segmentation.SuperpixelSegmentation" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#karabo.simulation.signal.base_segmentation.BaseSegmentation" title="karabo.simulation.signal.base_segmentation.BaseSegmentation"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseSegmentation</span></code></a></p>
+<p>Superpixel based segmentation.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">karabo.simulation.signal.plotting</span><span class="w"> </span><span class="kn">import</span> <span class="n">SegmentationPlotting</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">karabo.simulation.signal.signal_21_cm</span><span class="w"> </span><span class="kn">import</span> <span class="n">Signal21cm</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">z1</span> <span class="o">=</span> <span class="n">Signal21cm</span><span class="o">.</span><span class="n">get_xfrac_dens_file</span><span class="p">(</span><span class="n">z</span><span class="o">=</span><span class="mf">7.059</span><span class="p">,</span> <span class="n">box_dims</span><span class="o">=</span><span class="mi">244</span> <span class="o">/</span> <span class="mf">0.7</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sig</span> <span class="o">=</span> <span class="n">Signal21cm</span><span class="p">([</span><span class="n">z1</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">seg</span> <span class="o">=</span> <span class="n">SuperpixelSegmentation</span><span class="p">(</span><span class="n">max_baseline</span><span class="o">=</span><span class="mf">70.0</span><span class="p">,</span>  <span class="n">max_iter</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">n_segments</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">signal_images</span> <span class="o">=</span> <span class="n">sig</span><span class="o">.</span><span class="n">simulate</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">segmented</span> <span class="o">=</span> <span class="n">seg</span><span class="o">.</span><span class="n">segment</span><span class="p">(</span><span class="n">signal_images</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">SegmentationPlotting</span><span class="o">.</span><span class="n">superpixel_plotting</span><span class="p">(</span><span class="n">segmented</span><span class="p">,</span> <span class="n">signal_images</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="karabo.simulation.signal.superpixel_segmentation.SuperpixelSegmentation.segment">
+<span class="sig-name descname"><span class="pre">segment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#karabo.simulation.signal.typing.Image3D" title="karabo.simulation.signal.typing.Image3D"><span class="pre">Image3D</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#karabo.simulation.signal.typing.SegmentationOutput" title="karabo.simulation.signal.typing.SegmentationOutput"><span class="pre">SegmentationOutput</span></a></span></span><a class="headerlink" href="#karabo.simulation.signal.superpixel_segmentation.SuperpixelSegmentation.segment" title="Link to this definition"></a></dt>
+<dd><p>Superpixel based segmentation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>image</strong> (<a class="reference internal" href="#karabo.simulation.signal.typing.Image3D" title="karabo.simulation.signal.typing.Image3D"><em>Image3D</em></a>) – The constructed simulation</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Superpixel cube</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#karabo.simulation.signal.typing.SegmentationOutput" title="karabo.simulation.signal.typing.SegmentationOutput">SegmentationOutput</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-karabo.simulation.signal.synchroton_signal">
+<span id="karabo-simulation-signal-synchroton-signal-module"></span><h2>karabo.simulation.signal.synchroton_signal module<a class="headerlink" href="#module-karabo.simulation.signal.synchroton_signal" title="Link to this heading"></a></h2>
+<p>Synchroton signal catalogue wrapper.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="karabo.simulation.signal.synchroton_signal.SignalSynchroton">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SignalSynchroton</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">centre</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">SkyCoord</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fov</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Angle</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">Annotated</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'X'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Annotated</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'Y'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">diffuse_emission_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_table_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mask_table_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#karabo.simulation.signal.synchroton_signal.SignalSynchroton" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#karabo.simulation.signal.base_signal.BaseSignal" title="karabo.simulation.signal.base_signal.BaseSignal"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseSignal</span></code></a>[<a class="reference internal" href="#karabo.simulation.signal.typing.Image2D" title="karabo.simulation.signal.typing.Image2D"><code class="xref py py-class docutils literal notranslate"><span class="pre">Image2D</span></code></a>]</p>
+<p>Synchroton signal.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">karabo.simulation.signal.plotting</span><span class="w"> </span><span class="kn">import</span> <span class="n">SignalPlotting</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">astropy</span><span class="w"> </span><span class="kn">import</span> <span class="n">units</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cent</span> <span class="o">=</span> <span class="n">SkyCoord</span><span class="p">(</span><span class="n">ra</span><span class="o">=</span><span class="mi">10</span> <span class="o">*</span> <span class="n">units</span><span class="o">.</span><span class="n">degree</span><span class="p">,</span> <span class="n">dec</span><span class="o">=</span><span class="mi">10</span> <span class="o">*</span> <span class="n">units</span><span class="o">.</span><span class="n">degree</span><span class="p">,</span> <span class="n">frame</span><span class="o">=</span><span class="s2">&quot;icrs&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sync_sig</span> <span class="o">=</span> <span class="n">SignalSynchroton</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">centre</span><span class="o">=</span><span class="n">cent</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">fov</span><span class="o">=</span><span class="n">Angle</span><span class="p">([</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">],</span> <span class="n">unit</span><span class="o">=</span><span class="n">units</span><span class="o">.</span><span class="n">degree</span><span class="p">),</span>
+<span class="gp">... </span>    <span class="n">grid_size</span><span class="o">=</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">imgs</span> <span class="o">=</span> <span class="n">sync_sig</span><span class="o">.</span><span class="n">simulate</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">SignalPlotting</span><span class="o">.</span><span class="n">general_img</span><span class="p">(</span><span class="n">imgs</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;Synchroton&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Map overview plot</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">SignalPlotting</span><span class="o">.</span><span class="n">general_polar_plot</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">sync_sig</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;RA&quot;</span><span class="p">],</span>
+<span class="gp">... </span>    <span class="n">sync_sig</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;DEC&quot;</span><span class="p">],</span>
+<span class="gp">... </span>    <span class="n">sync_sig</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;intensity&quot;</span><span class="p">],</span>
+<span class="gp">... </span>    <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Synchroton map&quot;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">log_bar</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="gp">... </span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="karabo.simulation.signal.synchroton_signal.SignalSynchroton.MAX_GRID_X">
+<span class="sig-name descname"><span class="pre">MAX_GRID_X</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">190</span></em><a class="headerlink" href="#karabo.simulation.signal.synchroton_signal.SignalSynchroton.MAX_GRID_X" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="karabo.simulation.signal.synchroton_signal.SignalSynchroton.MAX_GRID_Y">
+<span class="sig-name descname"><span class="pre">MAX_GRID_Y</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">190</span></em><a class="headerlink" href="#karabo.simulation.signal.synchroton_signal.SignalSynchroton.MAX_GRID_Y" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="karabo.simulation.signal.synchroton_signal.SignalSynchroton.simulate">
+<span class="sig-name descname"><span class="pre">simulate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#karabo.simulation.signal.typing.Image2D" title="karabo.simulation.signal.typing.Image2D"><span class="pre">Image2D</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#karabo.simulation.signal.synchroton_signal.SignalSynchroton.simulate" title="Link to this definition"></a></dt>
+<dd><p>Fetch the synchroton signal.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The synchroton image.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list[<a class="reference internal" href="#karabo.simulation.signal.typing.Image2D" title="karabo.simulation.signal.typing.Image2D">Image2D</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-karabo.simulation.signal.typing">
+<span id="karabo-simulation-signal-typing-module"></span><h2>karabo.simulation.signal.typing module<a class="headerlink" href="#module-karabo.simulation.signal.typing" title="Link to this heading"></a></h2>
+<p>General typings for the signal package.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="karabo.simulation.signal.typing.BaseImage">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">BaseImage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Annotated</span><span class="p"><span class="pre">[</span></span><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">float64</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'X'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'Y'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_label</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Annotated</span><span class="p"><span class="pre">[</span></span><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">float64</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'X'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_label</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Annotated</span><span class="p"><span class="pre">[</span></span><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">float64</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'Y'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">redshift</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">box_dims</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#karabo.simulation.signal.typing.BaseImage" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A general image, meant to be subclassed.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="karabo.simulation.signal.typing.BaseImage.box_dims">
+<span class="sig-name descname"><span class="pre">box_dims</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#karabo.simulation.signal.typing.BaseImage.box_dims" title="Link to this definition"></a></dt>
+<dd><p>Box dimensions used to create the image. Negative number if not provided.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="karabo.simulation.signal.typing.BaseImage.data">
+<span class="sig-name descname"><span class="pre">data</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Annotated</span><span class="p"><span class="pre">[</span></span><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">float64</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'X'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'Y'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#karabo.simulation.signal.typing.BaseImage.data" title="Link to this definition"></a></dt>
+<dd><p>Image data in a 2D array.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="karabo.simulation.signal.typing.BaseImage.redshift">
+<span class="sig-name descname"><span class="pre">redshift</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#karabo.simulation.signal.typing.BaseImage.redshift" title="Link to this definition"></a></dt>
+<dd><p>Redshift value. Negative number if not provided.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="karabo.simulation.signal.typing.BaseImage.x_label">
+<span class="sig-name descname"><span class="pre">x_label</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Annotated</span><span class="p"><span class="pre">[</span></span><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">float64</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'X'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#karabo.simulation.signal.typing.BaseImage.x_label" title="Link to this definition"></a></dt>
+<dd><p>X-labels.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="karabo.simulation.signal.typing.BaseImage.y_label">
+<span class="sig-name descname"><span class="pre">y_label</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Annotated</span><span class="p"><span class="pre">[</span></span><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">float64</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'Y'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#karabo.simulation.signal.typing.BaseImage.y_label" title="Link to this definition"></a></dt>
+<dd><p>Y-labels.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="karabo.simulation.signal.typing.Image2D">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Image2D</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Annotated</span><span class="p"><span class="pre">[</span></span><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">float64</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'X'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'Y'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_label</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Annotated</span><span class="p"><span class="pre">[</span></span><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">float64</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'X'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_label</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Annotated</span><span class="p"><span class="pre">[</span></span><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">float64</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'Y'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">redshift</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">box_dims</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#karabo.simulation.signal.typing.Image2D" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#karabo.simulation.signal.typing.BaseImage" title="karabo.simulation.signal.typing.BaseImage"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseImage</span></code></a></p>
+<p>A 2D image.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="karabo.simulation.signal.typing.Image2DOriented">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Image2DOriented</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Annotated</span><span class="p"><span class="pre">[</span></span><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">float64</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'X'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'Y'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_label</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Annotated</span><span class="p"><span class="pre">[</span></span><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">float64</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'X'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_label</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Annotated</span><span class="p"><span class="pre">[</span></span><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">float64</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'Y'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">redshift</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">box_dims</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sky_model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="main_features/simulation.html#karabo.simulation.sky_model.SkyModel" title="karabo.simulation.sky_model.SkyModel"><span class="pre">SkyModel</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#karabo.simulation.signal.typing.Image2DOriented" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#karabo.simulation.signal.typing.Image2D" title="karabo.simulation.signal.typing.Image2D"><code class="xref py py-class docutils literal notranslate"><span class="pre">Image2D</span></code></a></p>
+<p>A 2D image combined with a sky model.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="karabo.simulation.signal.typing.Image2DOriented.sky_model">
+<span class="sig-name descname"><span class="pre">sky_model</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="main_features/simulation.html#karabo.simulation.sky_model.SkyModel" title="karabo.simulation.sky_model.SkyModel"><span class="pre">SkyModel</span></a></em><a class="headerlink" href="#karabo.simulation.signal.typing.Image2DOriented.sky_model" title="Link to this definition"></a></dt>
+<dd><p>Sky Model for the orientation.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="karabo.simulation.signal.typing.Image3D">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Image3D</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Annotated</span><span class="p"><span class="pre">[</span></span><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">float64</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'Z'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'X'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'Y'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_label</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Annotated</span><span class="p"><span class="pre">[</span></span><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">float64</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'X'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_label</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Annotated</span><span class="p"><span class="pre">[</span></span><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">float64</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'Y'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">redshift</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">box_dims</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z_label</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Annotated</span><span class="p"><span class="pre">[</span></span><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">float64</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'Z'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#karabo.simulation.signal.typing.Image3D" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#karabo.simulation.signal.typing.BaseImage" title="karabo.simulation.signal.typing.BaseImage"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseImage</span></code></a></p>
+<p>A 3D cube of images along the z-axis.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="karabo.simulation.signal.typing.Image3D.data">
+<span class="sig-name descname"><span class="pre">data</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Annotated</span><span class="p"><span class="pre">[</span></span><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">float64</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'Z'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'X'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'Y'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#karabo.simulation.signal.typing.Image3D.data" title="Link to this definition"></a></dt>
+<dd><p>Image data in a 3D cube.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="karabo.simulation.signal.typing.Image3D.z_label">
+<span class="sig-name descname"><span class="pre">z_label</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Annotated</span><span class="p"><span class="pre">[</span></span><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">float64</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'Z'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#karabo.simulation.signal.typing.Image3D.z_label" title="Link to this definition"></a></dt>
+<dd><p>Z-labels.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="karabo.simulation.signal.typing.SegmentationOutput">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SegmentationOutput</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#karabo.simulation.signal.typing.Image3D" title="karabo.simulation.signal.typing.Image3D"><span class="pre">Image3D</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">xhii_stitch</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">npt.NDArray</span><span class="p"><span class="pre">[</span></span><span class="pre">np.bool_</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mask_xhi</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">npt.NDArray</span><span class="p"><span class="pre">[</span></span><span class="pre">np.bool_</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dt_smooth</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">npt.NDArray</span><span class="p"><span class="pre">[</span></span><span class="pre">np.float_</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xhi_seg_err</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">npt.NDArray</span><span class="p"><span class="pre">[</span></span><span class="pre">np.float_</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#karabo.simulation.signal.typing.SegmentationOutput" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">NamedTuple</span></code></p>
+<p>Output of the segmentation.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="karabo.simulation.signal.typing.SegmentationOutput.dt_smooth">
+<span class="sig-name descname"><span class="pre">dt_smooth</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">float64</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#karabo.simulation.signal.typing.SegmentationOutput.dt_smooth" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 3</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="karabo.simulation.signal.typing.SegmentationOutput.image">
+<span class="sig-name descname"><span class="pre">image</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#karabo.simulation.signal.typing.Image3D" title="karabo.simulation.signal.typing.Image3D"><span class="pre">Image3D</span></a></em><a class="headerlink" href="#karabo.simulation.signal.typing.SegmentationOutput.image" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 0</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="karabo.simulation.signal.typing.SegmentationOutput.mask_xhi">
+<span class="sig-name descname"><span class="pre">mask_xhi</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">bool_</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#karabo.simulation.signal.typing.SegmentationOutput.mask_xhi" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 2</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="karabo.simulation.signal.typing.SegmentationOutput.xhi_seg_err">
+<span class="sig-name descname"><span class="pre">xhi_seg_err</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">float64</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#karabo.simulation.signal.typing.SegmentationOutput.xhi_seg_err" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 4</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="karabo.simulation.signal.typing.SegmentationOutput.xhii_stitch">
+<span class="sig-name descname"><span class="pre">xhii_stitch</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">bool_</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#karabo.simulation.signal.typing.SegmentationOutput.xhii_stitch" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 1</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="karabo.simulation.signal.typing.XFracDensFilePair">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">XFracDensFilePair</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xfrac_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dens_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">box_dims</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#karabo.simulation.signal.typing.XFracDensFilePair" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">NamedTuple</span></code></p>
+<p>A pair of matching XFrac and dens files (Same Redshift value).</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="karabo.simulation.signal.typing.XFracDensFilePair.box_dims">
+<span class="sig-name descname"><span class="pre">box_dims</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#karabo.simulation.signal.typing.XFracDensFilePair.box_dims" title="Link to this definition"></a></dt>
+<dd><p>Length of the volume along each direction in [Mpc].</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="karabo.simulation.signal.typing.XFracDensFilePair.dens_path">
+<span class="sig-name descname"><span class="pre">dens_path</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Path</span></em><a class="headerlink" href="#karabo.simulation.signal.typing.XFracDensFilePair.dens_path" title="Link to this definition"></a></dt>
+<dd><p>Path to the dens file.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="karabo.simulation.signal.typing.XFracDensFilePair.load">
+<span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#karabo.simulation.signal.typing.XFracDensLoaded" title="karabo.simulation.signal.typing.XFracDensLoaded"><span class="pre">XFracDensLoaded</span></a></span></span><a class="headerlink" href="#karabo.simulation.signal.typing.XFracDensFilePair.load" title="Link to this definition"></a></dt>
+<dd><p>Load the files into memory.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The loaded files.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#karabo.simulation.signal.typing.XFracDensLoaded" title="karabo.simulation.signal.typing.XFracDensLoaded">XFracDensLoaded</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="karabo.simulation.signal.typing.XFracDensFilePair.xfrac_path">
+<span class="sig-name descname"><span class="pre">xfrac_path</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Path</span></em><a class="headerlink" href="#karabo.simulation.signal.typing.XFracDensFilePair.xfrac_path" title="Link to this definition"></a></dt>
+<dd><p>Path to the x-frac file.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="karabo.simulation.signal.typing.XFracDensLoaded">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">XFracDensLoaded</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">t2c.XfracFile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">d_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">t2c.DensityFile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_frac</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">FloatArrayNxNxN</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dens</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">FloatArrayNxNxN</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">box_dims</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#karabo.simulation.signal.typing.XFracDensLoaded" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">NamedTuple</span></code></p>
+<p>The Xfrac and dens files loaded into memory.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="karabo.simulation.signal.typing.XFracDensLoaded.box_dims">
+<span class="sig-name descname"><span class="pre">box_dims</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#karabo.simulation.signal.typing.XFracDensLoaded.box_dims" title="Link to this definition"></a></dt>
+<dd><p>Length of the volume along each direction in [Mpc].</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="karabo.simulation.signal.typing.XFracDensLoaded.d_file">
+<span class="sig-name descname"><span class="pre">d_file</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">DensityFile</span></em><a class="headerlink" href="#karabo.simulation.signal.typing.XFracDensLoaded.d_file" title="Link to this definition"></a></dt>
+<dd><p>Loaded density file object.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="karabo.simulation.signal.typing.XFracDensLoaded.dens">
+<span class="sig-name descname"><span class="pre">dens</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Annotated</span><span class="p"><span class="pre">[</span></span><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">float64</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'N'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#karabo.simulation.signal.typing.XFracDensLoaded.dens" title="Link to this definition"></a></dt>
+<dd><p>Density values in a 3D cub N*N*N.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="karabo.simulation.signal.typing.XFracDensLoaded.x_file">
+<span class="sig-name descname"><span class="pre">x_file</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">XfracFile</span></em><a class="headerlink" href="#karabo.simulation.signal.typing.XFracDensLoaded.x_file" title="Link to this definition"></a></dt>
+<dd><p>Loaded xfrac file object.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="karabo.simulation.signal.typing.XFracDensLoaded.x_frac">
+<span class="sig-name descname"><span class="pre">x_frac</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Annotated</span><span class="p"><span class="pre">[</span></span><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">float64</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'N'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#karabo.simulation.signal.typing.XFracDensLoaded.x_frac" title="Link to this definition"></a></dt>
+<dd><p>xfrac values in a 3D cube N*N*N.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="karabo.simulation.signal.typing.XFracDensLoaded.xy_dims">
+<span class="sig-name descname"><span class="pre">xy_dims</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">Annotated</span><span class="p"><span class="pre">[</span></span><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">float64</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'N'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Annotated</span><span class="p"><span class="pre">[</span></span><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">float64</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'N'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#karabo.simulation.signal.typing.XFracDensLoaded.xy_dims" title="Link to this definition"></a></dt>
+<dd><p>Get the x, y dimensions of the loaded.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A tuple containing the x and y labels.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>tuple[FloatArrayN, FloatArrayN]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="karabo.simulation.signal.typing.XFracDensLoaded.z">
+<span class="sig-name descname"><span class="pre">z</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#karabo.simulation.signal.typing.XFracDensLoaded.z" title="Link to this definition"></a></dt>
+<dd><p>Redshift value</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-karabo.simulation.signal">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-karabo.simulation.signal" title="Link to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, i4ds.
+      <span class="lastupdated">Last updated on Jan 23, 2025.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

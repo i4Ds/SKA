@@ -1,0 +1,125 @@
+karabo.util package
+===================
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   karabo.util.ska_sdp_datamodels
+
+Submodules
+----------
+
+karabo.util.config\_util module
+-------------------------------
+
+.. automodule:: karabo.util.config_util
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+karabo.util.dask module
+-----------------------
+
+.. automodule:: karabo.util.dask
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+karabo.util.data\_util module
+-----------------------------
+
+.. automodule:: karabo.util.data_util
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+karabo.util.file\_handler module
+--------------------------------
+
+.. automodule:: karabo.util.file_handler
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+karabo.util.gpu\_util module
+----------------------------
+
+.. automodule:: karabo.util.gpu_util
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+karabo.util.hdf5\_util module
+-----------------------------
+
+.. automodule:: karabo.util.hdf5_util
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+karabo.util.helpers module
+--------------------------
+
+.. automodule:: karabo.util.helpers
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+karabo.util.jupyter module
+--------------------------
+
+.. automodule:: karabo.util.jupyter
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+karabo.util.math\_util module
+-----------------------------
+
+.. automodule:: karabo.util.math_util
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+karabo.util.plotting\_util module
+---------------------------------
+
+.. automodule:: karabo.util.plotting_util
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+karabo.util.rascil\_util module
+-------------------------------
+
+.. automodule:: karabo.util.rascil_util
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+karabo.util.survey module
+-------------------------
+
+.. automodule:: karabo.util.survey
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+karabo.util.testing module
+--------------------------
+
+.. automodule:: karabo.util.testing
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: karabo.util
+   :members:
+   :undoc-members:
+   :show-inheritance:

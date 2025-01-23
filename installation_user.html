@@ -1,0 +1,202 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Installation (User) &mdash; Karabo-Pipeline 0+untagged.1.gffd0cfb documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=fc98ef0e"></script>
+      <script src="_static/doctools.js?v=9a2dae69"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Containers" href="container.html" />
+    <link rel="prev" title="Welcome to Karabo-Pipeline’s documentation!" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html">
+            
+              <img src="_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Users</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Installation (User)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#system-requirements">System Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#install-karabo">Install Karabo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#dealing-with-the-error-oskar-library-not-found">Dealing with the error ‘OSKAR library not found’</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#update-to-latest-karabo-version">Update to latest Karabo version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#older-versions-of-karabo">Older versions of Karabo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#additional-notes-and-troubleshooting">Additional notes and troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="container.html">Containers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parallel_processing.html">Parallel processing with Karabo</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Simulation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="main_features/simulation.html">karabo.simulation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Imaging</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="main_features/imaging.html">karabo.imaging.image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="main_features/base_imaging.html">karabo.imaging.imager_base</a></li>
+<li class="toctree-l1"><a class="reference internal" href="main_features/oskar_imaging.html">karabo.imaging.imager_oskar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="main_features/rascil_imaging.html">karabo.imaging.imager_rascil</a></li>
+<li class="toctree-l1"><a class="reference internal" href="main_features/wsclean_imaging.html">karabo.imaging.imager_wsclean</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Source Detection</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="main_features/sourcedetection.html">karabo.sourcedetection</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Utilities</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="utilities/utils.html">karabo.util package</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developers</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="development.html">Development Documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Karabo-Pipeline</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Installation (User)</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/installation_user.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="installation-user">
+<h1>Installation (User)<a class="headerlink" href="#installation-user" title="Link to this heading"></a></h1>
+<section id="system-requirements">
+<h2>System Requirements<a class="headerlink" href="#system-requirements" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Linux or Windows with WSL. For macOS we recommend you use <a class="reference internal" href="container.html"><span class="std std-doc">Docker</span></a>, starting with version 0.18.1 of the image.</p></li>
+<li><p>8GB RAM</p></li>
+<li><p>10GB disk space</p></li>
+<li><p>GPU-acceleration requires proprietary nVidia drivers/CUDA &gt;= 11</p></li>
+</ul>
+</section>
+<section id="install-karabo">
+<h2>Install Karabo<a class="headerlink" href="#install-karabo" title="Link to this heading"></a></h2>
+<p>The following steps will install Karabo and its prerequisites (miniconda):</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># install conda &amp; solver</span>
+wget<span class="w"> </span>https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+bash<span class="w"> </span>Miniconda3-latest-Linux-x86_64.sh
+<span class="nb">source</span><span class="w"> </span>~/miniconda3/bin/activate
+conda<span class="w"> </span>init<span class="w"> </span>bash
+conda<span class="w"> </span>install<span class="w"> </span>-n<span class="w"> </span>base<span class="w"> </span>conda-libmamba-solver
+<span class="c1"># setup virtual environment</span>
+conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>karabo<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.9
+conda<span class="w"> </span>activate<span class="w"> </span>karabo
+conda<span class="w"> </span>config<span class="w"> </span>--env<span class="w"> </span>--set<span class="w"> </span>solver<span class="w"> </span>libmamba
+conda<span class="w"> </span>config<span class="w"> </span>--env<span class="w"> </span>--set<span class="w"> </span>channel_priority<span class="w"> </span><span class="nb">true</span>
+<span class="c1"># install karabo</span>
+conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>nvidia/label/cuda-11.7.0<span class="w"> </span>-c<span class="w"> </span>i4ds<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>karabo-pipeline
+<span class="c1"># in case you use wsl2</span>
+conda<span class="w"> </span>env<span class="w"> </span>config<span class="w"> </span>vars<span class="w"> </span><span class="nb">set</span><span class="w"> </span><span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span><span class="nv">$LD_LIBRARY_PATH</span>:/usr/lib/wsl/lib
+</pre></div>
+</div>
+</section>
+<section id="dealing-with-the-error-oskar-library-not-found">
+<h2>Dealing with the error ‘OSKAR library not found’<a class="headerlink" href="#dealing-with-the-error-oskar-library-not-found" title="Link to this heading"></a></h2>
+<p>If you use Karabo and get the error <code class="docutils literal notranslate"><span class="pre">RuntimeError:</span> <span class="pre">OSKAR</span> <span class="pre">library</span> <span class="pre">not</span> <span class="pre">found.</span></code> then this because the correct CUDA drivers are not installed. Karabo relies on CUDA drivers 11.7. It has been reported that often versions &gt; 12 get installed automatically. In this case the above mentioned error is shown at runtime. More information about this issue can be found <a class="reference external" href="https://github.com/i4Ds/Karabo-Pipeline/issues/568">here (issue #568)</a>. Refer to this issue for a workaround.</p>
+<p>Please refer to the troubleshooting section at the bottom of this page if you feel something else does not work.</p>
+</section>
+<section id="update-to-latest-karabo-version">
+<h2>Update to latest Karabo version<a class="headerlink" href="#update-to-latest-karabo-version" title="Link to this heading"></a></h2>
+<p>A Karabo installation can be updated the following way:</p>
+<p>Note: Even though we care about not introducing API-breaking changes through different minor releases of Karabo, we don’t guarantee it.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">update</span> <span class="o">-</span><span class="n">c</span> <span class="n">nvidia</span><span class="o">/</span><span class="n">label</span><span class="o">/</span><span class="n">cuda</span><span class="o">-</span><span class="mf">11.7.0</span> <span class="o">-</span><span class="n">c</span> <span class="n">i4ds</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="n">karabo</span><span class="o">-</span><span class="n">pipeline</span>
+</pre></div>
+</div>
+</section>
+<section id="older-versions-of-karabo">
+<h2>Older versions of Karabo<a class="headerlink" href="#older-versions-of-karabo" title="Link to this heading"></a></h2>
+<p>Karabo versions older than <code class="docutils literal notranslate"><span class="pre">v0.15.0</span></code> are deprecated and therefore installation will most likely fail. In addition, we do not support Karabo older than latest-minor version in case dependency resolving or online resources are outdated. Therefore, we strongly recommend using the latest version of Karabo. If an older version of Karabo is required, we recommend using a <a class="reference internal" href="container.html"><span class="std std-doc">container</span></a>, as the environment is fixed in a container, or extract the environment dependencies using <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">env</span> <span class="pre">export</span> <span class="pre">--no-builds</span></code>. However, outdated online resources may still occur.</p>
+</section>
+<section id="additional-notes-and-troubleshooting">
+<h2>Additional notes and troubleshooting<a class="headerlink" href="#additional-notes-and-troubleshooting" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Don’t install anything into the base environment except libraries which are supposed to live in there. If you accidentally install packages there which are not supposed to be there, you might break some functionalities of your conda-installation.</p></li>
+<li><p>If you’re using a system conda, it might be that you don’t have access to a libmamba-solver, because the solver lives in the base environment, which belongs to root. In this case, you can ask your admin to install the solver, try an installation without the libmamba solver OR we recommend to just install conda into your home (which is the recommended solution).</p></li>
+<li><p>Additional files not packaged with Karabo, e.g. surveys, are downloaded from the CSCS object store. We had a case where downloads were hanging indefinitely. The culprit was a non-default MTU value (!= 1500) configured on the network interface. If you should experience this, please check your network interface configuration with <code class="docutils literal notranslate"><span class="pre">ip</span> <span class="pre">a</span></code> and change the MTU to 1500 if it should differ, see <a class="reference external" href="https://www.baeldung.com/linux/maximum-transmission-unit-change-size">this link</a>.</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to Karabo-Pipeline’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="container.html" class="btn btn-neutral float-right" title="Containers" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, i4ds.
+      <span class="lastupdated">Last updated on Jan 23, 2025.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

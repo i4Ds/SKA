@@ -1,0 +1,58 @@
+karabo package
+==============
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   karabo.data
+   karabo.imaging
+   karabo.simulation
+   karabo.sourcedetection
+   karabo.test
+   karabo.util
+
+Submodules
+----------
+
+karabo.error module
+-------------------
+
+.. automodule:: karabo.error
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+karabo.karabo\_resource module
+------------------------------
+
+.. automodule:: karabo.karabo_resource
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+karabo.simulator\_backend module
+--------------------------------
+
+.. automodule:: karabo.simulator_backend
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+karabo.warning module
+---------------------
+
+.. automodule:: karabo.warning
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: karabo
+   :members:
+   :undoc-members:
+   :show-inheritance:

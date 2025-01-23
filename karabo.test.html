@@ -1,0 +1,1465 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>karabo.test package &mdash; Karabo-Pipeline 0+untagged.1.gffd0cfb documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=fc98ef0e"></script>
+      <script src="_static/doctools.js?v=9a2dae69"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html">
+            
+              <img src="_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Users</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="installation_user.html">Installation (User)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="container.html">Containers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parallel_processing.html">Parallel processing with Karabo</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Simulation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="main_features/simulation.html">karabo.simulation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Imaging</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="main_features/imaging.html">karabo.imaging.image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="main_features/base_imaging.html">karabo.imaging.imager_base</a></li>
+<li class="toctree-l1"><a class="reference internal" href="main_features/oskar_imaging.html">karabo.imaging.imager_oskar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="main_features/rascil_imaging.html">karabo.imaging.imager_rascil</a></li>
+<li class="toctree-l1"><a class="reference internal" href="main_features/wsclean_imaging.html">karabo.imaging.imager_wsclean</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Source Detection</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="main_features/sourcedetection.html">karabo.sourcedetection</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Utilities</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="utilities/utils.html">karabo.util package</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developers</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="development.html">Development Documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Karabo-Pipeline</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">karabo.test package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/karabo.test.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="karabo-test-package">
+<h1>karabo.test package<a class="headerlink" href="#karabo-test-package" title="Link to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-karabo.test.conftest">
+<span id="karabo-test-conftest-module"></span><h2>karabo.test.conftest module<a class="headerlink" href="#module-karabo.test.conftest" title="Link to this heading"></a></h2>
+<p>Pytest global fixtures needs to be here!</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="karabo.test.conftest.TFiles">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">TFiles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cst_like_beam_port_1_txt</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'/usr/share/miniconda/envs/karabo_dev_env/lib/python3.9/site-packages/karabo/test/data/cst_like_beam_port_1.txt'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cst_like_beam_port_2_txt</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'/usr/share/miniconda/envs/karabo_dev_env/lib/python3.9/site-packages/karabo/test/data/cst_like_beam_port_2.txt'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">detection_csv</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'/usr/share/miniconda/envs/karabo_dev_env/lib/python3.9/site-packages/karabo/test/data/detection.csv'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">detection_zip</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'/usr/share/miniconda/envs/karabo_dev_env/lib/python3.9/site-packages/karabo/test/data/detection.zip'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">detection_result_csv</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'/usr/share/miniconda/envs/karabo_dev_env/lib/python3.9/site-packages/karabo/test/data/detection_result_512.px.csv'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filtered_sky_csv</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'/usr/share/miniconda/envs/karabo_dev_env/lib/python3.9/site-packages/karabo/test/data/filtered_sky.csv'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">run5_cst</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'/usr/share/miniconda/envs/karabo_dev_env/lib/python3.9/site-packages/karabo/test/data/run5.cst'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">visibilities_gleam_ms</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'/usr/share/miniconda/envs/karabo_dev_env/lib/python3.9/site-packages/karabo/test/data/visibilities_gleam.ms'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">poisson_vis_ms</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'/usr/share/miniconda/envs/karabo_dev_env/lib/python3.9/site-packages/karabo/test/data/poisson_vis.ms'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gt_assignment</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'/usr/share/miniconda/envs/karabo_dev_env/lib/python3.9/site-packages/karabo/test/data/sdp/gt_assignment.npy'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gt_plot</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'/usr/share/miniconda/envs/karabo_dev_env/lib/python3.9/site-packages/karabo/test/data/sdp/gt_plot.png'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gt_plot_error_ra_dec</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'/usr/share/miniconda/envs/karabo_dev_env/lib/python3.9/site-packages/karabo/test/data/sdp/gt_plot_error_ra_dec.png'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gt_plot_flux_histogram</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'/usr/share/miniconda/envs/karabo_dev_env/lib/python3.9/site-packages/karabo/test/data/sdp/gt_plot_flux_histogram.png'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gt_plot_flux_ratio_to_distance</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'/usr/share/miniconda/envs/karabo_dev_env/lib/python3.9/site-packages/karabo/test/data/sdp/gt_plot_flux_ratio_to_distance.png'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gt_plot_flux_ratio_to_ra_dec</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'/usr/share/miniconda/envs/karabo_dev_env/lib/python3.9/site-packages/karabo/test/data/sdp/gt_plot_flux_ratio_to_ra_dec.png'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gt_plot_quiver_positions</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'/usr/share/miniconda/envs/karabo_dev_env/lib/python3.9/site-packages/karabo/test/data/sdp/gt_plot_quiver_positions.png'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">blank_image_file_for_source_detection</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'/usr/share/miniconda/envs/karabo_dev_env/lib/python3.9/site-packages/karabo/test/data/blank_image.fits'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.conftest.TFiles" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Read-only repo-artifact paths.</p>
+<dl class="simple">
+<dt>It is assumed that all artifacts here exist in the repo</dt><dd><p>and therefore are not in the .gitignore.</p>
+</dd>
+<dt>The defined artifacts should reflect the <a href="#id1"><span class="problematic" id="id2">`</span></a>karabo/test/data/* file</dt><dd><p>and dir paths.</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="karabo.test.conftest.TFiles.blank_image_file_for_source_detection">
+<span class="sig-name descname"><span class="pre">blank_image_file_for_source_detection</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'/usr/share/miniconda/envs/karabo_dev_env/lib/python3.9/site-packages/karabo/test/data/blank_image.fits'</span></em><a class="headerlink" href="#karabo.test.conftest.TFiles.blank_image_file_for_source_detection" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="karabo.test.conftest.TFiles.cst_like_beam_port_1_txt">
+<span class="sig-name descname"><span class="pre">cst_like_beam_port_1_txt</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'/usr/share/miniconda/envs/karabo_dev_env/lib/python3.9/site-packages/karabo/test/data/cst_like_beam_port_1.txt'</span></em><a class="headerlink" href="#karabo.test.conftest.TFiles.cst_like_beam_port_1_txt" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="karabo.test.conftest.TFiles.cst_like_beam_port_2_txt">
+<span class="sig-name descname"><span class="pre">cst_like_beam_port_2_txt</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'/usr/share/miniconda/envs/karabo_dev_env/lib/python3.9/site-packages/karabo/test/data/cst_like_beam_port_2.txt'</span></em><a class="headerlink" href="#karabo.test.conftest.TFiles.cst_like_beam_port_2_txt" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="karabo.test.conftest.TFiles.detection_csv">
+<span class="sig-name descname"><span class="pre">detection_csv</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'/usr/share/miniconda/envs/karabo_dev_env/lib/python3.9/site-packages/karabo/test/data/detection.csv'</span></em><a class="headerlink" href="#karabo.test.conftest.TFiles.detection_csv" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="karabo.test.conftest.TFiles.detection_result_csv">
+<span class="sig-name descname"><span class="pre">detection_result_csv</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'/usr/share/miniconda/envs/karabo_dev_env/lib/python3.9/site-packages/karabo/test/data/detection_result_512.px.csv'</span></em><a class="headerlink" href="#karabo.test.conftest.TFiles.detection_result_csv" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="karabo.test.conftest.TFiles.detection_zip">
+<span class="sig-name descname"><span class="pre">detection_zip</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'/usr/share/miniconda/envs/karabo_dev_env/lib/python3.9/site-packages/karabo/test/data/detection.zip'</span></em><a class="headerlink" href="#karabo.test.conftest.TFiles.detection_zip" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="karabo.test.conftest.TFiles.filtered_sky_csv">
+<span class="sig-name descname"><span class="pre">filtered_sky_csv</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'/usr/share/miniconda/envs/karabo_dev_env/lib/python3.9/site-packages/karabo/test/data/filtered_sky.csv'</span></em><a class="headerlink" href="#karabo.test.conftest.TFiles.filtered_sky_csv" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="karabo.test.conftest.TFiles.gt_assignment">
+<span class="sig-name descname"><span class="pre">gt_assignment</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'/usr/share/miniconda/envs/karabo_dev_env/lib/python3.9/site-packages/karabo/test/data/sdp/gt_assignment.npy'</span></em><a class="headerlink" href="#karabo.test.conftest.TFiles.gt_assignment" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="karabo.test.conftest.TFiles.gt_plot">
+<span class="sig-name descname"><span class="pre">gt_plot</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'/usr/share/miniconda/envs/karabo_dev_env/lib/python3.9/site-packages/karabo/test/data/sdp/gt_plot.png'</span></em><a class="headerlink" href="#karabo.test.conftest.TFiles.gt_plot" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="karabo.test.conftest.TFiles.gt_plot_error_ra_dec">
+<span class="sig-name descname"><span class="pre">gt_plot_error_ra_dec</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'/usr/share/miniconda/envs/karabo_dev_env/lib/python3.9/site-packages/karabo/test/data/sdp/gt_plot_error_ra_dec.png'</span></em><a class="headerlink" href="#karabo.test.conftest.TFiles.gt_plot_error_ra_dec" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="karabo.test.conftest.TFiles.gt_plot_flux_histogram">
+<span class="sig-name descname"><span class="pre">gt_plot_flux_histogram</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'/usr/share/miniconda/envs/karabo_dev_env/lib/python3.9/site-packages/karabo/test/data/sdp/gt_plot_flux_histogram.png'</span></em><a class="headerlink" href="#karabo.test.conftest.TFiles.gt_plot_flux_histogram" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="karabo.test.conftest.TFiles.gt_plot_flux_ratio_to_distance">
+<span class="sig-name descname"><span class="pre">gt_plot_flux_ratio_to_distance</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'/usr/share/miniconda/envs/karabo_dev_env/lib/python3.9/site-packages/karabo/test/data/sdp/gt_plot_flux_ratio_to_distance.png'</span></em><a class="headerlink" href="#karabo.test.conftest.TFiles.gt_plot_flux_ratio_to_distance" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="karabo.test.conftest.TFiles.gt_plot_flux_ratio_to_ra_dec">
+<span class="sig-name descname"><span class="pre">gt_plot_flux_ratio_to_ra_dec</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'/usr/share/miniconda/envs/karabo_dev_env/lib/python3.9/site-packages/karabo/test/data/sdp/gt_plot_flux_ratio_to_ra_dec.png'</span></em><a class="headerlink" href="#karabo.test.conftest.TFiles.gt_plot_flux_ratio_to_ra_dec" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="karabo.test.conftest.TFiles.gt_plot_quiver_positions">
+<span class="sig-name descname"><span class="pre">gt_plot_quiver_positions</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'/usr/share/miniconda/envs/karabo_dev_env/lib/python3.9/site-packages/karabo/test/data/sdp/gt_plot_quiver_positions.png'</span></em><a class="headerlink" href="#karabo.test.conftest.TFiles.gt_plot_quiver_positions" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="karabo.test.conftest.TFiles.poisson_vis_ms">
+<span class="sig-name descname"><span class="pre">poisson_vis_ms</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'/usr/share/miniconda/envs/karabo_dev_env/lib/python3.9/site-packages/karabo/test/data/poisson_vis.ms'</span></em><a class="headerlink" href="#karabo.test.conftest.TFiles.poisson_vis_ms" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="karabo.test.conftest.TFiles.run5_cst">
+<span class="sig-name descname"><span class="pre">run5_cst</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'/usr/share/miniconda/envs/karabo_dev_env/lib/python3.9/site-packages/karabo/test/data/run5.cst'</span></em><a class="headerlink" href="#karabo.test.conftest.TFiles.run5_cst" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="karabo.test.conftest.TFiles.visibilities_gleam_ms">
+<span class="sig-name descname"><span class="pre">visibilities_gleam_ms</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'/usr/share/miniconda/envs/karabo_dev_env/lib/python3.9/site-packages/karabo/test/data/visibilities_gleam.ms'</span></em><a class="headerlink" href="#karabo.test.conftest.TFiles.visibilities_gleam_ms" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.conftest.clean_disk">
+<span class="sig-name descname"><span class="pre">clean_disk</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Generator</span><span class="p"><span class="pre">[</span></span><span class="pre">None</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#karabo.test.conftest.clean_disk" title="Link to this definition"></a></dt>
+<dd><p>Automatically clears FileHandler’s short-term-memory after each test file.</p>
+<dl class="simple">
+<dt>Needed in some cases where the underlying functions do use FileHandler</dt><dd><p>which could lead to IOError because of disk-space limitations.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.conftest.default_sample_simulation_visibility">
+<span class="sig-name descname"><span class="pre">default_sample_simulation_visibility</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="karabo.simulation.html#karabo.simulation.visibility.Visibility" title="karabo.simulation.visibility.Visibility"><span class="pre">Visibility</span></a></span></span><a class="headerlink" href="#karabo.test.conftest.default_sample_simulation_visibility" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.conftest.minimal_casa_ms">
+<span class="sig-name descname"><span class="pre">minimal_casa_ms</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="karabo.simulation.html#karabo.simulation.visibility.Visibility" title="karabo.simulation.visibility.Visibility"><span class="pre">Visibility</span></a></span></span><a class="headerlink" href="#karabo.test.conftest.minimal_casa_ms" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.conftest.minimal_fits_restored">
+<span class="sig-name descname"><span class="pre">minimal_fits_restored</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="main_features/imaging.html#karabo.imaging.image.Image" title="karabo.imaging.image.Image"><span class="pre">Image</span></a></span></span><a class="headerlink" href="#karabo.test.conftest.minimal_fits_restored" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.conftest.minimal_oskar_vis">
+<span class="sig-name descname"><span class="pre">minimal_oskar_vis</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="karabo.simulation.html#karabo.simulation.visibility.Visibility" title="karabo.simulation.visibility.Visibility"><span class="pre">Visibility</span></a></span></span><a class="headerlink" href="#karabo.test.conftest.minimal_oskar_vis" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.conftest.normalized_norm_diff">
+<span class="sig-name descname"><span class="pre">normalized_norm_diff</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#karabo.test.conftest.normalized_norm_diff" title="Link to this definition"></a></dt>
+<dd><p>Compare two images.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.conftest.pytest_addoption">
+<span class="sig-name descname"><span class="pre">pytest_addoption</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parser</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Parser</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#karabo.test.conftest.pytest_addoption" title="Link to this definition"></a></dt>
+<dd><p>Pytest custom argparse hook.</p>
+<p>Add custom argparse options here.</p>
+<p>Pytest argparse-options have to be declared in the root conftest.py.
+For some reason, the root conftest.py has to live near the project-root, even if
+only a single conftest.py exists. However, this prevents using <cite>pytest .</cite> with
+custom argparse-coptions from the root. Instead, either specify the test-dir
+or leave it out entirely.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>parser</strong> – pytest.Parser</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.conftest.pytest_collection_modifyitems">
+<span class="sig-name descname"><span class="pre">pytest_collection_modifyitems</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Config</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">items</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><span class="pre">Item</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#karabo.test.conftest.pytest_collection_modifyitems" title="Link to this definition"></a></dt>
+<dd><p>Pytest modify-items hook.</p>
+<p>Change pytest-behavior dependent on parsed input.</p>
+<p>See <a class="reference external" href="https://docs.pytest.org/en/latest/example/simple.html#control-skipping-of-tests-according-to-command-line-option">https://docs.pytest.org/en/latest/example/simple.html#control-skipping-of-tests-according-to-command-line-option</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>config</strong> – pytest.Config</p></li>
+<li><p><strong>items</strong> – iterable of pytest.Item</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.conftest.pytest_configure">
+<span class="sig-name descname"><span class="pre">pytest_configure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Config</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#karabo.test.conftest.pytest_configure" title="Link to this definition"></a></dt>
+<dd><p>Pytest add ini-values.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>config</strong> – pytest.Config</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.conftest.sky_data">
+<span class="sig-name descname"><span class="pre">sky_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sky_data_with_ids</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">object_</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">float64</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#karabo.test.conftest.sky_data" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.conftest.sky_data_with_ids">
+<span class="sig-name descname"><span class="pre">sky_data_with_ids</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">object_</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#karabo.test.conftest.sky_data_with_ids" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.conftest.tobject">
+<span class="sig-name descname"><span class="pre">tobject</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#karabo.test.conftest.TFiles" title="karabo.test.conftest.TFiles"><span class="pre">TFiles</span></a></span></span><a class="headerlink" href="#karabo.test.conftest.tobject" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-karabo.test.test_beam">
+<span id="karabo-test-test-beam-module"></span><h2>karabo.test.test_beam module<a class="headerlink" href="#module-karabo.test.test_beam" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_beam.test_eidosbeam">
+<span class="sig-name descname"><span class="pre">test_eidosbeam</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_beam.test_eidosbeam" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_beam.test_fit_element">
+<span class="sig-name descname"><span class="pre">test_fit_element</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tobject</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#karabo.test.conftest.TFiles" title="karabo.test.conftest.TFiles"><span class="pre">TFiles</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_beam.test_fit_element" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_beam.test_gaussian_beam">
+<span class="sig-name descname"><span class="pre">test_gaussian_beam</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_beam.test_gaussian_beam" title="Link to this definition"></a></dt>
+<dd><p>We test that image reconstruction works also with a Gaussian beam and
+test both Imagers: Oskar and Rascil.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_beam.test_katbeam">
+<span class="sig-name descname"><span class="pre">test_katbeam</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_beam.test_katbeam" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="karabo-test-test-beam-ska-low-module">
+<h2>karabo.test.test_beam_ska-low module<a class="headerlink" href="#karabo-test-test-beam-ska-low-module" title="Link to this heading"></a></h2>
+</section>
+<section id="module-karabo.test.test_casa">
+<span id="karabo-test-test-casa-module"></span><h2>karabo.test.test_casa module<a class="headerlink" href="#module-karabo.test.test_casa" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="karabo.test.test_casa.TestCasaMS">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">TestCasaMS</span></span><a class="headerlink" href="#karabo.test.test_casa.TestCasaMS" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="karabo.test.test_casa.TestCasaMS.test_tables">
+<span class="sig-name descname"><span class="pre">test_tables</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">minimal_casa_ms</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="karabo.simulation.html#karabo.simulation.visibility.Visibility" title="karabo.simulation.visibility.Visibility"><span class="pre">Visibility</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#karabo.test.test_casa.TestCasaMS.test_tables" title="Link to this definition"></a></dt>
+<dd><p>Minimal table-creation test.</p>
+<dl class="simple">
+<dt>This test currently just calls the table creation function of the particular</dt><dd><p>to ensure field-name correctness &amp; data loading success.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>minimal_casa_ms</strong> – Casa MS fixture.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-karabo.test.test_coordinate_helper">
+<span id="karabo-test-test-coordinate-helper-module"></span><h2>karabo.test.test_coordinate_helper module<a class="headerlink" href="#module-karabo.test.test_coordinate_helper" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_coordinate_helper.test_east_north_to_long_lat">
+<span class="sig-name descname"><span class="pre">test_east_north_to_long_lat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">east</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">north</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_lat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_lon</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_coordinate_helper.test_east_north_to_long_lat" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_coordinate_helper.test_wgs84_to_cartesian">
+<span class="sig-name descname"><span class="pre">test_wgs84_to_cartesian</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_coordinate_helper.test_wgs84_to_cartesian" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-karabo.test.test_dask">
+<span id="karabo-test-test-dask-module"></span><h2>karabo.test.test_dask module<a class="headerlink" href="#module-karabo.test.test_dask" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_dask.env_vars">
+<span class="sig-name descname"><span class="pre">env_vars</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#karabo.test.test_dask.env_vars" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_dask.simple_function">
+<span class="sig-name descname"><span class="pre">simple_function</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">multiplier</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#karabo.test.test_dask.simple_function" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_dask.test_dask_job">
+<span class="sig-name descname"><span class="pre">test_dask_job</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#karabo.test.test_dask.test_dask_job" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_dask.test_extreme_range_of_nodes">
+<span class="sig-name descname"><span class="pre">test_extreme_range_of_nodes</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#karabo.test.test_dask.test_extreme_range_of_nodes" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_dask.test_get_base_string_node_list">
+<span class="sig-name descname"><span class="pre">test_get_base_string_node_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">env_vars</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#karabo.test.test_dask.test_get_base_string_node_list" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_dask.test_get_lowest_node_id">
+<span class="sig-name descname"><span class="pre">test_get_lowest_node_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">env_vars</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#karabo.test.test_dask.test_get_lowest_node_id" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_dask.test_get_lowest_node_name">
+<span class="sig-name descname"><span class="pre">test_get_lowest_node_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">env_vars</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#karabo.test.test_dask.test_get_lowest_node_name" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_dask.test_get_min_max_of_node_id">
+<span class="sig-name descname"><span class="pre">test_get_min_max_of_node_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">env_vars</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#karabo.test.test_dask.test_get_min_max_of_node_id" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_dask.test_get_node_id">
+<span class="sig-name descname"><span class="pre">test_get_node_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">env_vars</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#karabo.test.test_dask.test_get_node_id" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_dask.test_get_node_name">
+<span class="sig-name descname"><span class="pre">test_get_node_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">env_vars</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#karabo.test.test_dask.test_get_node_name" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_dask.test_get_number_of_nodes">
+<span class="sig-name descname"><span class="pre">test_get_number_of_nodes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">env_vars</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#karabo.test.test_dask.test_get_number_of_nodes" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_dask.test_is_first_node">
+<span class="sig-name descname"><span class="pre">test_is_first_node</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">env_vars</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#karabo.test.test_dask.test_is_first_node" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_dask.test_is_on_slurm_cluster">
+<span class="sig-name descname"><span class="pre">test_is_on_slurm_cluster</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">env_vars</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#karabo.test.test_dask.test_is_on_slurm_cluster" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_dask.test_multiple_nodes_and_ranges">
+<span class="sig-name descname"><span class="pre">test_multiple_nodes_and_ranges</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#karabo.test.test_dask.test_multiple_nodes_and_ranges" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_dask.test_parallelize_with_dask">
+<span class="sig-name descname"><span class="pre">test_parallelize_with_dask</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#karabo.test.test_dask.test_parallelize_with_dask" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_dask.test_single_node">
+<span class="sig-name descname"><span class="pre">test_single_node</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#karabo.test.test_dask.test_single_node" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-karabo.test.test_data_util">
+<span id="karabo-test-test-data-util-module"></span><h2>karabo.test.test_data_util module<a class="headerlink" href="#module-karabo.test.test_data_util" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_data_util.test_calculate_chunk_size_from_max_chunk_size_in_memory">
+<span class="sig-name descname"><span class="pre">test_calculate_chunk_size_from_max_chunk_size_in_memory</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_data_util.test_calculate_chunk_size_from_max_chunk_size_in_memory" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_data_util.test_invalid_sizes">
+<span class="sig-name descname"><span class="pre">test_invalid_sizes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">size_str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_data_util.test_invalid_sizes" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_data_util.test_valid_sizes">
+<span class="sig-name descname"><span class="pre">test_valid_sizes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">size_str</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">expected</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_data_util.test_valid_sizes" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-karabo.test.test_examples">
+<span id="karabo-test-test-examples-module"></span><h2>karabo.test.test_examples module<a class="headerlink" href="#module-karabo.test.test_examples" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_examples.test_examples">
+<span class="sig-name descname"><span class="pre">test_examples</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_examples.test_examples" title="Link to this definition"></a></dt>
+<dd><p>Test all examples in the documentation</p>
+</dd></dl>
+
+</section>
+<section id="module-karabo.test.test_filehandler">
+<span id="karabo-test-test-filehandler-module"></span><h2>karabo.test.test_filehandler module<a class="headerlink" href="#module-karabo.test.test_filehandler" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_filehandler.test_file_handler">
+<span class="sig-name descname"><span class="pre">test_file_handler</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_filehandler.test_file_handler" title="Link to this definition"></a></dt>
+<dd><p>Test global FileHandler functionality.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_filehandler.test_object_bound_file_handler">
+<span class="sig-name descname"><span class="pre">test_object_bound_file_handler</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_filehandler.test_object_bound_file_handler" title="Link to this definition"></a></dt>
+<dd><p>Test obj unique FileHandler creation.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_filehandler.test_write_dir">
+<span class="sig-name descname"><span class="pre">test_write_dir</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_filehandler.test_write_dir" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-karabo.test.test_image">
+<span id="karabo-test-test-image-module"></span><h2>karabo.test.test_image module<a class="headerlink" href="#module-karabo.test.test_image" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_image.test_cellsize_overwrite">
+<span class="sig-name descname"><span class="pre">test_cellsize_overwrite</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tobject</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#karabo.test.conftest.TFiles" title="karabo.test.conftest.TFiles"><span class="pre">TFiles</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_image.test_cellsize_overwrite" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_image.test_cellsize_overwrite_false">
+<span class="sig-name descname"><span class="pre">test_cellsize_overwrite_false</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tobject</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#karabo.test.conftest.TFiles" title="karabo.test.conftest.TFiles"><span class="pre">TFiles</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_image.test_cellsize_overwrite_false" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_image.test_dirty_image">
+<span class="sig-name descname"><span class="pre">test_dirty_image</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tobject</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#karabo.test.conftest.TFiles" title="karabo.test.conftest.TFiles"><span class="pre">TFiles</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_image.test_dirty_image" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_image.test_dirty_image_N_cutout">
+<span class="sig-name descname"><span class="pre">test_dirty_image_N_cutout</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tobject</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#karabo.test.conftest.TFiles" title="karabo.test.conftest.TFiles"><span class="pre">TFiles</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_image.test_dirty_image_N_cutout" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_image.test_dirty_image_cutout">
+<span class="sig-name descname"><span class="pre">test_dirty_image_cutout</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tobject</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#karabo.test.conftest.TFiles" title="karabo.test.conftest.TFiles"><span class="pre">TFiles</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_image.test_dirty_image_cutout" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_image.test_dirty_image_resample">
+<span class="sig-name descname"><span class="pre">test_dirty_image_resample</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tobject</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#karabo.test.conftest.TFiles" title="karabo.test.conftest.TFiles"><span class="pre">TFiles</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_image.test_dirty_image_resample" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_image.test_image_circle">
+<span class="sig-name descname"><span class="pre">test_image_circle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tobject</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#karabo.test.conftest.TFiles" title="karabo.test.conftest.TFiles"><span class="pre">TFiles</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_image.test_image_circle" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_image.test_imaging">
+<span class="sig-name descname"><span class="pre">test_imaging</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_image.test_imaging" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-karabo.test.test_imager_oskar">
+<span id="karabo-test-test-imager-oskar-module"></span><h2>karabo.test.test_imager_oskar module<a class="headerlink" href="#module-karabo.test.test_imager_oskar" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_imager_oskar.test_dirty_image">
+<span class="sig-name descname"><span class="pre">test_dirty_image</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tobject</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#karabo.test.conftest.TFiles" title="karabo.test.conftest.TFiles"><span class="pre">TFiles</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_imager_oskar.test_dirty_image" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_imager_oskar.test_dirty_image_custom_output_path">
+<span class="sig-name descname"><span class="pre">test_dirty_image_custom_output_path</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tobject</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#karabo.test.conftest.TFiles" title="karabo.test.conftest.TFiles"><span class="pre">TFiles</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_imager_oskar.test_dirty_image_custom_output_path" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-karabo.test.test_imager_rascil">
+<span id="karabo-test-test-imager-rascil-module"></span><h2>karabo.test.test_imager_rascil module<a class="headerlink" href="#module-karabo.test.test_imager_rascil" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_imager_rascil.test_create_cleaned_image">
+<span class="sig-name descname"><span class="pre">test_create_cleaned_image</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_imager_rascil.test_create_cleaned_image" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_imager_rascil.test_dirty_image">
+<span class="sig-name descname"><span class="pre">test_dirty_image</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tobject</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#karabo.test.conftest.TFiles" title="karabo.test.conftest.TFiles"><span class="pre">TFiles</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_imager_rascil.test_dirty_image" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-karabo.test.test_imager_wsclean">
+<span id="karabo-test-test-imager-wsclean-module"></span><h2>karabo.test.test_imager_wsclean module<a class="headerlink" href="#module-karabo.test.test_imager_wsclean" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_imager_wsclean.test_create_cleaned_image">
+<span class="sig-name descname"><span class="pre">test_create_cleaned_image</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">default_sample_simulation_visibility</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="karabo.simulation.html#karabo.simulation.visibility.Visibility" title="karabo.simulation.visibility.Visibility"><span class="pre">Visibility</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_imager_wsclean.test_create_cleaned_image" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_imager_wsclean.test_create_cleaned_image_custom_path">
+<span class="sig-name descname"><span class="pre">test_create_cleaned_image_custom_path</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">default_sample_simulation_visibility</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="karabo.simulation.html#karabo.simulation.visibility.Visibility" title="karabo.simulation.visibility.Visibility"><span class="pre">Visibility</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_imager_wsclean.test_create_cleaned_image_custom_path" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_imager_wsclean.test_create_cleaned_image_reuse_dirty">
+<span class="sig-name descname"><span class="pre">test_create_cleaned_image_reuse_dirty</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">default_sample_simulation_visibility</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="karabo.simulation.html#karabo.simulation.visibility.Visibility" title="karabo.simulation.visibility.Visibility"><span class="pre">Visibility</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_imager_wsclean.test_create_cleaned_image_reuse_dirty" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_imager_wsclean.test_create_image_custom_command">
+<span class="sig-name descname"><span class="pre">test_create_image_custom_command</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">default_sample_simulation_visibility</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="karabo.simulation.html#karabo.simulation.visibility.Visibility" title="karabo.simulation.visibility.Visibility"><span class="pre">Visibility</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_imager_wsclean.test_create_image_custom_command" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_imager_wsclean.test_create_image_custom_command_multiple_outputs">
+<span class="sig-name descname"><span class="pre">test_create_image_custom_command_multiple_outputs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">default_sample_simulation_visibility</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="karabo.simulation.html#karabo.simulation.visibility.Visibility" title="karabo.simulation.visibility.Visibility"><span class="pre">Visibility</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_imager_wsclean.test_create_image_custom_command_multiple_outputs" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_imager_wsclean.test_dirty_image">
+<span class="sig-name descname"><span class="pre">test_dirty_image</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tobject</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#karabo.test.conftest.TFiles" title="karabo.test.conftest.TFiles"><span class="pre">TFiles</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_imager_wsclean.test_dirty_image" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_imager_wsclean.test_dirty_image_custom_path">
+<span class="sig-name descname"><span class="pre">test_dirty_image_custom_path</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tobject</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#karabo.test.conftest.TFiles" title="karabo.test.conftest.TFiles"><span class="pre">TFiles</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_imager_wsclean.test_dirty_image_custom_path" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-karabo.test.test_imaging_util">
+<span id="karabo-test-test-imaging-util-module"></span><h2>karabo.test.test_imaging_util module<a class="headerlink" href="#module-karabo.test.test_imaging_util" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_imaging_util.test_get_compatible_dirty_imager">
+<span class="sig-name descname"><span class="pre">test_get_compatible_dirty_imager</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sky_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">float64</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">backend</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="karabo.html#karabo.simulator_backend.SimulatorBackend" title="karabo.simulator_backend.SimulatorBackend"><span class="pre">SimulatorBackend</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">telescope_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">visibility_format</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'MS'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'OSKAR_VIS'</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">combine_across_frequencies</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#karabo.test.test_imaging_util.test_get_compatible_dirty_imager" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-karabo.test.test_ionosphere">
+<span id="karabo-test-test-ionosphere-module"></span><h2>karabo.test.test_ionosphere module<a class="headerlink" href="#module-karabo.test.test_ionosphere" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_ionosphere.sim_ion">
+<span class="sig-name descname"><span class="pre">sim_ion</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">screen_width_metres</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bmax</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sampling</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">speed</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha_mag</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_times</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frequency</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fits_filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_ionosphere.sim_ion" title="Link to this definition"></a></dt>
+<dd><p>Example from OSKAR</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_ionosphere.test_ionosphere">
+<span class="sig-name descname"><span class="pre">test_ionosphere</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sky_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">float64</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_ionosphere.test_ionosphere" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-karabo.test.test_line_emission">
+<span id="karabo-test-test-line-emission-module"></span><h2>karabo.test.test_line_emission module<a class="headerlink" href="#module-karabo.test.test_line_emission" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_line_emission.test_compare_oskar_rascil_dirty_images">
+<span class="sig-name descname"><span class="pre">test_compare_oskar_rascil_dirty_images</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_line_emission.test_compare_oskar_rascil_dirty_images" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_line_emission.test_line_emission_pipeline">
+<span class="sig-name descname"><span class="pre">test_line_emission_pipeline</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">simulator_backend</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">telescope_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_line_emission.test_line_emission_pipeline" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_line_emission.test_primary_beam_effects">
+<span class="sig-name descname"><span class="pre">test_primary_beam_effects</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">simulator_backend</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">telescope_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_line_emission.test_primary_beam_effects" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-karabo.test.test_long_observation">
+<span id="karabo-test-test-long-observation-module"></span><h2>karabo.test.test_long_observation module<a class="headerlink" href="#module-karabo.test.test_long_observation" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_long_observation.test_eidosbeam">
+<span class="sig-name descname"><span class="pre">test_eidosbeam</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_long_observation.test_eidosbeam" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_long_observation.test_fit_element">
+<span class="sig-name descname"><span class="pre">test_fit_element</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tobject</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#karabo.test.conftest.TFiles" title="karabo.test.conftest.TFiles"><span class="pre">TFiles</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_long_observation.test_fit_element" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_long_observation.test_katbeam">
+<span class="sig-name descname"><span class="pre">test_katbeam</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_long_observation.test_katbeam" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_long_observation.test_long_observations">
+<span class="sig-name descname"><span class="pre">test_long_observations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tobject</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#karabo.test.conftest.TFiles" title="karabo.test.conftest.TFiles"><span class="pre">TFiles</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">sky_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">float64</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_long_observation.test_long_observations" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-karabo.test.test_mock_mightee">
+<span id="karabo-test-test-mock-mightee-module"></span><h2>karabo.test.test_mock_mightee module<a class="headerlink" href="#module-karabo.test.test_mock_mightee" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_mock_mightee.test_mightee_download">
+<span class="sig-name descname"><span class="pre">test_mightee_download</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_mock_mightee.test_mightee_download" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_mock_mightee.test_mock_mightee">
+<span class="sig-name descname"><span class="pre">test_mock_mightee</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_mock_mightee.test_mock_mightee" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-karabo.test.test_mosaic">
+<span id="karabo-test-test-mosaic-module"></span><h2>karabo.test.test_mosaic module<a class="headerlink" href="#module-karabo.test.test_mosaic" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_mosaic.test_ImageMosaicker">
+<span class="sig-name descname"><span class="pre">test_ImageMosaicker</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tobject</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#karabo.test.conftest.TFiles" title="karabo.test.conftest.TFiles"><span class="pre">TFiles</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_mosaic.test_ImageMosaicker" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-karabo.test.test_mpi">
+<span id="karabo-test-test-mpi-module"></span><h2>karabo.test.test_mpi module<a class="headerlink" href="#module-karabo.test.test_mpi" title="Link to this heading"></a></h2>
+<p>MPI tests according to <cite>https://mpi4py.readthedocs.io/en/stable/tutorial.html</cite>.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_mpi.test_broadcast_dict">
+<span class="sig-name descname"><span class="pre">test_broadcast_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_mpi.test_broadcast_dict" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_mpi.test_broadcast_nparrays">
+<span class="sig-name descname"><span class="pre">test_broadcast_nparrays</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_mpi.test_broadcast_nparrays" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_mpi.test_gather_nparrays">
+<span class="sig-name descname"><span class="pre">test_gather_nparrays</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_mpi.test_gather_nparrays" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_mpi.test_gather_obj">
+<span class="sig-name descname"><span class="pre">test_gather_obj</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_mpi.test_gather_obj" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_mpi.test_scatter_nparrays">
+<span class="sig-name descname"><span class="pre">test_scatter_nparrays</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_mpi.test_scatter_nparrays" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_mpi.test_scatter_obj">
+<span class="sig-name descname"><span class="pre">test_scatter_obj</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_mpi.test_scatter_obj" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-karabo.test.test_notebooks">
+<span id="karabo-test-test-notebooks-module"></span><h2>karabo.test.test_notebooks module<a class="headerlink" href="#module-karabo.test.test_notebooks" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_notebooks.test_ImageMosaicker_notebook">
+<span class="sig-name descname"><span class="pre">test_ImageMosaicker_notebook</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#karabo.test.test_notebooks.test_ImageMosaicker_notebook" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_notebooks.test_LineEmission_notebook">
+<span class="sig-name descname"><span class="pre">test_LineEmission_notebook</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#karabo.test.test_notebooks.test_LineEmission_notebook" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_notebooks.test_imaging_notebook">
+<span class="sig-name descname"><span class="pre">test_imaging_notebook</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#karabo.test.test_notebooks.test_imaging_notebook" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_notebooks.test_source_detection_assessment_notebook">
+<span class="sig-name descname"><span class="pre">test_source_detection_assessment_notebook</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#karabo.test.test_notebooks.test_source_detection_assessment_notebook" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_notebooks.test_source_detection_big_files_notebook">
+<span class="sig-name descname"><span class="pre">test_source_detection_big_files_notebook</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#karabo.test.test_notebooks.test_source_detection_big_files_notebook" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_notebooks.test_source_detection_notebook">
+<span class="sig-name descname"><span class="pre">test_source_detection_notebook</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#karabo.test.test_notebooks.test_source_detection_notebook" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-karabo.test.test_obscore">
+<span id="karabo-test-test-obscore-module"></span><h2>karabo.test.test_obscore module<a class="headerlink" href="#module-karabo.test.test_obscore" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="karabo.test.test_obscore.TestObsCoreMeta">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">TestObsCoreMeta</span></span><a class="headerlink" href="#karabo.test.test_obscore.TestObsCoreMeta" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="karabo.test.test_obscore.TestObsCoreMeta.test_from_image">
+<span class="sig-name descname"><span class="pre">test_from_image</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">minimal_fits_restored</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="main_features/imaging.html#karabo.imaging.image.Image" title="karabo.imaging.image.Image"><span class="pre">Image</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#karabo.test.test_obscore.TestObsCoreMeta.test_from_image" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="karabo.test.test_obscore.TestObsCoreMeta.test_from_visibility">
+<span class="sig-name descname"><span class="pre">test_from_visibility</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vis_fixture_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">FixtureRequest</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#karabo.test.test_obscore.TestObsCoreMeta.test_from_visibility" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="karabo.test.test_obscore.TestObsCoreMeta.test_ivoid">
+<span class="sig-name descname"><span class="pre">test_ivoid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">authority</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">query</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fragment</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">expected</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#karabo.test.test_obscore.TestObsCoreMeta.test_ivoid" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="karabo.test.test_obscore.TestObsCoreMeta.test_sshapes">
+<span class="sig-name descname"><span class="pre">test_sshapes</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#karabo.test.test_obscore.TestObsCoreMeta.test_sshapes" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="karabo.test.test_obscore.TestRucioMeta">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">TestRucioMeta</span></span><a class="headerlink" href="#karabo.test.test_obscore.TestRucioMeta" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="karabo.test.test_obscore.TestRucioMeta.test_json_creation">
+<span class="sig-name descname"><span class="pre">test_json_creation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">minimal_fits_restored</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="main_features/imaging.html#karabo.imaging.image.Image" title="karabo.imaging.image.Image"><span class="pre">Image</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#karabo.test.test_obscore.TestRucioMeta.test_json_creation" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-karabo.test.test_observation">
+<span id="karabo-test-test-observation-module"></span><h2>karabo.test.test_observation module<a class="headerlink" href="#module-karabo.test.test_observation" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_observation.test_constructor_with_date_time">
+<span class="sig-name descname"><span class="pre">test_constructor_with_date_time</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_observation.test_constructor_with_date_time" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_observation.test_constructor_with_string">
+<span class="sig-name descname"><span class="pre">test_constructor_with_string</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_observation.test_constructor_with_string" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_observation.test_create_observations_oskar_settings_tree">
+<span class="sig-name descname"><span class="pre">test_create_observations_oskar_settings_tree</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_observation.test_create_observations_oskar_settings_tree" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-karabo.test.test_rascil_telescope_setup">
+<span id="karabo-test-test-rascil-telescope-setup-module"></span><h2>karabo.test.test_rascil_telescope_setup module<a class="headerlink" href="#module-karabo.test.test_rascil_telescope_setup" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_rascil_telescope_setup.test_num_of_baselines">
+<span class="sig-name descname"><span class="pre">test_num_of_baselines</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">site_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_stations</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_rascil_telescope_setup.test_num_of_baselines" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_rascil_telescope_setup.test_num_of_stations">
+<span class="sig-name descname"><span class="pre">test_num_of_stations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">site_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_stations</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_rascil_telescope_setup.test_num_of_stations" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_rascil_telescope_setup.test_set_telescope_from_oskar_telescope">
+<span class="sig-name descname"><span class="pre">test_set_telescope_from_oskar_telescope</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">site_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_rascil_telescope_setup.test_set_telescope_from_oskar_telescope" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_rascil_telescope_setup.test_set_telescope_name">
+<span class="sig-name descname"><span class="pre">test_set_telescope_name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_rascil_telescope_setup.test_set_telescope_name" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-karabo.test.test_sim_format_imager_combos">
+<span id="karabo-test-test-sim-format-imager-combos-module"></span><h2>karabo.test.test_sim_format_imager_combos module<a class="headerlink" href="#module-karabo.test.test_sim_format_imager_combos" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_sim_format_imager_combos.test_oskar_imager">
+<span class="sig-name descname"><span class="pre">test_oskar_imager</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">simulator_backend</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="karabo.html#karabo.simulator_backend.SimulatorBackend" title="karabo.simulator_backend.SimulatorBackend"><span class="pre">SimulatorBackend</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">visibility_format</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'MS'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'OSKAR_VIS'</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#karabo.test.test_sim_format_imager_combos.test_oskar_imager" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_sim_format_imager_combos.test_rascil_imager">
+<span class="sig-name descname"><span class="pre">test_rascil_imager</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">simulator_backend</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="karabo.html#karabo.simulator_backend.SimulatorBackend" title="karabo.simulator_backend.SimulatorBackend"><span class="pre">SimulatorBackend</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">visibility_format</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'MS'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'OSKAR_VIS'</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#karabo.test.test_sim_format_imager_combos.test_rascil_imager" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_sim_format_imager_combos.test_wsclean_imager">
+<span class="sig-name descname"><span class="pre">test_wsclean_imager</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">simulator_backend</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="karabo.html#karabo.simulator_backend.SimulatorBackend" title="karabo.simulator_backend.SimulatorBackend"><span class="pre">SimulatorBackend</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">visibility_format</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'MS'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'OSKAR_VIS'</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#karabo.test.test_sim_format_imager_combos.test_wsclean_imager" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-karabo.test.test_simulation">
+<span id="karabo-test-test-simulation-module"></span><h2>karabo.test.test_simulation module<a class="headerlink" href="#module-karabo.test.test_simulation" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_simulation.continuous_fits_downloader">
+<span class="sig-name descname"><span class="pre">continuous_fits_downloader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">continuous_fits_filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="karabo.data.html#karabo.data.external_data.SingleFileDownloadObject" title="karabo.data.external_data.SingleFileDownloadObject"><span class="pre">SingleFileDownloadObject</span></a></span></span><a class="headerlink" href="#karabo.test.test_simulation.continuous_fits_downloader" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_simulation.continuous_fits_filename">
+<span class="sig-name descname"><span class="pre">continuous_fits_filename</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#karabo.test.test_simulation.continuous_fits_filename" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_simulation.continuous_noise_fits_downloader">
+<span class="sig-name descname"><span class="pre">continuous_noise_fits_downloader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">continuous_noise_fits_filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="karabo.data.html#karabo.data.external_data.SingleFileDownloadObject" title="karabo.data.external_data.SingleFileDownloadObject"><span class="pre">SingleFileDownloadObject</span></a></span></span><a class="headerlink" href="#karabo.test.test_simulation.continuous_noise_fits_downloader" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_simulation.continuous_noise_fits_filename">
+<span class="sig-name descname"><span class="pre">continuous_noise_fits_filename</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#karabo.test.test_simulation.continuous_noise_fits_filename" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_simulation.test_backend_simulations">
+<span class="sig-name descname"><span class="pre">test_backend_simulations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sky_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">float64</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">backend</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="karabo.html#karabo.simulator_backend.SimulatorBackend" title="karabo.simulator_backend.SimulatorBackend"><span class="pre">SimulatorBackend</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">telescope_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#karabo.test.test_simulation.test_backend_simulations" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_simulation.test_parallelization_by_observation">
+<span class="sig-name descname"><span class="pre">test_parallelization_by_observation</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#karabo.test.test_simulation.test_parallelization_by_observation" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_simulation.test_run_sample_simulation">
+<span class="sig-name descname"><span class="pre">test_run_sample_simulation</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#karabo.test.test_simulation.test_run_sample_simulation" title="Link to this definition"></a></dt>
+<dd><p>Executes the ASKAP sample simulation, captures verbose output,
+validates the output files, and checks the sky model filtering.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_simulation.test_simulation_meerkat">
+<span class="sig-name descname"><span class="pre">test_simulation_meerkat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">continuous_fits_filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">continuous_fits_downloader</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="karabo.data.html#karabo.data.external_data.SingleFileDownloadObject" title="karabo.data.external_data.SingleFileDownloadObject"><span class="pre">SingleFileDownloadObject</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#karabo.test.test_simulation.test_simulation_meerkat" title="Link to this definition"></a></dt>
+<dd><p>Executes a simulation of continuous emission and validates the output files.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>continuous_fits_filename</strong> – Name of FITS file containing the simulated dirty image.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_simulation.test_simulation_noise_meerkat">
+<span class="sig-name descname"><span class="pre">test_simulation_noise_meerkat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">continuous_noise_fits_filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">continuous_noise_fits_downloader</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="karabo.data.html#karabo.data.external_data.SingleFileDownloadObject" title="karabo.data.external_data.SingleFileDownloadObject"><span class="pre">SingleFileDownloadObject</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#karabo.test.test_simulation.test_simulation_noise_meerkat" title="Link to this definition"></a></dt>
+<dd><p>Executes a simulation of continuous emission with noise and validates
+the output files.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>continuous_noise_fits_filename</strong> – Name of FITS file containing the simulated dirty image.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-karabo.test.test_skymodel">
+<span id="karabo-test-test-skymodel-module"></span><h2>karabo.test.test_skymodel module<a class="headerlink" href="#module-karabo.test.test_skymodel" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_skymodel.formattable">
+<span class="sig-name descname"><span class="pre">formattable</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">_ColsMappingDict</span></span></span><a class="headerlink" href="#karabo.test.test_skymodel.formattable" title="Link to this definition"></a></dt>
+<dd><p>Matching <cite>_ColsMappingDict</cite> of formattable col-names.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_skymodel.gleam">
+<span class="sig-name descname"><span class="pre">gleam</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="main_features/simulation.html#karabo.simulation.sky_model.SkyModel" title="karabo.simulation.sky_model.SkyModel"><span class="pre">SkyModel</span></a></span></span><a class="headerlink" href="#karabo.test.test_skymodel.gleam" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_skymodel.non_formattable">
+<span class="sig-name descname"><span class="pre">non_formattable</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">_ColsMappingDict</span></span></span><a class="headerlink" href="#karabo.test.test_skymodel.non_formattable" title="Link to this definition"></a></dt>
+<dd><p>Matching <cite>_ColsMappingType</cite> of non-formattable col-names.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_skymodel.test_SkySourcesColName_assumption">
+<span class="sig-name descname"><span class="pre">test_SkySourcesColName_assumption</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_skymodel.test_SkySourcesColName_assumption" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_skymodel.test_convert_sky_to_backends">
+<span class="sig-name descname"><span class="pre">test_convert_sky_to_backends</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_skymodel.test_convert_sky_to_backends" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_skymodel.test_cscs_resource_availability">
+<span class="sig-name descname"><span class="pre">test_cscs_resource_availability</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_skymodel.test_cscs_resource_availability" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_skymodel.test_download_gleam_and_make_sky_model">
+<span class="sig-name descname"><span class="pre">test_download_gleam_and_make_sky_model</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_skymodel.test_download_gleam_and_make_sky_model" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_skymodel.test_explore_sky">
+<span class="sig-name descname"><span class="pre">test_explore_sky</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gleam</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="main_features/simulation.html#karabo.simulation.sky_model.SkyModel" title="karabo.simulation.sky_model.SkyModel"><span class="pre">SkyModel</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_skymodel.test_explore_sky" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_skymodel.test_extract_names_and_freqs">
+<span class="sig-name descname"><span class="pre">test_extract_names_and_freqs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">formattable</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">_ColsMappingDict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_skymodel.test_extract_names_and_freqs" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_skymodel.test_filter_flux_sky_model">
+<span class="sig-name descname"><span class="pre">test_filter_flux_sky_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sky_data_with_ids</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">object_</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_skymodel.test_filter_flux_sky_model" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_skymodel.test_filter_sky_model">
+<span class="sig-name descname"><span class="pre">test_filter_sky_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gleam</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="main_features/simulation.html#karabo.simulation.sky_model.SkyModel" title="karabo.simulation.sky_model.SkyModel"><span class="pre">SkyModel</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_skymodel.test_filter_sky_model" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_skymodel.test_filter_sky_model_h5">
+<span class="sig-name descname"><span class="pre">test_filter_sky_model_h5</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_skymodel.test_filter_sky_model_h5" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_skymodel.test_format_prefix_freq_mapping">
+<span class="sig-name descname"><span class="pre">test_format_prefix_freq_mapping</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">formattable</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">_ColsMappingDict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">non_formattable</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">_ColsMappingDict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_skymodel.test_format_prefix_freq_mapping" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_skymodel.test_get_cartesian">
+<span class="sig-name descname"><span class="pre">test_get_cartesian</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sky_data_with_ids</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">object_</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_skymodel.test_get_cartesian" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_skymodel.test_get_poisson_sky">
+<span class="sig-name descname"><span class="pre">test_get_poisson_sky</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_skymodel.test_get_poisson_sky" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_skymodel.test_get_unit_scales">
+<span class="sig-name descname"><span class="pre">test_get_unit_scales</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">formattable</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">_ColsMappingDict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">non_formattable</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">_ColsMappingDict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_skymodel.test_get_unit_scales" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_skymodel.test_init">
+<span class="sig-name descname"><span class="pre">test_init</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sky_data_with_ids</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">object_</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_skymodel.test_init" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_skymodel.test_mals_v3">
+<span class="sig-name descname"><span class="pre">test_mals_v3</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_skymodel.test_mals_v3" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_skymodel.test_mightee">
+<span class="sig-name descname"><span class="pre">test_mightee</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_skymodel.test_mightee" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_skymodel.test_not_full_array">
+<span class="sig-name descname"><span class="pre">test_not_full_array</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_skymodel.test_not_full_array" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_skymodel.test_pos_ids_to_ra_dec">
+<span class="sig-name descname"><span class="pre">test_pos_ids_to_ra_dec</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pos_ids</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">expected</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_skymodel.test_pos_ids_to_ra_dec" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_skymodel.test_read_healpix_map">
+<span class="sig-name descname"><span class="pre">test_read_healpix_map</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_skymodel.test_read_healpix_map" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_skymodel.test_read_sky_model">
+<span class="sig-name descname"><span class="pre">test_read_sky_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gleam</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="main_features/simulation.html#karabo.simulation.sky_model.SkyModel" title="karabo.simulation.sky_model.SkyModel"><span class="pre">SkyModel</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_skymodel.test_read_sky_model" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_skymodel.test_read_write_sky_model">
+<span class="sig-name descname"><span class="pre">test_read_write_sky_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sky_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">float64</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_skymodel.test_read_write_sky_model" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-karabo.test.test_source_detection">
+<span id="karabo-test-test-source-detection-module"></span><h2>karabo.test.test_source_detection module<a class="headerlink" href="#module-karabo.test.test_source_detection" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_source_detection.restored_filtered_example_gleam">
+<span class="sig-name descname"><span class="pre">restored_filtered_example_gleam</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#karabo.test.test_source_detection.restored_filtered_example_gleam" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_source_detection.test_automatic_assignment_of_ground_truth_and_prediction">
+<span class="sig-name descname"><span class="pre">test_automatic_assignment_of_ground_truth_and_prediction</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_source_detection.test_automatic_assignment_of_ground_truth_and_prediction" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_source_detection.test_bdsf_image_blanked">
+<span class="sig-name descname"><span class="pre">test_bdsf_image_blanked</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tobject</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#karabo.test.conftest.TFiles" title="karabo.test.conftest.TFiles"><span class="pre">TFiles</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_source_detection.test_bdsf_image_blanked" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_source_detection.test_create_detection_from_ms_cuda">
+<span class="sig-name descname"><span class="pre">test_create_detection_from_ms_cuda</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_source_detection.test_create_detection_from_ms_cuda" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_source_detection.test_full_source_detection">
+<span class="sig-name descname"><span class="pre">test_full_source_detection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">test_restored_filtered_example_gleam_downloader</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="karabo.data.html#karabo.data.external_data.SingleFileDownloadObject" title="karabo.data.external_data.SingleFileDownloadObject"><span class="pre">SingleFileDownloadObject</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_source_detection.test_full_source_detection" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_source_detection.test_restored_filtered_example_gleam_downloader">
+<span class="sig-name descname"><span class="pre">test_restored_filtered_example_gleam_downloader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">restored_filtered_example_gleam</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="karabo.data.html#karabo.data.external_data.SingleFileDownloadObject" title="karabo.data.external_data.SingleFileDownloadObject"><span class="pre">SingleFileDownloadObject</span></a></span></span><a class="headerlink" href="#karabo.test.test_source_detection.test_restored_filtered_example_gleam_downloader" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_source_detection.test_source_detection_plot">
+<span class="sig-name descname"><span class="pre">test_source_detection_plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tobject</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#karabo.test.conftest.TFiles" title="karabo.test.conftest.TFiles"><span class="pre">TFiles</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">normalized_norm_diff</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_source_detection.test_source_detection_plot" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-karabo.test.test_superimpose">
+<span id="karabo-test-test-superimpose-module"></span><h2>karabo.test.test_superimpose module<a class="headerlink" href="#module-karabo.test.test_superimpose" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="karabo.test.test_superimpose.SuperimposeTestCase">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SuperimposeTestCase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">methodName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'runTest'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_superimpose.SuperimposeTestCase" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">TestCase</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="karabo.test.test_superimpose.SuperimposeTestCase.data_3d_1">
+<span class="sig-name descname"><span class="pre">data_3d_1</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">array([[[0,</span> <span class="pre">0,</span> <span class="pre">0],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">[0,</span> <span class="pre">0,</span> <span class="pre">0],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">[0,</span> <span class="pre">0,</span> <span class="pre">0]],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">[[0,</span> <span class="pre">0,</span> <span class="pre">0],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">[0,</span> <span class="pre">0,</span> <span class="pre">0],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">[0,</span> <span class="pre">0,</span> <span class="pre">0]],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">[[0,</span> <span class="pre">0,</span> <span class="pre">0],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">[0,</span> <span class="pre">0,</span> <span class="pre">0],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">[0,</span> <span class="pre">0,</span> <span class="pre">0]]])</span></em><a class="headerlink" href="#karabo.test.test_superimpose.SuperimposeTestCase.data_3d_1" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="karabo.test.test_superimpose.SuperimposeTestCase.data_3d_2">
+<span class="sig-name descname"><span class="pre">data_3d_2</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">array([[[1,</span> <span class="pre">1,</span> <span class="pre">1],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">[1,</span> <span class="pre">1,</span> <span class="pre">1],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">[1,</span> <span class="pre">1,</span> <span class="pre">1]],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">[[1,</span> <span class="pre">1,</span> <span class="pre">1],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">[1,</span> <span class="pre">1,</span> <span class="pre">1],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">[1,</span> <span class="pre">1,</span> <span class="pre">1]],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">[[1,</span> <span class="pre">1,</span> <span class="pre">1],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">[1,</span> <span class="pre">1,</span> <span class="pre">1],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">[1,</span> <span class="pre">1,</span> <span class="pre">1]]])</span></em><a class="headerlink" href="#karabo.test.test_superimpose.SuperimposeTestCase.data_3d_2" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="karabo.test.test_superimpose.SuperimposeTestCase.data_3d_3">
+<span class="sig-name descname"><span class="pre">data_3d_3</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">array([[[1,</span> <span class="pre">2,</span> <span class="pre">3],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3]],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">[[1,</span> <span class="pre">2,</span> <span class="pre">3],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3]],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">[[1,</span> <span class="pre">2,</span> <span class="pre">3],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3]]])</span></em><a class="headerlink" href="#karabo.test.test_superimpose.SuperimposeTestCase.data_3d_3" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="karabo.test.test_superimpose.SuperimposeTestCase.im_2d_1">
+<span class="sig-name descname"><span class="pre">im_2d_1</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">Image2D(data=array([[0,</span> <span class="pre">0,</span> <span class="pre">0],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">[0,</span> <span class="pre">0,</span> <span class="pre">0],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">[0,</span> <span class="pre">0,</span> <span class="pre">0]]),</span> <span class="pre">x_label=[],</span> <span class="pre">y_label=[],</span> <span class="pre">redshift=0,</span> <span class="pre">box_dims=0)</span></em><a class="headerlink" href="#karabo.test.test_superimpose.SuperimposeTestCase.im_2d_1" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="karabo.test.test_superimpose.SuperimposeTestCase.im_2d_2">
+<span class="sig-name descname"><span class="pre">im_2d_2</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">Image2D(data=array([[1,</span> <span class="pre">1,</span> <span class="pre">1],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">[1,</span> <span class="pre">1,</span> <span class="pre">1],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">[1,</span> <span class="pre">1,</span> <span class="pre">1]]),</span> <span class="pre">x_label=[],</span> <span class="pre">y_label=[],</span> <span class="pre">redshift=0,</span> <span class="pre">box_dims=0)</span></em><a class="headerlink" href="#karabo.test.test_superimpose.SuperimposeTestCase.im_2d_2" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="karabo.test.test_superimpose.SuperimposeTestCase.im_2d_3">
+<span class="sig-name descname"><span class="pre">im_2d_3</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">Image2D(data=array([[1,</span> <span class="pre">1,</span> <span class="pre">1],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">[2,</span> <span class="pre">2,</span> <span class="pre">2],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">[3,</span> <span class="pre">3,</span> <span class="pre">3]]),</span> <span class="pre">x_label=[],</span> <span class="pre">y_label=[],</span> <span class="pre">redshift=0,</span> <span class="pre">box_dims=0)</span></em><a class="headerlink" href="#karabo.test.test_superimpose.SuperimposeTestCase.im_2d_3" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="karabo.test.test_superimpose.SuperimposeTestCase.im_3d_1">
+<span class="sig-name descname"><span class="pre">im_3d_1</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">Image3D(data=array([[[0,</span> <span class="pre">0,</span> <span class="pre">0],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">[0,</span> <span class="pre">0,</span> <span class="pre">0],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">[0,</span> <span class="pre">0,</span> <span class="pre">0]],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">[[0,</span> <span class="pre">0,</span> <span class="pre">0],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">[0,</span> <span class="pre">0,</span> <span class="pre">0],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">[0,</span> <span class="pre">0,</span> <span class="pre">0]],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">[[0,</span> <span class="pre">0,</span> <span class="pre">0],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">[0,</span> <span class="pre">0,</span> <span class="pre">0],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">[0,</span> <span class="pre">0,</span> <span class="pre">0]]]),</span> <span class="pre">x_label=[],</span> <span class="pre">y_label=[],</span> <span class="pre">redshift=0,</span> <span class="pre">box_dims=0,</span> <span class="pre">z_label=[])</span></em><a class="headerlink" href="#karabo.test.test_superimpose.SuperimposeTestCase.im_3d_1" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="karabo.test.test_superimpose.SuperimposeTestCase.im_3d_2">
+<span class="sig-name descname"><span class="pre">im_3d_2</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">Image3D(data=array([[[1,</span> <span class="pre">1,</span> <span class="pre">1],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">[1,</span> <span class="pre">1,</span> <span class="pre">1],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">[1,</span> <span class="pre">1,</span> <span class="pre">1]],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">[[1,</span> <span class="pre">1,</span> <span class="pre">1],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">[1,</span> <span class="pre">1,</span> <span class="pre">1],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">[1,</span> <span class="pre">1,</span> <span class="pre">1]],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">[[1,</span> <span class="pre">1,</span> <span class="pre">1],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">[1,</span> <span class="pre">1,</span> <span class="pre">1],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">[1,</span> <span class="pre">1,</span> <span class="pre">1]]]),</span> <span class="pre">x_label=[],</span> <span class="pre">y_label=[],</span> <span class="pre">redshift=0,</span> <span class="pre">box_dims=0,</span> <span class="pre">z_label=[])</span></em><a class="headerlink" href="#karabo.test.test_superimpose.SuperimposeTestCase.im_3d_2" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="karabo.test.test_superimpose.SuperimposeTestCase.im_3d_3">
+<span class="sig-name descname"><span class="pre">im_3d_3</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">Image3D(data=array([[[1,</span> <span class="pre">2,</span> <span class="pre">3],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3]],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">[[1,</span> <span class="pre">2,</span> <span class="pre">3],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3]],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">[[1,</span> <span class="pre">2,</span> <span class="pre">3],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3]]]),</span> <span class="pre">x_label=[],</span> <span class="pre">y_label=[],</span> <span class="pre">redshift=0,</span> <span class="pre">box_dims=0,</span> <span class="pre">z_label=[])</span></em><a class="headerlink" href="#karabo.test.test_superimpose.SuperimposeTestCase.im_3d_3" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="karabo.test.test_superimpose.SuperimposeTestCase.test_akin_array_elem">
+<span class="sig-name descname"><span class="pre">test_akin_array_elem</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#karabo.test.test_superimpose.SuperimposeTestCase.test_akin_array_elem" title="Link to this definition"></a></dt>
+<dd><p>Test if the multiple images, of the same dimension, are combined correctly.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="karabo.test.test_superimpose.SuperimposeTestCase.test_different_array_elem">
+<span class="sig-name descname"><span class="pre">test_different_array_elem</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#karabo.test.test_superimpose.SuperimposeTestCase.test_different_array_elem" title="Link to this definition"></a></dt>
+<dd><p>Test if the multiple images, of different dimension, are combined correctly.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="karabo.test.test_superimpose.SuperimposeTestCase.test_empty">
+<span class="sig-name descname"><span class="pre">test_empty</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#karabo.test.test_superimpose.SuperimposeTestCase.test_empty" title="Link to this definition"></a></dt>
+<dd><p>Test if the KaraboError is raised when trying to combine the elements of an
+empty list.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="karabo.test.test_superimpose.SuperimposeTestCase.test_one_elem">
+<span class="sig-name descname"><span class="pre">test_one_elem</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#karabo.test.test_superimpose.SuperimposeTestCase.test_one_elem" title="Link to this definition"></a></dt>
+<dd><p>Test if the same image comes out if only on is given to the superimpose.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="karabo.test.test_superimpose.SuperimposeTestCase.test_tow_akin_elem">
+<span class="sig-name descname"><span class="pre">test_tow_akin_elem</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#karabo.test.test_superimpose.SuperimposeTestCase.test_tow_akin_elem" title="Link to this definition"></a></dt>
+<dd><p>Test if the two images, of the same dimension, are combined correctly.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="karabo.test.test_superimpose.SuperimposeTestCase.test_tow_different_elem">
+<span class="sig-name descname"><span class="pre">test_tow_different_elem</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#karabo.test.test_superimpose.SuperimposeTestCase.test_tow_different_elem" title="Link to this definition"></a></dt>
+<dd><p>Test if the two images, of different dimension, are combined correctly.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-karabo.test.test_system_noise">
+<span id="karabo-test-test-system-noise-module"></span><h2>karabo.test.test_system_noise module<a class="headerlink" href="#module-karabo.test.test_system_noise" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_system_noise.test_basic">
+<span class="sig-name descname"><span class="pre">test_basic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sky_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">float64</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_system_noise.test_basic" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-karabo.test.test_telescope">
+<span id="karabo-test-test-telescope-module"></span><h2>karabo.test.test_telescope module<a class="headerlink" href="#module-karabo.test.test_telescope" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_telescope.rest_read_all_VLA_versions">
+<span class="sig-name descname"><span class="pre">rest_read_all_VLA_versions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">version</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_telescope.rest_read_all_VLA_versions" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_telescope.test_OSKAR_telescope_plot_file_created">
+<span class="sig-name descname"><span class="pre">test_OSKAR_telescope_plot_file_created</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_telescope.test_OSKAR_telescope_plot_file_created" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_telescope.test_OSKAR_telescope_with_invalid_version">
+<span class="sig-name descname"><span class="pre">test_OSKAR_telescope_with_invalid_version</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_telescope.test_OSKAR_telescope_with_invalid_version" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_telescope.test_OSKAR_telescope_with_missing_version">
+<span class="sig-name descname"><span class="pre">test_OSKAR_telescope_with_missing_version</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_telescope.test_OSKAR_telescope_with_missing_version" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_telescope.test_OSKAR_telescope_with_version_but_version_not_required">
+<span class="sig-name descname"><span class="pre">test_OSKAR_telescope_with_version_but_version_not_required</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_telescope.test_OSKAR_telescope_with_version_but_version_not_required" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_telescope.test_RASCIL_telescope">
+<span class="sig-name descname"><span class="pre">test_RASCIL_telescope</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_telescope.test_RASCIL_telescope" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_telescope.test_RASCIL_telescope_no_plot_file_created">
+<span class="sig-name descname"><span class="pre">test_RASCIL_telescope_no_plot_file_created</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_telescope.test_RASCIL_telescope_no_plot_file_created" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_telescope.test_RASCIL_telescope_plot_file_created">
+<span class="sig-name descname"><span class="pre">test_RASCIL_telescope_plot_file_created</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_telescope.test_RASCIL_telescope_plot_file_created" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_telescope.test_RASCIL_telescope_with_version_triggers_logging">
+<span class="sig-name descname"><span class="pre">test_RASCIL_telescope_with_version_triggers_logging</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mock_logging_warning</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_telescope.test_RASCIL_telescope_with_version_triggers_logging" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_telescope.test_convert_to_oskar">
+<span class="sig-name descname"><span class="pre">test_convert_to_oskar</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_telescope.test_convert_to_oskar" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_telescope.test_create_alma_telescope">
+<span class="sig-name descname"><span class="pre">test_create_alma_telescope</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_telescope.test_create_alma_telescope" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_telescope.test_create_meerkat_telescope">
+<span class="sig-name descname"><span class="pre">test_create_meerkat_telescope</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_telescope.test_create_meerkat_telescope" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_telescope.test_get_OSKAR_backend_information">
+<span class="sig-name descname"><span class="pre">test_get_OSKAR_backend_information</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_telescope.test_get_OSKAR_backend_information" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_telescope.test_get_RASCIL_backend_information">
+<span class="sig-name descname"><span class="pre">test_get_RASCIL_backend_information</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_telescope.test_get_RASCIL_backend_information" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_telescope.test_get_invalid_backend_information">
+<span class="sig-name descname"><span class="pre">test_get_invalid_backend_information</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_telescope.test_get_invalid_backend_information" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_telescope.test_invalid_OSKAR_telescope">
+<span class="sig-name descname"><span class="pre">test_invalid_OSKAR_telescope</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_telescope.test_invalid_OSKAR_telescope" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_telescope.test_invalid_RASCIL_telescope">
+<span class="sig-name descname"><span class="pre">test_invalid_RASCIL_telescope</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_telescope.test_invalid_RASCIL_telescope" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_telescope.test_invalid_backend">
+<span class="sig-name descname"><span class="pre">test_invalid_backend</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_telescope.test_invalid_backend" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_telescope.test_plot_invalid_backend">
+<span class="sig-name descname"><span class="pre">test_plot_invalid_backend</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mock_logging_warning</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_telescope.test_plot_invalid_backend" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_telescope.test_read_SKA_LOW">
+<span class="sig-name descname"><span class="pre">test_read_SKA_LOW</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_telescope.test_read_SKA_LOW" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_telescope.test_read_SKA_MID">
+<span class="sig-name descname"><span class="pre">test_read_SKA_MID</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_telescope.test_read_SKA_MID" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_telescope.test_read_VLBA">
+<span class="sig-name descname"><span class="pre">test_read_VLBA</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_telescope.test_read_VLBA" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_telescope.test_read_WSRT">
+<span class="sig-name descname"><span class="pre">test_read_WSRT</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_telescope.test_read_WSRT" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_telescope.test_read_all_ACA_versions">
+<span class="sig-name descname"><span class="pre">test_read_all_ACA_versions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">version</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_telescope.test_read_all_ACA_versions" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_telescope.test_read_all_ALMA_versions">
+<span class="sig-name descname"><span class="pre">test_read_all_ALMA_versions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">version</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_telescope.test_read_all_ALMA_versions" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_telescope.test_read_all_CARMA_versions">
+<span class="sig-name descname"><span class="pre">test_read_all_CARMA_versions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">version</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_telescope.test_read_all_CARMA_versions" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_telescope.test_read_all_NG_VLA_versions">
+<span class="sig-name descname"><span class="pre">test_read_all_NG_VLA_versions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">version</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_telescope.test_read_all_NG_VLA_versions" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_telescope.test_read_all_PDBI_versions">
+<span class="sig-name descname"><span class="pre">test_read_all_PDBI_versions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">version</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_telescope.test_read_all_PDBI_versions" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_telescope.test_read_all_SMA_versions">
+<span class="sig-name descname"><span class="pre">test_read_all_SMA_versions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">version</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_telescope.test_read_all_SMA_versions" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_telescope.test_write_and_read_tm_file">
+<span class="sig-name descname"><span class="pre">test_write_and_read_tm_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_telescope.test_write_and_read_tm_file" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-karabo.test.test_telescope_baselines">
+<span id="karabo-test-test-telescope-baselines-module"></span><h2>karabo.test.test_telescope_baselines module<a class="headerlink" href="#module-karabo.test.test_telescope_baselines" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_telescope_baselines.oskar_telescope">
+<span class="sig-name descname"><span class="pre">oskar_telescope</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="main_features/simulation.html#karabo.simulation.telescope.Telescope" title="karabo.simulation.telescope.Telescope"><span class="pre">Telescope</span></a></span></span><a class="headerlink" href="#karabo.test.test_telescope_baselines.oskar_telescope" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_telescope_baselines.rascil_telescope">
+<span class="sig-name descname"><span class="pre">rascil_telescope</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="main_features/simulation.html#karabo.simulation.telescope.Telescope" title="karabo.simulation.telescope.Telescope"><span class="pre">Telescope</span></a></span></span><a class="headerlink" href="#karabo.test.test_telescope_baselines.rascil_telescope" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_telescope_baselines.sky_model">
+<span class="sig-name descname"><span class="pre">sky_model</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="main_features/simulation.html#karabo.simulation.sky_model.SkyModel" title="karabo.simulation.sky_model.SkyModel"><span class="pre">SkyModel</span></a></span></span><a class="headerlink" href="#karabo.test.test_telescope_baselines.sky_model" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_telescope_baselines.test_baselines_based_cutoff">
+<span class="sig-name descname"><span class="pre">test_baselines_based_cutoff</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">oskar_telescope</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="main_features/simulation.html#karabo.simulation.telescope.Telescope" title="karabo.simulation.telescope.Telescope"><span class="pre">Telescope</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">sky_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="main_features/simulation.html#karabo.simulation.sky_model.SkyModel" title="karabo.simulation.sky_model.SkyModel"><span class="pre">SkyModel</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_telescope_baselines.test_baselines_based_cutoff" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_telescope_baselines.test_telescope_baseline_length">
+<span class="sig-name descname"><span class="pre">test_telescope_baseline_length</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rascil_telescope</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_telescope_baselines.test_telescope_baseline_length" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_telescope_baselines.test_telescope_max_baseline_length">
+<span class="sig-name descname"><span class="pre">test_telescope_max_baseline_length</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">oskar_telescope</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="main_features/simulation.html#karabo.simulation.telescope.Telescope" title="karabo.simulation.telescope.Telescope"><span class="pre">Telescope</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">rascil_telescope</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="main_features/simulation.html#karabo.simulation.telescope.Telescope" title="karabo.simulation.telescope.Telescope"><span class="pre">Telescope</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_telescope_baselines.test_telescope_max_baseline_length" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_telescope_baselines.test_telescope_stations">
+<span class="sig-name descname"><span class="pre">test_telescope_stations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">oskar_telescope</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="main_features/simulation.html#karabo.simulation.telescope.Telescope" title="karabo.simulation.telescope.Telescope"><span class="pre">Telescope</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">rascil_telescope</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="main_features/simulation.html#karabo.simulation.telescope.Telescope" title="karabo.simulation.telescope.Telescope"><span class="pre">Telescope</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_telescope_baselines.test_telescope_stations" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-karabo.test.test_utils">
+<span id="karabo-test-test-utils-module"></span><h2>karabo.test.test_utils module<a class="headerlink" href="#module-karabo.test.test_utils" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_utils.test_get_gpu_memory">
+<span class="sig-name descname"><span class="pre">test_get_gpu_memory</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_utils.test_get_gpu_memory" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_utils.test_gpu_memory_error">
+<span class="sig-name descname"><span class="pre">test_gpu_memory_error</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_utils.test_gpu_memory_error" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_utils.test_is_cuda_available">
+<span class="sig-name descname"><span class="pre">test_is_cuda_available</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_utils.test_is_cuda_available" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_utils.test_is_cuda_available_true">
+<span class="sig-name descname"><span class="pre">test_is_cuda_available_true</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_utils.test_is_cuda_available_true" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_utils.test_suppress_rascil_warning">
+<span class="sig-name descname"><span class="pre">test_suppress_rascil_warning</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">caplog</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">LogCaptureFixture</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_utils.test_suppress_rascil_warning" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.test_utils.test_version">
+<span class="sig-name descname"><span class="pre">test_version</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#karabo.test.test_utils.test_version" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-karabo.test.util">
+<span id="karabo-test-util-module"></span><h2>karabo.test.util module<a class="headerlink" href="#module-karabo.test.util" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="karabo.test.util.get_compatible_dirty_imager">
+<span class="sig-name descname"><span class="pre">get_compatible_dirty_imager</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">visibility</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="karabo.simulation.html#karabo.simulation.visibility.Visibility" title="karabo.simulation.visibility.Visibility"><span class="pre">Visibility</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="main_features/base_imaging.html#id0" title="karabo.imaging.imager_base.DirtyImagerConfig"><span class="pre">DirtyImagerConfig</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="main_features/base_imaging.html#karabo.imaging.imager_base.DirtyImager" title="karabo.imaging.imager_base.DirtyImager"><span class="pre">DirtyImager</span></a></span></span><a class="headerlink" href="#karabo.test.util.get_compatible_dirty_imager" title="Link to this definition"></a></dt>
+<dd><p>Automatically choose a suitable dirty imager based on a visibility object.</p>
+<p>Temporary function until we have a general visibility object
+and functions to convert general objects to implementation-specific
+objects on demand.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>visibility</strong> – Visibility object</p></li>
+<li><p><strong>config</strong> – Config to initialize dirty imager
+object with.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The created dirty imager object</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="main_features/base_imaging.html#karabo.imaging.imager_base.DirtyImager" title="karabo.imaging.imager_base.DirtyImager">DirtyImager</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-karabo.test">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-karabo.test" title="Link to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, i4ds.
+      <span class="lastupdated">Last updated on Jan 23, 2025.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
