@@ -90,8 +90,9 @@ class SourceDetectionResult(ISourceDetectionResult):
         detection algorithm. More rows can also be added at the end. As they are not
         used for any internal algorithm.
 
-        :param detected_sources: detected sources in array
-        :param source_image: Image, where the source detection was performed on
+        Args:
+            detected_sources: detected sources in array
+            source_image: Image, where the source detection was performed on
         """
         self.source_image = source_image
         self.detected_sources = detected_sources
@@ -115,53 +116,45 @@ class SourceDetectionResult(ISourceDetectionResult):
         """
         Detect sources in an astronomical image using PyBDSF.process_image function.
 
-        Parameters
-        ----------
-        cls : Type[SourceDetectionResultType]
-            The class on which this method is called.
-        image : Image or List[Image]
-            Image object for source detection. Can be a single image or a list of
-            images.
-        beam : Optional[BeamType],
-            The Full Width Half Maximum (FWHM) of the restoring beam,
-            BMAJ(arcsec), BMIN(arcsec), BPA(degree).
-            If None, tries to extract from image metadata.
-        verbose : verbose?
-        n_splits : int, default 0
-            The number of parts to split the image into for processing. A value
-            greater than 1 requires Dask.
-        overlap : int, default 0
-            The overlap between split parts of the image in pixels.
-        ** kwargs : Any
-            Additional keyword arguments to pass to PyBDSF.process_image function.
+        Args:
+            image (Image or List[Image]):
+                Image object for source detection. Can be a single image or a list of
+                images.
+            beam (Optional[BeamType]):
+                The Full Width Half Maximum (FWHM) of the restoring beam,
+                BMAJ(arcsec), BMIN(arcsec), BPA(degree).
+                If None, tries to extract from image metadata.
+            verbose (bool): verbose?
+            n_splits (int): default 0
+                The number of parts to split the image into for processing. A value
+                greater than 1 requires Dask.
+            overlap (int): default 0
+                The overlap between split parts of the image in pixels.
+            ** kwargs (Any):
+                Additional keyword arguments to pass to PyBDSF.process_image function.
 
-        Returns
-        -------
-        Optional[List[SourceDetectionResultType]]
-            A list of detected sources, or None if all pixels in the image are blanked
-            or on failure.
+        Returns:
+            Optional[List[_SourceDetectionResultType]]: A list of detected sources,
+            or None if all pixels in the image are blanked or on failure.
 
-        Raises
-        ------
-        RuntimeError
-            If an unexpected error occurs during the source detection process.
+        Raises:
+            RuntimeError: If an unexpected error occurs during the source detection process.
 
-        Notes
-        -----
-        The dask client has to be created with the setting `processes=False` to avoid
-        issues with PyBDSF multiprocessing. See similar issue here:
-        https://stackoverflow.com/questions/51485212/multiprocessing-gives-assertionerror-daemonic-processes-are-not-allowed-to-have # noqa
-        If 'n_splits' is greater than 1 and 'use_dask' is True, the image will be split
-        into multiple parts and processed in parallel using Dask. Overlap can be
-        specified to prevent edge artifacts.
+        Note:
+            The dask client has to be created with the setting `processes=False` to avoid
+            issues with PyBDSF multiprocessing. See similar issue here:
+            https://stackoverflow.com/questions/51485212/multiprocessing-gives-assertionerror-daemonic-processes-are-not-allowed-to-have # noqa
+            If 'n_splits' is greater than 1 and 'use_dask' is True, the image will be split
+            into multiple parts and processed in parallel using Dask. Overlap can be
+            specified to prevent edge artifacts.
 
-        If the 'beam' parameter is not provided, the method will attempt to extract the
-        beam parameters from the image metadata. A warning is raised if beam parameters
-        are not found.
+            If the 'beam' parameter is not provided, the method will attempt to extract the
+            beam parameters from the image metadata. A warning is raised if beam parameters
+            are not found.
 
-        The PyBDSF process_image function is called for source detection, which is
-        particularly designed for radio astronomical images. For details on this
-        function, refer to the PyBDSF documentation.
+            The PyBDSF process_image function is called for source detection, which is
+            particularly designed for radio astronomical images. For details on this
+            function, refer to the PyBDSF documentation.
         """
         if beam is None:
             if image.has_beam_parameters():
@@ -198,7 +191,9 @@ class SourceDetectionResult(ISourceDetectionResult):
         """
         Save Source Detection Result to ZIP Archive containing the .fits source image
         and source-finding catalog.
-        :param path: path to save the zip archive as.
+
+        Args:
+            path: Path to save the zip archive to.
         """
         path = str(path)
         if path.endswith(".zip"):
@@ -223,9 +218,10 @@ class SourceDetectionResult(ISourceDetectionResult):
 
     def __save_sources_to_csv(self, filepath: FilePathType) -> None:
         """
-        Save detected Sources to CSV
-        :param filepath:
-        :return:
+        Save detected sources to CSV
+
+        Args:
+            filepath: Where to save the csv file to.
         """
         filepath = str(filepath)
         np.savetxt(filepath, self.detected_sources, delimiter=",")
@@ -233,7 +229,9 @@ class SourceDetectionResult(ISourceDetectionResult):
     def has_source_image(self) -> bool:
         """
         Check if source image is present.
-        :return: True if present, False if not present
+
+        Returns:
+            bool: True if present, False if not present
         """
         if self.source_image is not None:
             return True
@@ -242,7 +240,9 @@ class SourceDetectionResult(ISourceDetectionResult):
     def get_source_image(self) -> Optional[Image]:
         """
         Return the source image, where the source detection was performed on.
-        :return: Karabo Image or None (if not supplied)
+
+        Returns:
+            Image: Karabo Image or None (if not supplied)
         """
         if self.has_source_image():
             return self.source_image
@@ -269,7 +269,9 @@ class PyBDSFSourceDetectionResult(SourceDetectionResult):
         Source Detection Result Wrapper for source detection results from PyBDSF.
         The Object allows the use of all Karabo-Source Detection
         functions on PyBDSF results
-        :param bdsf_detection: PyBDSF result image
+
+        Args:
+            dsf_detection: PyBDSF result image
         """
         tmp_dir = FileHandler().get_tmp_dir(
             prefix="pybdsf-sdr-",
@@ -390,39 +392,30 @@ class PyBDSFSourceDetectionResultList(ISourceDetectionResult):
     removes sources that are closer than a specified minimum pixel distance,
     preferring sources with higher total flux.
 
-    Parameters
-    ----------
-    bdsf_detection : Optional[List[PyBDSFSourceDetectionResult]
-        A list of PyBDSF source detection results.
+    Attributes:
+        bdsf_detection (List[PyBDSFSourceDetectionResult]):
+            The list of detection results from PyBDSF.
+        detected_sources (NDArray[np.float_]):
+            Array of detected sources. Calculated based on `bdsf_detection` and
+            `min_pixel_distance_between_sources`. It's populated when the property
+            is accessed and not beforehand.
+        min_pixel_distance_between_sources (int):
+            The minimum number of pixels that must separate sources to be considered
+            distinct. Defaults to 5. This attribute can be modified before calling
+            any function that relies on it to adjust the minimum distance criterion.
+        verbose (bool):
+            If True, prints verbose output. Defaults to False.
 
-    Attributes
-    ----------
-    bdsf_detection : List[PyBDSFSourceDetectionResult]
-        The list of detection results from PyBDSF.
-    detected_sources : NDArray[np.float_]
-        Array of detected sources. Calculated based on `bdsf_detection` and
-        `min_pixel_distance_between_sources`. It's populated when the property
-        is accessed and not beforehand.
-    min_pixel_distance_between_sources : int
-        The minimum number of pixels that must separate sources to be considered
-        distinct. Defaults to 5. This attribute can be modified before calling
-        any function that relies on it to adjust the minimum distance criterion.
-    verbose : bool
-        If True, prints verbose output. Defaults to False.
+    Args:
+        bdsf_detection (Optional[List[PyBDSFSourceDetectionResult]):
+            A list of PyBDSF source detection results.
 
-    Methods
-    -------
-    detected_sources() -> NDArray[np.float_]:
-        Returns the detected sources after applying the minimum pixel distance
-        criteria. Lazy loads the value when accessed.
-
-    Notes
-    -----
-    The `detected_sources` property depends on `bdsf_detection` and
-    `min_pixel_distance_between_sources`. It calculates the pixel positions
-    based on these inputs and filters out sources that are closer than the
-    minimum distance. It also assumes a single mosaic header is applicable for
-    all detections for CRPIX calibration.
+    Note:
+        The `detected_sources` property depends on `bdsf_detection` and
+        `min_pixel_distance_between_sources`. It calculates the pixel positions
+        based on these inputs and filters out sources that are closer than the
+        minimum distance. It also assumes a single mosaic header is applicable for
+        all detections for CRPIX calibration.
     """
 
     def __init__(
@@ -498,18 +491,16 @@ class PyBDSFSourceDetectionResultList(ISourceDetectionResult):
         `bdsf_detection`attribute.
         It identifies and removes overlapping sources using pixel overlap.
 
-        Returns
-        -------
-        NDArray[np.float_]
+        Returns:
+            NDArray[np.float_]:
             A numpy array of detected sources after removing overlaps. The array
             structure and content depend on the format used by individual
             detection instances.
 
-        Notes
-        -----
-        This method relies on `self.__get_idx_of_overlapping_sources()` to
-        identify indices of overlapping sources and `self.__drop_cast_sources()`
-        to remove them.
+        Note:
+            This method relies on `self.__get_idx_of_overlapping_sources()` to
+            identify indices of overlapping sources and `self.__drop_cast_sources()`
+            to remove them.
         """
         if self.bdsf_detection is None:
             raise ValueError(

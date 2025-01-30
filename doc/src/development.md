@@ -73,7 +73,7 @@ If you run mypy several times for the same file(s) and it takes a while, you can
 
 ### pydocstyle
 
-[pydocstyle](http://www.pydocstyle.org/en/stable/) supports docstring checking out of the box. The check can be used via CLI `pydocstyle {source_file_or_directory}. Further options can be found in the [documentation](http://www.pydocstyle.org/en/stable/usage.html) or via `pydocstyle --help`.
+[pydocstyle](http://www.pydocstyle.org/en/stable/) supports docstring checking out of the box. The check can be used via CLI `pydocstyle {source_file_or_directory}`. Further options can be found in the [documentation](http://www.pydocstyle.org/en/stable/usage.html) or via `pydocstyle --help`.
 
 In our project we use the [google convention](http://www.pydocstyle.org/en/stable/error_codes.html?highlight=google#default-conventions). Python files, classes as well as functions need corresponding docstrings. There are autocompletion tools for IDE's that create docstrings in the correct format (e.g. VSCode [autoDocstring](https://marketplace.visualstudio.com/items?itemName=njpwerner.autodocstring)). Below is an example of a dummy function with the corresponding docstring template:
 

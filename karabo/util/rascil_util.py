@@ -1,3 +1,4 @@
+""" Offers functions to handle some of the RASCIL output. """
 import logging
 import os
 from logging import LogRecord
@@ -16,11 +17,13 @@ DATA_DIR_WARNING_PATH_TO_MODULE = os.path.join(
 def filter_data_dir_warning_message() -> None:
     """Avoid unnecessary RASCIL warning that confuses users.
 
-    Avoid the following RASCIL warning:
+    Currently the following RASCIL warning is suppressed:
+
     The RASCIL data directory is not available - continuing but any simulations will
     fail
+
     ...which pops up because we don't download the RASCIL data directory.
-    To the best of our knowledge, we don't need the data directory. (31.07.2024)
+    To the best of our knowledge, we don't need the data directory (31.07.2024).
     We can therefore ignore this warning and avoid unnecessarily alerting users with it.
     """
 

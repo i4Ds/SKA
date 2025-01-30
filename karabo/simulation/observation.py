@@ -34,38 +34,28 @@ class ObservationAbstract(ABC):
 
         Args:
             start_date_and_time (Union[datetime, str]): Start time UTC and date for
-            the observation. Strings are converted to datetime objects
-            using datetime.fromisoformat.
-
+                the observation. Strings are converted to datetime objects
+                using `datetime.fromisoformat`.
             mode (str, optional): TODO. Defaults to "Tracking".
-
             start_frequency_hz (IntFloat, optional): The frequency at the start of the
-            first channel in Hz.
-            Defaults to 0.
-
+                first channel in Hz.Defaults to 0.
             length (timedelta, optional): Length of observation.
-            Defaults to timedelta(hours=4).
-
+                Defaults to timedelta(hours=4).
             number_of_channels (int, optional): Number of channels / bands to use.
-            Defaults to 1.
-
+                Defaults to 1.
             frequency_increment_hz (IntFloat, optional): Frequency increment between
-            successive channels in Hz.
-            Defaults to 0.
-
+                successive channels in Hz. Defaults to 0.
             phase_centre_ra_deg (IntFloat, optional): Right Ascension of
-            the observation pointing (phase centre) in degrees.
-            Defaults to 0.
-
+                the observation pointing (phase centre) in degrees.
+                Defaults to 0.
             phase_centre_dec_deg (IntFloat, optional): Declination of the observation
-            pointing (phase centre) in degrees.
-            Defaults to 0.
-
+                pointing (phase centre) in degrees.
+                Defaults to 0.
             number_of_time_steps (int, optional): Number of time steps in the output
-            data during the observation length. This corresponds to the number of
-            correlator dumps for interferometer simulations, and the number of beam
-            pattern snapshots for beam pattern simulations.
-            Defaults to 1.
+                data during the observation length. This corresponds to the number of
+                correlator dumps for interferometer simulations, and the number of beam
+                pattern snapshots for beam pattern simulations.
+                Defaults to 1.
         """
 
         self.start_frequency_hz = start_frequency_hz
@@ -96,10 +86,11 @@ class ObservationAbstract(ABC):
         Set a new length for the observation.
         Overriding the observation length set in the constructor.
 
-        :param hours: hours
-        :param minutes: minutes
-        :param seconds: seconds
-        :param milliseconds: milliseconds
+        Args:
+            hours: hours
+            minutes: minutes
+            seconds: seconds
+            milliseconds: milliseconds
         """
         self.length = timedelta(
             hours=hours, minutes=minutes, seconds=seconds, milliseconds=milliseconds
@@ -112,8 +103,9 @@ class ObservationAbstract(ABC):
         according to the OSKAR documentation.
         `<https://fdulwich.github.io/oskarpy-doc/settings_tree.html>`.
 
-        :return: Dictionary containing the full configuration
-        in the OSKAR Settings Tree format.
+        Returns:
+            Dictionary containing the full configuration in the
+            OSKAR Settings Tree format.
         """
         settings = {
             "observation": {
@@ -145,8 +137,7 @@ class ObservationAbstract(ABC):
         If there is a mix of different lengths of lists or single values,
         the missing information is repeated to match the longest list.
 
-        Parameters
-        ----------
+        Args:
         settings_tree : OskarSettingsTreeType
             The OSKAR settings tree, with 'observation' key among others.
         central_frequencies_hz : int or list of int
@@ -156,19 +147,14 @@ class ObservationAbstract(ABC):
         n_channels : int or list of int
             List of numbers of channels for each observation.
 
-        Returns
-        -------
-        list of dict
-            List of OSKAR observations, each as a dictionary with 'observation'
-            key among others.
+        Returns:
+        list of dict: List of OSKAR observations,
+        each as a dictionary with 'observation' key among others.
 
-        Raises
-        ------
-        ValueError
-            If the input lists are not of the same length.
+        Raises:
+        ValueError: If the input lists are not of the same length.
 
-        Notes
-        -----
+        Note:
         The 'observation' key in each dictionary in the returned list has a value
         which is itself a dictionary, with keys 'start_frequency_hz',
         'num_channels', and 'frequency_inc_hz'.
@@ -269,7 +255,8 @@ class ObservationLong(ObservationAbstract):
     `length` is little different, which describes the duration of ONE observation,
     whose maximum duration for `ObservationLong` is 24h.
 
-    :ivar number_of_days: Number of successive days to observe
+    Args:
+        number_of_days: Number of successive days to observe
     """
 
     def __init__(
@@ -326,7 +313,8 @@ class ObservationParallelized(ObservationAbstract):
     `length` is little different, which describes the duration of ONE observation,
     whose maximum duration for `ObservationLong` is 24h.
 
-    :ivar number_of_days: Number of successive days to observe
+    Args:
+        number_of_days: Number of successive days to observe
     """
 
     def __init__(

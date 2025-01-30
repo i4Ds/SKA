@@ -1,3 +1,7 @@
+"""
+Offers functionality for handling caching data on disk and
+reading/writung to temporary files.
+"""
 from __future__ import annotations
 
 import glob
@@ -54,19 +58,22 @@ def _get_disk_cache_root(
     'XDG_CACHE_HOME' > $HOME/.cache > /tmp
     Note: Setting env-vars has only an effect if they're set before importing Karabo.
 
+    Returns:
+        str: Path of tmpdir
+
     Raises:
         RuntimeError: If 'TMPDIR' & 'TMP' are set differently which is ambiguous.
 
-    In a container-setup, this dir is preferably a mounted dir. For long-term-memory
-    so that each object doesn't have to be downloaded for each run. For
-    short-term-memory so that the created artifacts are locatable on the launch system.
+    Note:
+        In a container-setup, this dir is preferably a mounted dir.
+        For long-term-memory so that each object doesn't have to be downloaded
+        for each run. For short-term-memory so that the created artifacts are
+        locatable on the launch system.
 
-    Singularity & Sarus container usually use a mounted /tmp. However, this is not the
-    default case for Docker containers. This may be a reason to not put the
-    download-objects into /tmp of the Docker-image.
+        Singularity & Sarus container usually use a mounted /tmp. However, this
+        is not the default case for Docker containers. This may be a reason to
+        not put the download-objects into /tmp of the Docker-image.
 
-    Returns:
-        path of tmpdir
     """
     # first guess is /tmp
     tmpdir = f"{os.path.sep}tmp"
@@ -159,7 +166,6 @@ class FileHandler:
 
     The root STM and LTM must be unique per user (seeded rnd chars+digits) to
     avoid conflicting dir-names on any computer with any root-directory.
-
 
     LTM-root
     └── karabo-LTM-<user>-<10 rnd chars+digits>

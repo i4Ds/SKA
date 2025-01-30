@@ -1,4 +1,4 @@
-"""Module for helper utils which doesn't belong to any other modules."""
+"""Module for helper utils which don't belong to any other modules."""
 
 from __future__ import annotations
 

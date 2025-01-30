@@ -13,9 +13,11 @@ _T = TypeVar("_T", NDArray[np.float_], xr.DataArray, IntFloat)
 def convert_z_to_frequency(z: _T) -> _T:
     """Turn given redshift into corresponding frequency (Hz) for 21cm emission.
 
-    :param z: Redshift values to be converted into frequencies.
+    Args:
+        z: Redshift values to be converted into frequencies.
 
-    :return: Frequencies corresponding to input redshifts.
+    Returns:
+        Frequencies corresponding to input redshifts.
     """
 
     return cast(_T, c.value / (0.21 * (1 + z)))
@@ -24,9 +26,11 @@ def convert_z_to_frequency(z: _T) -> _T:
 def convert_frequency_to_z(freq: _T) -> _T:
     """Turn given frequency (Hz) into corresponding redshift for 21cm emission.
 
-    :param freq: Frequency values to be converted into redshifts.
+    Args:
+        freq: Frequency values to be converted into redshifts.
 
-    :return: Redshifts corresponding to input frequencies.
+    Returns:
+        Redshifts corresponding to input frequencies.
     """
 
     return cast(_T, (c.value / (0.21 * freq)) - 1)
@@ -39,15 +43,18 @@ def freq_channels(
 ) -> Tuple[NDArray[np.float_], NDArray[np.float_], NDArray[np.float_], np.float_]:
     """
     Calculates the frequency channels from the redshifts.
-    :param z_obs: Observed redshifts from the HI sources.
-    :param channel_num: Number of channels.
-    :param equally_spaced_freq: If True (default), create channels
-        equally spaced in frequency.
-        If False, create channels equally spaced in redshift.
 
-    :return: Redshift channels array,
-        frequency channels array (in Hz),
-        array of bin widths of frequency channel (in Hz), for convenience,
+    Args:
+        z_obs: Observed redshifts from the HI sources.
+        channel_num: Number of channels.
+        equally_spaced_freq: If True (default), create channels
+            equally spaced in frequency.
+            If False, create channels equally spaced in redshift.
+
+    Returns:
+        - Redshift channels array,
+        - frequency channels array (in Hz),
+        - array of bin widths of frequency channel (in Hz), for convenience, \
         and middle frequency (in Hz)
     """
     z_start = np.min(z_obs)

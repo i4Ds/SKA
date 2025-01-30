@@ -131,10 +131,11 @@ def line_emission_pipeline(
     And again, if desired, perform a primary beam correction on the final dirty images.
 
     For OSKAR, the provided primary beams will only be used for correction.
-        For the actual primary beam effect in OSKAR,
-        set the relevant parameter in the InterferometerSimulation constructor.
+    For the actual primary beam effect in OSKAR,
+    set the relevant parameter in the InterferometerSimulation constructor.
+
     For RASCIL, the provided primary beams are used
-        for both the primary beam effect and its correction.
+    for both the primary beam effect and its correction.
     """
     print(f"Selected backend: {simulator_backend}")
 

@@ -28,7 +28,7 @@ conda env config vars set LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/wsl/lib
 ```
 
 ## Dealing with the error 'OSKAR library not found'
-If you use Karabo and get the error `RuntimeError: OSKAR library not found.` then this because the correct CUDA drivers are not installed. Karabo relies on CUDA drivers 11.7. It has been reported that often versions > 12 get installed automatically. In this case the above mentioned error is shown at runtime. More information about this issue can be found [here (issue #568)](https://github.com/i4Ds/Karabo-Pipeline/issues/568). Refer to this issue for a workaround.
+If you use Karabo and get the error `RuntimeError: OSKAR library not found.` then this is because the correct CUDA drivers were not installed. Karabo relies on CUDA drivers 11.7. It has been reported that often versions > 12 get installed automatically. In this case the above mentioned error is shown at runtime. More information about this issue can be found [here (issue #568)](https://github.com/i4Ds/Karabo-Pipeline/issues/568). Refer to this issue for a workaround.
 
 Please refer to the troubleshooting section at the bottom of this page if you feel something else does not work.
 

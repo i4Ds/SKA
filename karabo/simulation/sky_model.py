@@ -503,36 +503,37 @@ class SkyModel:
     It should be called after all the filtering and other operations are completed
     and to avoid doing the same calculation multiple them when e.g. on a cluster.
 
-    :ivar sources: List of all point sources in the sky as `xarray.DataArray`.
-        The source_ids reside in `SkyModel.source_ids` if provided
-        through `xarray.sources.coords` with an arbitrary string key
-        as index or `np.ndarray` as idx SOURCES_COLS.
-        A single point source is described using the following col-order:
+    Args:
+        sources: List of all point sources in the sky as `xarray.DataArray`.
+            The source_ids reside in `SkyModel.source_ids` if provided
+            through `xarray.sources.coords` with an arbitrary string key
+            as index or `np.ndarray` as idx SOURCES_COLS.
+            A single point source is described using the following col-order:
 
-        - [0] right ascension (deg)
-        - [1] declination (deg)
-        - [2] stokes I Flux (Jy)
-        - [3] stokes Q Flux (Jy): defaults to 0
-        - [4] stokes U Flux (Jy): defaults to 0
-        - [5] stokes V Flux (Jy): defaults to 0
-        - [6] reference_frequency (Hz): defaults to 0
-        - [7] spectral index (N/A): defaults to 0
-        - [8] rotation measure (rad / m^2): defaults to 0
-        - [9] major axis FWHM (arcsec): defaults to 0
-        - [10] minor axis FWHM (arcsec): defaults to 0
-        - [11] position angle (deg): defaults to 0
-        - [12] true redshift: defaults to 0
-        - [13] observed redshift: defaults to 0
-        - [14] object-id: just for `np.ndarray`
+            - [0] right ascension (deg)
+            - [1] declination (deg)
+            - [2] stokes I Flux (Jy)
+            - [3] stokes Q Flux (Jy): defaults to 0
+            - [4] stokes U Flux (Jy): defaults to 0
+            - [5] stokes V Flux (Jy): defaults to 0
+            - [6] reference_frequency (Hz): defaults to 0
+            - [7] spectral index (N/A): defaults to 0
+            - [8] rotation measure (rad / m^2): defaults to 0
+            - [9] major axis FWHM (arcsec): defaults to 0
+            - [10] minor axis FWHM (arcsec): defaults to 0
+            - [11] position angle (deg): defaults to 0
+            - [12] true redshift: defaults to 0
+            - [13] observed redshift: defaults to 0
+            - [14] object-id: just for `np.ndarray` \
             it is removed in the `xr.DataArray`
             and exists then in `xr.DataArray.coords` as index.
-    :ivar wcs: World Coordinate System (WCS) object representing the coordinate
-        transformation between pixel coordinates and celestial coordinates
-        (e.g., right ascension and declination).
-    :ivar precision: The precision of numerical values used in the SkyModel.
-        Has to be of type np.float_.
-    :ivar h5_file_connection: An open connection to an HDF5 (h5) file
-        that can be used to store or retrieve data related to the SkyModel.
+        wcs: World Coordinate System (WCS) object representing the coordinate
+            transformation between pixel coordinates and celestial coordinates
+            (e.g., right ascension and declination).
+        precision: The precision of numerical values used in the SkyModel.
+            Has to be of type np.float_.
+        h5_file_connection: An open connection to an HDF5 (h5) file
+            that can be used to store or retrieve data related to the SkyModel.
     """
 
     SOURCES_COLS = 14
@@ -571,22 +572,21 @@ class SkyModel:
         """
         Initialize a SkyModel object.
 
-        Parameters
-        ----------
-        sources : {xarray.DataArray, np.ndarray}, optional
-            List of all point sources in the sky.
-            It can be provided as an `xarray.DataArray` or `np.ndarray`.
-            If provided as an `np.ndarray`, the values are converted to
-            `xarray.DataArray`.
-        wcs : WCS, optional
-            World Coordinate System (WCS) object representing the coordinate
-            transformation between pixel coordinates and celestial coordinates.
-        precision : np.dtype, optional
-            The precision of numerical values used in the SkyModel.
-            It should be a NumPy data type (e.g., np.float64).
-        h5_file_connection : h5py.File, optional
-            An open connection to an HDF5 (h5) file
-            that can be used to store or retrieve data related to the SkyModel.
+        Args:
+            sources : {xarray.DataArray, np.ndarray}, optional
+                List of all point sources in the sky.
+                It can be provided as an `xarray.DataArray` or `np.ndarray`.
+                If provided as an `np.ndarray`, the values are converted to
+                `xarray.DataArray`.
+            wcs : WCS, optional
+                World Coordinate System (WCS) object representing the coordinate
+                transformation between pixel coordinates and celestial coordinates.
+            precision : np.dtype, optional
+                The precision of numerical values used in the SkyModel.
+                It should be a NumPy data type (e.g., np.float64).
+            h5_file_connection : h5py.File, optional
+                An open connection to an HDF5 (h5) file
+                that can be used to store or retrieve data related to the SkyModel.
         """
         self.__sources_dim_sources = XARRAY_DIM_0_DEFAULT
         self.__sources_dim_data = XARRAY_DIM_1_DEFAULT
@@ -614,9 +614,7 @@ class SkyModel:
 
     def close(self) -> None:
         """
-        Closes the connection to the HDF5 file.
-
-        This method closes the connection to the HDF5 file if it is open and
+        Closes the connection to the HDF5 file if it is open and
         sets the `h5_file_connection` attribute to `None`.
         """
         if self.h5_file_connection:
@@ -639,16 +637,14 @@ class SkyModel:
 
     def compute(self) -> None:
         """
-        Loads the lazy data into a numpy array, wrapped in a xarray.DataArray.
-
-        This method loads the lazy data from the sources into a numpy array,
-        which is then wrapped in a xarray.DataArray object. It performs the computation
+        Loads the lazy data into a numpy array which is then
+        wrapped in a `xarray.DataArray`. It performs the computation
         necessary to obtain the actual data and stores it in the `_sources` attribute.
         After the computation is complete,
         it calls the `close` method to close the connection to the HDF5 file.
 
         Returns:
-        None
+            None
         """
         if self.sources is not None:
             computed_sources = self.sources.compute()
@@ -739,29 +735,30 @@ class SkyModel:
     def add_point_sources(self, sources: _SkySourcesType) -> None:
         """Add new point sources to the sky model.
 
-        :param sources: `np.ndarray` with shape (number of sources, 1 + SOURCES_COLS),
-            where you can place the "source_id" at index SOURCES_COLS.
-            OR an `xarray.DataArray` with shape (number of sources, SOURCES_COLS),
-            where you can place the "source_id" at `xarray.DataArray.coord`
-            or use `SkyModel.source_ids` later.
+        Args:
+            sources: `np.ndarray` with shape (number of sources, 1 + SOURCES_COLS),
+                where you can place the "source_id" at index SOURCES_COLS.
+                OR an `xarray.DataArray` with shape (number of sources, SOURCES_COLS),
+                where you can place the "source_id" at `xarray.DataArray.coord`
+                or use `SkyModel.source_ids` later.
 
-            The column indices correspond to:
+                The column indices correspond to:
 
-            - [0] right ascension (deg)
-            - [1] declination (deg)
-            - [2] stokes I Flux (Jy)
-            - [3] stokes Q Flux (Jy): defaults to 0
-            - [4] stokes U Flux (Jy): defaults to 0
-            - [5] stokes V Flux (Jy): defaults to 0
-            - [6] reference_frequency (Hz): defaults to 0
-            - [7] spectral index (N/A): defaults to 0
-            - [8] rotation measure (rad / m^2): defaults to 0
-            - [9] major axis FWHM (arcsec): defaults to 0
-            - [10] minor axis FWHM (arcsec): defaults to 0
-            - [11] position angle (deg): defaults to 0
-            - [12] true redshift: defaults to 0
-            - [13] observed redshift: defaults to 0
-            - [14] source id (object): is in `SkyModel.source_ids` if provided
+                - [0] right ascension (deg)
+                - [1] declination (deg)
+                - [2] stokes I Flux (Jy)
+                - [3] stokes Q Flux (Jy): defaults to 0
+                - [4] stokes U Flux (Jy): defaults to 0
+                - [5] stokes V Flux (Jy): defaults to 0
+                - [6] reference_frequency (Hz): defaults to 0
+                - [7] spectral index (N/A): defaults to 0
+                - [8] rotation measure (rad / m^2): defaults to 0
+                - [9] major axis FWHM (arcsec): defaults to 0
+                - [10] minor axis FWHM (arcsec): defaults to 0
+                - [11] position angle (deg): defaults to 0
+                - [12] true redshift: defaults to 0
+                - [13] observed redshift: defaults to 0
+                - [14] source id (object): is in `SkyModel.source_ids` if provided
 
         """
         if (len(sources.shape) == 2) and (sources.shape[0] == 0):
@@ -813,8 +810,10 @@ class SkyModel:
         - observed redshift: defaults to 0
         - source id (object): is in `SkyModel.source_ids` if provided
 
-        :param path: file to read in
-        :return: SkyModel
+        Args:
+            path: file to read in
+        Returns:
+            SkyModel
         """
         dataframe = pd.read_csv(path).to_numpy()
 
@@ -836,9 +835,11 @@ class SkyModel:
         """
         Gets the sources as np.ndarray
 
-        :param with_obj_ids: Option whether object ids should be included or not
+        Args:
+            with_obj_ids: Option whether object ids should be included or not
 
-        :return: the sources of the SkyModel as np.ndarray
+        Returns:
+            the sources of the SkyModel as np.ndarray
         """
         if self.sources is None:
             raise KaraboSkyModelError(
@@ -904,14 +905,16 @@ class SkyModel:
         """
         Filters the sky according to an inner and outer circle from the phase center
 
-        :param inner_radius_deg: Inner radius in degrees
-        :param outer_radius_deg: Outer radius in degrees
-        :param ra0_deg: Phase center right ascension
-        :param dec0_deg: Phase center declination
-        :param indices: Optional parameter, if set to True,
-            we also return the indices of the filtered sky copy
-        :return: Filtered copy of the sky
-        :rtype: SkyModel
+        Args:
+            inner_radius_deg: Inner radius in degrees
+            outer_radius_deg: Outer radius in degrees
+            ra0_deg: Phase center right ascension
+            dec0_deg: Phase center declination
+            indices: Optional parameter, if set to True,
+                we also return the indices of the filtered sky copy
+
+        Returns:
+            SkyModel: Filtered copy of the sky
         """
         copied_sky = SkyModel.copy_sky(self)
         if copied_sky.sources is None:
@@ -984,38 +987,33 @@ class SkyModel:
         fields where the curvature of the celestial sphere can be reasonably
         neglected.
 
-        Parameters
-        ----------
-        inner_radius_deg : IntFloat
-            The inner radius of the annular search region, in degrees.
-        outer_radius_deg : IntFloat
-            The outer radius of the annular search region, in degrees.
-        ra0_deg : IntFloat
-            The right ascension of the search region's center, in degrees.
-        dec0_deg : IntFloat
-            The declination of the search region's center, in degrees.
-        indices : bool, optional
-            If True, returns the indices of the filtered sources in addition to the
-            SkyModel object. Defaults to False.
+        Args:
+            inner_radius_deg : IntFloat
+                The inner radius of the annular search region, in degrees.
+            outer_radius_deg : IntFloat
+                The outer radius of the annular search region, in degrees.
+            ra0_deg : IntFloat
+                The right ascension of the search region's center, in degrees.
+            dec0_deg : IntFloat
+                The declination of the search region's center, in degrees.
+            indices : bool, optional
+                If True, returns the indices of the filtered sources in addition to the
+                SkyModel object. Defaults to False.
 
-        Returns
-        -------
-        SkyModel or tuple of (SkyModel, NDArray[np.int_])
-            The filtered SkyModel object, and optionally the indices of the filtered
-            sources if `indices` is set to True.
+        Returns:
+            SkyModel or tuple of (SkyModel, NDArray[np.int_]):
+                The filtered SkyModel object, and optionally the indices of the filtered
+                sources if `indices` is set to True.
 
-        Raises
-        ------
-        KaraboSkyModelError
-            If the `sources` attribute is not populated in the SkyModel instance prior
-            to invoking this function.
+        Raises:
+            KaraboSkyModelError: If the `sources` attribute is not
+            populated in the SkyModel instance prior to invoking this function.
 
-        Notes
-        -----
-        Use this function for large sky models where a full spherical geometry
-        calculation is not feasible due to memory constraints. It is particularly
-        beneficial when working with Xarray and Dask, facilitating scalable data
-        analysis on datasets that are too large to fit into memory.
+        Note:
+            Use this function for large sky models where a full spherical geometry
+            calculation is not feasible due to memory constraints. It is particularly
+            beneficial when working with Xarray and Dask, facilitating scalable data
+            analysis on datasets that are too large to fit into memory.
         """
         copied_sky = SkyModel.copy_sky(self)
 
@@ -1055,10 +1053,13 @@ class SkyModel:
         """
         Filters the sky based on a specific column index
 
-        :param col_idx: Column index to filter by
-        :param min_val: Minimum value for the column
-        :param max_val: Maximum value for the column
-        :return sky: Filtered copy of the sky
+        Args:
+            col_idx: Column index to filter by
+            min_val: Minimum value for the column
+            max_val: Maximum value for the column
+
+        Returns:
+            SkyModel: Filtered copy of the sky
         """
         copied_sky = SkyModel.copy_sky(self)
         if copied_sky.sources is None:
@@ -1096,7 +1097,8 @@ class SkyModel:
         Gets the currently active world coordinate system astropy.wcs
         For details see https://docs.astropy.org/en/stable/wcs/index.html
 
-        :return: world coordinate system
+        Returns:
+            WCS: world coordinate system
         """
         return self.wcs
 
@@ -1105,7 +1107,8 @@ class SkyModel:
         Sets a new world coordinate system astropy.wcs
         For details see https://docs.astropy.org/en/stable/wcs/index.html
 
-        :param wcs: world coordinate system
+        Args:
+            wcs: world coordinate system
         """
         self.wcs = wcs
 
@@ -1117,9 +1120,11 @@ class SkyModel:
         Defines a default world coordinate system astropy.wcs
         For more details see https://docs.astropy.org/en/stable/wcs/index.html
 
-        :param phase_center: ra-dec location
+        Args:
+            phase_center: ra-dec location
 
-        :return: wcs
+        Returns:
+            WCS: The new world coordinate system
         """
         w = WCS(naxis=2)
         w.wcs.crpix = [0, 0]  # coordinate reference pixel per axis
@@ -1134,9 +1139,11 @@ class SkyModel:
         """
         Gets astropy.table.table.Table from a .fits catalog
 
-        :param path: Location of the .fits file
+        Args:
+            path: Location of the .fits file
 
-        :return: fits catalog
+        Returns:
+            astropy.table.table.Table: Table derived from fits catalog
         """
         return Table.read(path)
 
@@ -1165,28 +1172,30 @@ class SkyModel:
         A scatter plot of the `SkyModel` (self) where the sources
         are projected according to the `phase_center`
 
-        :param phase_center: [RA,DEC]
-        :param stokes: `SkyModel` stoke flux
-        :param idx_to_plot: If you want to plot only a subset of the sources, set
-            the indices here.
-        :param xlim: RA-limit of plot
-        :param ylim: DEC-limit of plot
-        :param figsize: figsize as tuple
-        :param title: plot title
-        :param xlabel: xlabel
-        :param ylabel: ylabel
-        :param cfun: flux scale transformation function for scatter-coloring
-        :param cmap: matplotlib color map
-        :param cbar_label: color bar label
-        :param with_labels: Plots object ID's if set?
-        :param wcs: If you want to use a custom astropy.wcs, ignores `phase_center` if
-            set
-        :param wcs_enabled: Use wcs transformation?
-        :param filename: Set to path/fname to save figure (set extension to fname to
-            overwrite .png default)
-        :param block: Whether or not plotting should block the rest of the program
-        :param kwargs: matplotlib kwargs for scatter & Collections, e.g. customize `s`,
-            `vmin` or `vmax`
+        Args:
+            phase_center: [RA,DEC]
+            stokes: `SkyModel` stoke flux
+            idx_to_plot: If you want to plot only a subset of the sources, set
+                the indices here.
+            xlim: RA-limit of plot
+            ylim: DEC-limit of plot
+            figsize: figsize as tuple
+            title: plot title
+            xlabel: x-axis label
+            ylabel: y-axis label
+            cfun: flux scale transformation function for scatter-coloring.
+                Defaults to np.log10
+            cmap: matplotlib color map
+            cbar_label: color bar label
+            with_labels: Plots object ID's if set?
+            wcs: If you want to use a custom astropy.wcs, ignores `phase_center` if
+                set
+            wcs_enabled: Use wcs transformation?
+            filename: Set to path/fname to save figure (set extension to fname to
+                overwrite .png default)
+            block: Whether or not plotting should block the rest of the program
+            kwargs: matplotlib kwargs for scatter & Collections, e.g. customize `s`,
+                `vmin` or `vmax`
         """
         # To avoid having to read the data multiple times, we read it once here
         if self.sources is None:
@@ -1291,7 +1300,8 @@ class SkyModel:
         """
         Get OSKAR sky model object from the defined Sky Model
 
-        :return: oskar sky model
+        Returns:
+            OSKAR sky model
         """
         if sky.shape[1] > 12:
             return oskar.Sky.from_array(sky[:, :12], precision)
@@ -1308,11 +1318,14 @@ class SkyModel:
         Read a healpix file in hdf5 format.
         The file should have the map keywords:
 
-        :param file: hdf5 file path (healpix format)
-        :param channel: Channels of observation (between 0 and maximum numbers of
-            channels of observation)
-        :param polarisation: 0 = Stokes I, 1 = Stokes Q, 2 = Stokes U, 3 = Stokes  V
-        :return:
+        Args:
+            file: hdf5 file path (healpix format)
+            channel: Channels of observation (between 0 and maximum numbers of
+                channels of observation)
+            polarisation: 0 = Stokes I, 1 = Stokes Q, 2 = Stokes U, 3 = Stokes  V
+
+        Returns:
+            xr.DataArray: Array converted from healpix to 2-D array of RADEC
         """
         arr = get_healpix_image(file)
         filtered = arr[channel][polarisation.value]
@@ -1343,10 +1356,11 @@ class SkyModel:
         """Sources setter.
 
         Does also allow numpy-arrays. But mypy doesn't allow getter and setter to
-            have different dtypes (issue 3004). Just set "# type: ignore [assignment]"
-            in case you don't have exactly an `xarray`.
+        have different dtypes (issue 3004). Just set "# type: ignore [assignment]"
+        in case you don't have exactly an `xarray`.
 
-        :param value: sources, `xarray.DataArray` or `np.ndarray`
+        Args:
+            value: sources, `xarray.DataArray` or `np.ndarray`
         """
         self._sources = None
         self._sources_dim_sources = XARRAY_DIM_0_DEFAULT
@@ -1438,9 +1452,11 @@ class SkyModel:
         If casts the selected array/scalar to float64 if possible
         (usually if source_id is not selected)
 
-        :param key: slice key
+        Args:
+            key: slice key
 
-        :return: sliced self.sources
+        Returns:
+            sliced self.sources
         """
         if self.sources is None:
             raise AttributeError("`sources` is None and therefore can't be accessed.")
@@ -1454,8 +1470,9 @@ class SkyModel:
         """
         Allows to set values in an np.ndarray like manner
 
-        :param key: slice key
-        :param value: values to store
+        Args:
+            key: slice key
+            value: values to store
         """
         if self.sources is None:
             raise KaraboSkyModelError("Can't access `sources` because it's None.")
@@ -1465,7 +1482,9 @@ class SkyModel:
     def save_sky_model_as_csv(self, path: str) -> None:
         """
         Save source array into a csv.
-        :param path: path to save the csv file in.
+
+        Args:
+            path: path to save the csv file in.
         """
         if self.sources is None:
             raise KaraboSkyModelError("Can't save `sources` because they're None.")
@@ -1532,26 +1551,23 @@ class SkyModel:
         Load a sky model dataset from an HDF5 file and
         converts it to an xarray DataArray.
 
-        Parameters
-        ----------
-        path : str
-            Path to the input HDF5 file.
-        prefix_mapping : SkyPrefixMapping
-            Mapping column names to their corresponding dataset paths
-            in the HDF5 file.
-            If the column is not present in the HDF5 file, set its value to None.
-        load_as : Literal["numpy_array", "dask_array"], default="dask_array"
-            What type of array to load the data inside the xarray Data Array as.
-        chunksize : Union[int, str], default=auto
-            Chunk size for Dask arrays. This determines the size of chunks that
-            the data will be divided into when read from the file. Can be an
-            integer or 'auto'. If 'auto', Dask will choose an optimal chunk size.
+        Args:
+            path : Path to the input HDF5 file.
+            prefix_mapping : Mapping column names to their
+                corresponding dataset paths in the HDF5 file.
+                If the column is not present in the HDF5 file,
+                set its value to None.
+            load_as : Literal["numpy_array", "dask_array"], default="dask_array"
+                What type of array to load the data inside the xarray Data Array as.
+            chunksize : Union[int, str], default=auto
+                Chunk size for Dask arrays. This determines the size of chunks that
+                the data will be divided into when read from the file. Can be an
+                integer or 'auto'. If 'auto', Dask will choose an optimal chunk size.
 
-        Returns
-        -------
-        xr.DataArray
-            A 2D xarray DataArray containing the sky model data. Rows represent data
-            points and columns represent different data fields ('ra', 'dec', ...).
+        Returns:
+            xr.DataArray: A 2D xarray DataArray containing the sky model data.
+            Rows represent data points and columns represent
+            different data fields ('ra', 'dec', ...).
         """
         f = h5py.File(path, "r", locking=False)
         data_arrays: List[xr.DataArray] = []
@@ -1616,7 +1632,7 @@ class SkyModel:
             encoded_freq: Unit of col-name encoded frequency.
 
         Returns:
-            sky-model with according sources from `data`.
+            SkyModel: Sky model with according sources from `data`.
         """
         if prefix_mapping.ref_freq is not None:
             raise RuntimeError(
@@ -1834,26 +1850,26 @@ class SkyModel:
 
         - Frequency of some columns is encoded in col-names of the .fits file.
 
-        :param fits_file: The .fits file to create the sky-model from.
-        :param prefix_mapping: Formattable col-names of .fits file. If `encoded_freq`
-            is not None, the freq-encoded field-values must have '{0}'
-            as placeholder.
-        :param unit_mapping: Mapping from col-unit to `astropy.unit`.
-        :param units_sources: Units of `SkyModel.sources`.
-        :param min_freq: Filter by min-freq in Hz. May slow down reading of
-            file significantly.
-        :param max_freq: Filter by max-freq in Hz. May slow down reading of
-            file significantly.
-        :param encoded_freq: Unit of col-name encoded frequency, if the .fits file has
-            it's ref-frequency encoded in the col-names.
-        :param chunks: Coerce the array's data into dask arrays with the given chunks.
-            Might be useful for reading larger-than-memory .fits files.
-        :param memmap: Whether to use memory mapping when opening the FITS file.
-            Allows for reading of larger-than-memory files.
+        Args:
+            fits_file: The .fits file to create the sky-model from.
+            prefix_mapping: Formattable col-names of .fits file. If `encoded_freq`
+                is not None, the freq-encoded field-values must have '{0}'
+                as placeholder.
+            unit_mapping: Mapping from col-unit to `astropy.unit`.
+            units_sources: Units of `SkyModel.sources`.
+            min_freq: Filter by min-freq in Hz. May slow down reading of
+                file significantly.
+            max_freq: Filter by max-freq in Hz. May slow down reading of
+                file significantly.
+            encoded_freq: Unit of col-name encoded frequency, if the .fits file has
+                it's ref-frequency encoded in the col-names.
+            chunks: Coerce the array's data into dask arrays with the given chunks.
+                Might be useful for reading larger-than-memory .fits files.
+            memmap: Whether to use memory mapping when opening the FITS file.
+                Allows for reading of larger-than-memory files.
 
-        :return: Sky model with according sources from `fits_file`.
-        :rtype: SkyModel
-
+        Returns:
+            SkyModel: Sky model with according sources from `fits_file`.
         """
 
         def chunks_fun(arr: xr.DataArray) -> xr.DataArray:
@@ -1968,22 +1984,21 @@ class SkyModel:
         (https://github.com/lmachadopolettivalle) in collaboration
         with the ETHZ Cosmology Research Group.
 
-        :return: The corresponding sky model.
+        Returns:
+            SkyModel: The corresponding sky model.
             The sky model contains the following information:
-            - 'Right Ascension' (ra): The right ascension coordinates \
-            of the celestial objects.
-            - 'Declination' (dec): The declination coordinates of the \
-            celestial objects.
-            - 'Flux' (i): The flux measurements of the celestial objects.
+                - 'Right Ascension' (ra): The right ascension coordinates \
+                of the celestial objects.
+                - 'Declination' (dec): The declination coordinates of the \
+                celestial objects.
+                - 'Flux' (i): The flux measurements of the celestial objects.
+                - 'Observed Redshift': Additional observed redshift information \
+                of the celestial objects.
 
-            - 'Observed Redshift': Additional observed redshift information \
-            of the celestial objects.
-
-            Note: Other properties such as 'stokes_q', 'stokes_u', 'stokes_v',
+        Note:
+            Other properties such as 'stokes_q', 'stokes_u', 'stokes_v',
             'ref_freq', 'spectral_index', 'rm', 'major', 'minor', 'pa', and 'id'
             are not included in the sky model.
-        :rtype: SkyModel
-
         """
         survey = HISourcesSmallCatalogDownloadObject()
         path = survey.get()
@@ -2124,13 +2139,12 @@ class SkyModel:
     @classmethod
     def sky_test(cls: Type[_TSkyModel]) -> _TSkyModel:
         """
-
         Construction of a sky model which can be used for testing and visualizing the
         simulation with equal distributed point sources around the phase center ra=20,
         deg=-30.
 
         Returns:
-             The test sky model.
+             SkyModel: The test sky model.
         """
         sky = cls()
         sky_data = np.zeros((81, cls.SOURCES_COLS))
@@ -2172,25 +2186,29 @@ class SkyModel:
         channel_bandwidth_hz: Optional[float] = None,
         verbose: bool = False,
     ) -> Union[SkyModel, List[SkyComponent]]:
-        """Convert an existing SkyModel instance into
-        a format acceptable by a desired backend.
+        """Convert an existing SkyModel instance into a format acceptable
+        by a desired backend.
 
-        :param backend: Determines how to return the SkyModel source catalog.
-            OSKAR: return the current SkyModel instance, since methods in Karabo
-            support OSKAR-formatted source np.array values.
-            RASCIL: convert the current source array into a
-            list of RASCIL SkyComponent instances.
-        :param desired_frequencies_hz: List of frequencies corresponding to start
-            of desired frequency channels. This field is required
-            to convert sources into RASCIL SkyComponents.
-            The array contains starting frequencies for the desired channels.
-            E.g. [100e6, 110e6] corresponds to 2 frequency channels,
-            which start at 100 MHz and 110 MHz, both with a bandwidth of 10 MHz.
-            channel_bandwidth_hz: Used if desired_frequencies_hz has only one element.
-            Otherwise, bandwidth is determined as the delta between
-            the first two entries in desired_frequencies_hz.
-        :param verbose: Determines whether to display additional print statements.
+        Args:
+            backend: Determines how to return the SkyModel source catalog.
 
+                    - OSKAR: return the current SkyModel instance, since methods \
+                    in Karabo support OSKAR-formatted source np.array values.
+                    - RASCIL: convert the current source array into a \
+                    list of RASCIL SkyComponent instances.
+            desired_frequencies_hz: List of frequencies corresponding to start
+                of desired frequency channels. This field is required
+                to convert sources into RASCIL SkyComponents.
+                The array contains starting frequencies for the desired channels.
+                E.g. [100e6, 110e6] corresponds to 2 frequency channels,
+                which start at 100 MHz and 110 MHz, both with a bandwidth of 10 MHz.
+                channel_bandwidth_hz: Used if desired_frequencies_hz has
+                only one element. Otherwise, bandwidth is determined as
+                the delta between the first two entries in desired_frequencies_hz.
+            verbose: Determines whether to display additional print statements.
+
+        Returns:
+            SkyModel: A SkyModel suitable for your chosen backend, e.g. OSKAR
         """
 
         if backend is SimulatorBackend.OSKAR:

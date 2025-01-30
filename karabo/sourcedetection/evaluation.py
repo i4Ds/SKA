@@ -30,15 +30,17 @@ class SourceDetectionEvaluation:
     ) -> None:
         """Class that holds the mapping of a source detection to truth mapping.
 
-        :param sky: `SkyModel` where the `assignment` comes from
-        :param ground_truth: 2xn array of pixel positions of ground truth
-        :param assignments: jx3 np.ndarray where each row represents an assignment:
+        Args:
+            sky: `SkyModel` where the `assignment` comes from
+            ground_truth: 2xn array of pixel positions of ground truth
+            assignments: jx3 np.ndarray where each row represents an assignment:
 
-            - first column is the `ground_truth` index
-            - second column is the predicted `source_detection.detected_sources` index
-            - third column is the euclidean distance between the assignment
-        :param sky_idxs: Sky sources indices of `SkyModel` from `assignment`
-        :param source_detection: SourceDetectionResult from a previous source-detection
+                - first column is the `ground_truth` index
+                - second column is the predicted `source_detection.detected_sources` \
+                index
+                - third column is the euclidean distance between the assignment
+            sky_idxs: Sky sources indices of `SkyModel` from `assignment`
+            source_detection: SourceDetectionResult from a previous source-detection
 
         """
         self.sky = sky
@@ -115,6 +117,7 @@ class SourceDetectionEvaluation:
             ground truth `gtruth`. The strategy is the following (similar to
             `AUTOMATIC SOURCE DETECTION IN ASTRONOMICAL IMAGES, P.61,
             Marc MASIAS MOYSET, 2014`):
+
             Each distance between the predicted and the ground truth sources is
             calculated. Any distances > `max_dist` are not considered.
             Assign the closest distance from the predicted and ground truth.
@@ -127,24 +130,29 @@ class SourceDetectionEvaluation:
             frequency), the duplicate sources are removed and the assignment is done
             on the remaining.
 
-        :param ground_truth: nx2 np.ndarray with the ground truth pixel
-            coordinates of the catalog
-        :param detected: kx2 np.ndarray with the predicted pixel
-            coordinates of the image
-        :param max_dist: maximal allowed euclidean distance for assignment
-            (in pixel domain)
-        :param top_k: number of top predictions to be considered in scipy.spatial.
-            KDTree. A small value could lead to imperfect results.
-        :return: nx3 np.ndarray where each row represents an assignment
-            - first column represents the ground truth index
-                (return is sorted by this column) a minus index means a ground-truth
-                source with no allocated prediction
-            - second column represents the predicted index
-                a minus index means a predicted source with no allocated ground-truth
-            - third column represents the euclidean distance between the assignment
-                a "inf" means no allocation between ground-truth and prediction
-                of that source
+            Args:
+                ground_truth: nx2 np.ndarray with the ground truth pixel
+                    coordinates of the catalog
+                detected: kx2 np.ndarray with the predicted pixel
+                    coordinates of the image
+                max_dist: maximal allowed euclidean distance for assignment
+                    (in pixel domain)
+                top_k: number of top predictions to be considered in scipy.spatial.
+                    KDTree. A small value could lead to imperfect results.
 
+            Returns:
+                np.ndarray: An nx3 array where each row represents an assignment.
+
+                - first column represents the ground truth index \
+                (return is sorted by this column). A negative index means a \
+                ground-truth source with no allocated prediction.
+
+                - second column represents the predicted index. A negative index means \
+                a predicted source with no allocated ground-truth.
+
+                - third column represents the euclidean distance between the \
+                assignment. A "inf" means no allocation between ground-truth and \
+                prediction of that source.
         """
         # Check if there are duplicate sources and if yes, remove them
         # Do it via index because otherwise the order is changed
@@ -224,16 +232,19 @@ class SourceDetectionEvaluation:
         """
         Calculates the True Positive (TP), False Positive (FP)
         and False Negative (FN) of the ground truth and predictions.
+
         - TP are the detections associated with a source
         - FP are detections without any associated source
         - FN are sources with no associations with a detection
 
-        :param assignments: nx3 did np.ndarray where each row represents an assignment
-            The `assignments` is expected to be as
-            `automatic_assignment_of_ground_truth_and_prediction` return.
-            Therefore, the non-assigned sources must have a value of "-1".
+        Args:
+            assignments: nx3 did np.ndarray where each row represents an assignment
+                The `assignments` is expected to be as
+                `automatic_assignment_of_ground_truth_and_prediction` return.
+                Therefore, the non-assigned sources must have a value of "-1".
 
-        :return: TP, FP, FN
+        Returns:
+            Tuple[int, int, int]: TP, FP, FN
         """
         tp = assignments[
             np.logical_and(assignments[:, 1] != -1, assignments[:, 0] != -1), :

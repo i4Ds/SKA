@@ -261,7 +261,6 @@ def create_image_custom_command(
             Example 2: ['wsclean-image.fits', 'wsclean-residual.fits']
 
     Returns:
-
         - If output_filenames is a **string**, returns an Image object of the file \
             output_filenames.
         - If output_filenames is a **list of strings**, returns a list of \

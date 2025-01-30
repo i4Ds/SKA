@@ -41,6 +41,12 @@ Modules
 
    main_features/sourcedetection.rst
 
+.. toctree::
+   :maxdepth: 2
+   :caption: Utilities
+
+   utilities/utils.rst
+
 
 Development
 ===========

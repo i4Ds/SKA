@@ -2,12 +2,13 @@ class EastNorthCoordinate:
     """
     Class defining an east-north-(up) coordinate.
 
-    :ivar x: east coordinate in meters
-    :ivar y: north coordinate in meters
-    :ivar z: up coordinate in meters
-    :ivar x_error: east coordinate error in meters
-    :ivar y_error: north coordinate error in meters
-    :ivar z_error: up coordinate error in meters
+    Args:
+        x: east coordinate in meters
+        y: north coordinate in meters
+        z: up coordinate in meters
+        x_error: east coordinate error in meters
+        y_error: north coordinate error in meters
+        z_error: up coordinate error in meters
 
     """
 
