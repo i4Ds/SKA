@@ -1,0 +1,46 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: Karabo
+message: 'If you use this software, please cite it as below.'
+type: software
+authors:
+  - family-names: Gehrig
+    given-names: Lukas
+    affiliation: >-
+      University of Applied Sciences and Arts Northwestern
+      Switzerland
+  - given-names: Michel
+    family-names: Plüss
+    affiliation: >-
+      University of Applied Sciences and Arts Northwestern
+      Switzerland
+  - given-names: Rohit
+    family-names: Sharma
+    affiliation: IIT Kanpur
+  - given-names: Simon
+    family-names: Felix
+    affiliation: >-
+      University of Applied Sciences and Arts Northwestern
+      Switzerland
+  - given-names: Vincenzo
+    family-names: Timmel
+    affiliation: >-
+      University of Applied Sciences and Arts Northwestern
+      Switzerland
+repository-code: 'https://github.com/i4Ds/Karabo-Pipeline'
+url: 'https://i4ds.github.io/Karabo-Pipeline/'
+abstract: >-
+  Karabo is a radio astronomy software distribution for
+  validation and benchmarking of radio telescopes and
+  algorithms. It can be used to simulate the behavior of the
+  Square Kilometer Array or other supported telescopes. Our
+  goal is to make installation and ramp-up easier for
+  researchers and developers.
+  Karabo is written in Python, composed of modules
+  that can be set up in an interactive Jupyter Notebook
+  environment.
+license: MIT
+version: 0.31.0
+date-released: '2025-01-07'
